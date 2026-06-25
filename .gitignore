@@ -21,5 +21,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# HTML bruto do WordPress (grande; regenere com curl se necessário)
+# Artefatos de extração — referência local, não vão pro deploy/push
 raw/
+scripts/

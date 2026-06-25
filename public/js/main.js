@@ -20,22 +20,29 @@ document.querySelectorAll('a[href="#preco"]').forEach(function (a) {
   });
 });
 
-// Carrossel infinito de depoimentos (1 imagem por vez, loop sem emenda)
+// Carrossel infinito de depoimentos
+// Mostra N imagens por vez (CSS var --pv), avança 1 por clique, loop sem emenda.
 document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   var track = root.querySelector(".carrossel-track");
   if (!track) return;
-  var slides = Array.prototype.slice.call(track.children);
-  var total = slides.length;
+  var reals = Array.prototype.slice.call(track.children);
+  var total = reals.length;
   var statusEl = root.querySelector("[data-status]");
   var prevBtn = root.querySelector("[data-prev]");
   var nextBtn = root.querySelector("[data-next]");
+
+  // quantos slides visíveis por vez (definido no CSS: .carrossel{--pv:3})
+  var pv = parseInt(getComputedStyle(root).getPropertyValue("--pv"), 10) || 1;
+  if (pv < 1) pv = 1;
+  if (pv > total) pv = total;
+  var stepPct = 100 / pv;
 
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function setStatus(real) {
     if (statusEl) statusEl.textContent = pad(real + 1) + " / " + pad(total);
   }
 
-  // 1 slide só: sem loop, sem botões
+  // Sem movimento se tudo já cabe na tela e só há um conjunto
   if (total <= 1) {
     setStatus(0);
     if (prevBtn) prevBtn.style.display = "none";
@@ -43,22 +50,30 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     return;
   }
 
-  // Clona primeiro e último para o loop infinito sem "rebobinar"
-  var firstClone = slides[0].cloneNode(true);
-  var lastClone = slides[total - 1].cloneNode(true);
-  firstClone.setAttribute("aria-hidden", "true");
-  lastClone.setAttribute("aria-hidden", "true");
-  track.insertBefore(lastClone, slides[0]);
-  track.appendChild(firstClone);
+  // Clona `pv` slides em cada ponta para o loop sem "rebobinar"
+  var lead = document.createDocumentFragment();
+  for (var i = total - pv; i < total; i++) {
+    var cl = reals[i].cloneNode(true);
+    cl.setAttribute("aria-hidden", "true");
+    lead.appendChild(cl);
+  }
+  track.insertBefore(lead, reals[0]);
+  var trail = document.createDocumentFragment();
+  for (var j = 0; j < pv; j++) {
+    var ct = reals[j].cloneNode(true);
+    ct.setAttribute("aria-hidden", "true");
+    trail.appendChild(ct);
+  }
+  track.appendChild(trail);
 
-  var index = 1; // primeiro slide real (depois do clone do último)
+  var index = pv; // primeiro slide real (depois dos clones iniciais)
   var locked = false;
 
-  function jump() {
+  function place() {
     track.style.transition = "none";
-    track.style.transform = "translateX(" + -index * 100 + "%)";
+    track.style.transform = "translateX(" + -index * stepPct + "%)";
   }
-  jump();
+  place();
   setStatus(0);
 
   function go(dir) {
@@ -66,14 +81,13 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     locked = true;
     index += dir;
     track.style.transition = "transform .55s cubic-bezier(.4,0,.2,1)";
-    track.style.transform = "translateX(" + -index * 100 + "%)";
-    var real = ((index - 1) % total + total) % total;
-    setStatus(real);
+    track.style.transform = "translateX(" + -index * stepPct + "%)";
+    setStatus(((index - pv) % total + total) % total);
   }
 
   track.addEventListener("transitionend", function () {
-    if (index === 0) { index = total; jump(); }
-    else if (index === total + 1) { index = 1; jump(); }
+    if (index >= total + pv) { index -= total; place(); }
+    else if (index < pv) { index += total; place(); }
     locked = false;
   });
 

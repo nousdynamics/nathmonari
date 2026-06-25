@@ -46,4 +46,4 @@ scripts/process-clone.py   # pipeline de extração
 
 - Largura de conteúdo: **1160px** (`--conteudo`). Fundos full-bleed; imagens de background (foto do hero) sangram até a borda; só o conteúdo respeita o limite.
 - Altura do hero: **720px** (`height` fixo nas duas páginas).
-- Depoimentos: carrossel infinito (1 imagem por vez) com botões prev/next minimalistas. Componente: `[data-carrossel]` em `js/main.js`.
+- Depoimentos: carrossel infinito, **3 imagens por vez** (ajustável na CSS var `--pv` em `.carrossel`), avança 1 por clique, com botões prev/next minimalistas. Componente: `[data-carrossel]` em `js/main.js`.

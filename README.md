@@ -35,7 +35,7 @@ npm run deploy         # = wrangler deploy
 
 - **Largura de conteúdo: 1160px** — definida por `--conteudo` em `css/styles.css`. Os fundos das seções vão de borda a borda e as imagens de background (foto do hero) sangram até a borda; só o conteúdo é centralizado em 1160px.
 - **Altura do hero: 720px** (`height` fixo nas duas páginas).
-- **Depoimentos: carrossel infinito** (1 imagem por vez) com botões prev/next minimalistas em ouro.
+- **Depoimentos: carrossel infinito** (3 imagens por vez, ajustável na var `--pv`) com botões prev/next minimalistas em ouro.
 
 ## Estrutura
 
