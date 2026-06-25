@@ -1,0 +1,14 @@
+{
+  "name": "nathmonari-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing pages Protocolo RC — site estático servido via Cloudflare Workers (static assets).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
