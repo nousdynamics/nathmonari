@@ -45,13 +45,15 @@ public/                    # tudo que vai pro ar (assets.directory do Worker)
   vendas-rc-v3.html        # página de vendas (sem VSL)
   vendas-rc-v3-vsl.html    # página de vendas (com vídeo)
   404.html
-  css/styles.css           # estilo compartilhado pelas duas páginas
+  css/styles.css           # estilo + design tokens (:root)
   js/main.js               # FAQ + scroll suave + carrossel de depoimentos
-  images/                  # assets locais
+  fonts/                   # fontes self-hosted (woff2) + fonts.css
+  images/                  # assets locais (WebP)
 wrangler.jsonc             # config Cloudflare Workers
 package.json               # scripts dev/deploy
-raw/                       # HTML original do WordPress (referência, git-ignored)
-scripts/process-clone.py   # pipeline de extração
+DESIGN-SYSTEM.md           # tokens de cor, tipografia e espaçamento
+raw/                       # HTML original do WordPress (git-ignored)
+scripts/process-clone.py   # pipeline de extração (git-ignored)
 ```
 
 ## Reprocessar a partir do HTML bruto
