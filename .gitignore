@@ -24,3 +24,6 @@ pnpm-debug.log*
 # Artefatos de extração — referência local, não vão pro deploy/push
 raw/
 scripts/
+
+# Mockups locais do companion visual
+.superpowers/

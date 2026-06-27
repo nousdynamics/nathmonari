@@ -109,7 +109,7 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   if (!("IntersectionObserver" in window)) return;
   var sel = ".secao-label,.prova-abertura .carrossel,.identificacao-item," +
     ".agitacao-inner > *,.reframe-esq,.reframe-dir,.historia-texto,.historia-story," +
-    ".mecanismo-item,.dia-item,.modulo-card,.bonus-item,.prova-densa .carrossel," +
+    ".mecanismo-item,.dia-item,.modulo-card,.bonus-row,.prova-densa .carrossel," +
     ".stack-item,.stack-total,.para-quem-item,.objecao-item,.futuro-img-wrap," +
     ".futuro-cenario,.preco-box,.garantia-inner,.cta-section-inner,.faq-item,.ps-final > *";
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
