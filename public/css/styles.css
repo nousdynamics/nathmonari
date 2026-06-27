@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   isolation:isolate;
   background:
     linear-gradient(90deg,rgba(245,242,236,.18) 0%,rgba(245,242,236,.08) 48%,rgba(245,242,236,.14) 100%),
-    url("../images/bg-hero-reconstrua-se-v2.png") center top/cover no-repeat,
+    url("../images/bg-hero-reconstrua-se-v2.webp") center top/cover no-repeat,
     var(--off-white);
 }
 .hero::after,.hero-vsl::after{
@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 
 /* AGITAÇÃO */
 .agitacao{background:var(--off-white);padding:var(--sp-section) 0}
-.agitacao-inner{max-width:720px;margin:0 auto}
+.agitacao-inner{max-width:720px;margin:0 auto;text-align:center}
 .agitacao-inner p{font-size:var(--fs-lead);font-weight:300;color:var(--texto-sec);line-height:1.75;margin-bottom:20px}
 .agitacao-quote{font-family:var(--font-display);font-size:clamp(22px,2.5vw,32px);font-style:italic;color:var(--preto);text-align:center;padding:40px 0;border-top:0.5px solid var(--ouro);border-bottom:0.5px solid var(--ouro);margin:32px 0}
 
@@ -385,14 +385,14 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
     height:720px;
     background:
       linear-gradient(180deg,rgba(245,242,236,.1) 0%,rgba(245,242,236,.2) 100%),
-      url("../images/bg-hero-reconstrua-se-mobile.png") center top/cover no-repeat,
+      url("../images/bg-hero-reconstrua-se-mobile.webp") center top/cover no-repeat,
       var(--off-white);
   }
   .hero-conteudo,.hvsl-left{height:720px;width:100%;margin-left:0;padding:44px 24px 56px}
   .hero-logo{margin-bottom:20px}
   .hero-logo img{max-width:210px;max-height:68px}
   .hero .hero-conteudo{justify-content:flex-start;padding-top:0}
-  .hero .hero-logo{padding-top:160px}
+  .hero .hero-logo{padding-top:220px}
   .hero h1{font-size:clamp(30px,9vw,42px);max-width:92%}
   .hero h2,.hvsl-h2{max-width:none}
   .hero-corpo{max-width:none}
