@@ -53,6 +53,12 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* equilíbrio de quebra de linha em toda a página */
 h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 
+/* QUEBRA DE SEÇÃO — transição curva entre seções (--de = cor de cima, --para = cor de baixo) */
+.quebra{position:relative;height:54px;background:var(--para);line-height:0}
+.quebra-svg{display:block;width:100%;height:100%}
+.quebra-svg path{fill:var(--de)}
+.quebra-seta{position:absolute;left:50%;bottom:9px;transform:translateX(-50%);color:var(--ouro);line-height:0;z-index:2}
+
 /* BARRA TOPO */
 .barra-topo{background:var(--preto);padding:13px 24px;text-align:center;position:sticky;top:0;z-index:100}
 .barra-topo p{font-family:var(--font-body);font-size:12px;font-weight:300;letter-spacing:0.12em;color:var(--ouro);text-transform:uppercase}
@@ -138,20 +144,31 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 .reframe-ponto-texto{font-size:16px;font-weight:300;color:var(--texto-sec);line-height:1.7}
 
 /* HISTÓRIA */
-.historia{background:var(--areia);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
-.historia-foto-wrap{position:relative}
-.historia-foto-container{border-radius:2px;aspect-ratio:3/4;overflow:hidden;position:relative;background:var(--off-white);display:flex;align-items:center;justify-content:center}
-.historia-foto-container img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-.historia-foto-container::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,var(--areia) 100%),linear-gradient(to right,transparent 65%,var(--areia) 100%),linear-gradient(to left,transparent 85%,var(--areia) 100%);pointer-events:none;z-index:2}
-.historia-badge{position:absolute;bottom:-20px;right:-20px;background:var(--preto);padding:20px 24px;border-radius:2px;z-index:3}
-.historia-badge-num{font-family:var(--font-display);font-size:28px;color:var(--ouro);display:block;line-height:1}
-.historia-badge-txt{font-family:var(--font-body);font-size:9px;font-weight:200;letter-spacing:0.2em;text-transform:uppercase;color:var(--off-white);margin-top:4px;display:block}
-.historia h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:28px}
-.historia-corpo{display:flex;flex-direction:column;gap:16px}
-.historia-corpo p{font-size:var(--fs-lead);font-weight:300;color:var(--texto-sec);line-height:1.85}
-.historia-stats{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:0.5px solid rgba(201,168,76,0.3)}
-.historia-stat-num{font-family:var(--font-display);font-size:28px;color:var(--preto);display:block;line-height:1}
-.historia-stat-txt{font-family:var(--font-body);font-size:10px;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:var(--texto-ter);margin-top:4px;display:block}
+/* HISTÓRIA — perfil com mockup de story (texto esq / story dir) */
+.historia{background:var(--areia);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 0.82fr;gap:72px;align-items:center}
+.historia-nome{display:inline-flex;align-items:center;gap:9px;padding:6px 16px 6px 6px;border-radius:999px;border:0.5px solid rgba(201,168,76,0.45);background:rgba(201,168,76,0.1);font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--preto);margin-bottom:24px}
+.historia-nome-ic{width:26px;height:26px;border-radius:50%;background:var(--ouro);color:var(--preto);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;line-height:1}
+.historia h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
+.historia-corpo{display:flex;flex-direction:column;gap:14px}
+.historia-corpo p{font-size:var(--fs-lead);font-weight:300;color:var(--texto-sec);line-height:1.8}
+.historia-lista{list-style:none;margin-top:28px;border-top:0.5px solid rgba(201,168,76,0.28)}
+.historia-lista li{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:0.5px solid rgba(201,168,76,0.28)}
+.historia-seta{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:0.5px solid var(--ouro);color:var(--ouro);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1}
+.historia-lista li span:last-child{font-size:var(--fs-body-sm);font-weight:400;color:var(--texto-sec);line-height:1.4}
+.historia-story{position:relative;width:100%;max-width:380px;justify-self:center}
+.hist-story-card{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:9/16;background:var(--off-white);box-shadow:0 50px 100px -45px rgba(26,18,8,0.55)}
+.hist-story-img{width:100%;height:100%;object-fit:cover;display:block}
+.hist-story-top{position:absolute;inset:0 0 auto 0;z-index:2;display:flex;align-items:center;gap:9px;padding:15px 16px;background:linear-gradient(180deg,rgba(0,0,0,0.45),transparent)}
+.hist-story-ava{width:30px;height:30px;border-radius:50%;background:var(--ouro);color:var(--preto);border:1.5px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;flex-shrink:0}
+.hist-story-user{font-family:var(--font-body);font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;gap:5px}
+.hist-story-verif{width:15px;height:15px;flex-shrink:0}
+.hist-story-time{font-family:var(--font-body);font-size:12px;font-weight:300;color:rgba(255,255,255,0.72);margin-left:2px}
+.hist-story-bar{position:absolute;inset:auto 0 0 0;z-index:2;display:flex;align-items:center;gap:14px;padding:16px;background:linear-gradient(0deg,rgba(0,0,0,0.45),transparent)}
+.hist-story-input{flex:1;border:1px solid rgba(255,255,255,0.55);border-radius:999px;padding:11px 18px;font-family:var(--font-body);font-size:12px;color:rgba(255,255,255,0.85)}
+.hist-story-bar svg{width:24px;height:24px;stroke:#fff;fill:none;flex-shrink:0}
+.hist-story-seal{position:absolute;top:15%;right:-24px;width:88px;height:88px;border-radius:50%;background:var(--preto);border:0.5px solid rgba(201,168,76,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;z-index:3;box-shadow:0 14px 30px -12px rgba(0,0,0,0.5)}
+.hist-story-seal-rc{font-family:var(--font-display);font-size:24px;color:var(--ouro);line-height:1}
+.hist-story-seal-txt{font-family:var(--font-body);font-size:7px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--off-white)}
 
 /* MECANISMO */
 .mecanismo{background:var(--preto);padding:var(--sp-section) 0}
@@ -244,15 +261,18 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 .objecao-item-conteudo p{font-size:var(--fs-body-sm);font-weight:300;color:var(--texto-sec);line-height:1.65}
 
 /* VISÃO FUTURO */
-.futuro{background:var(--preto);padding:var(--sp-section) 0;text-align:center}
-.futuro-inner{max-width:680px;margin:0 auto}
-.futuro h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:40px}
-.futuro-cenarios{display:flex;flex-direction:column;margin-bottom:56px;text-align:left}
-.futuro-cenario{padding:24px 0;border-bottom:0.5px solid rgba(201,168,76,0.1);display:flex;gap:20px;align-items:flex-start}
-.futuro-cenario:first-child{border-top:0.5px solid rgba(201,168,76,0.1)}
-.futuro-cenario-dot{width:5px;height:5px;border-radius:50%;background:var(--ouro);flex-shrink:0;margin-top:8px}
-.futuro-cenario p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.75}
-.futuro-nota{font-family:var(--font-display);font-size:var(--fs-body);font-style:italic;color:var(--on-dark);line-height:1.7}
+/* VISÃO DE FUTURO — imagem esq / cenários dir, compacto */
+.futuro{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:0.82fr 1fr;gap:64px;align-items:center}
+.futuro-img-wrap{position:relative}
+.futuro-img{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 40px 90px -45px rgba(0,0,0,0.7)}
+.futuro-inner{max-width:none;margin:0}
+.futuro h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.12;letter-spacing:-0.02em;margin-bottom:28px}
+.futuro-cenarios{display:flex;flex-direction:column;margin-bottom:32px}
+.futuro-cenario{padding:13px 0;border-bottom:0.5px solid rgba(201,168,76,0.12);display:flex;gap:16px;align-items:flex-start}
+.futuro-cenario:first-child{border-top:0.5px solid rgba(201,168,76,0.12)}
+.futuro-cenario-dot{width:5px;height:5px;border-radius:50%;background:var(--ouro);flex-shrink:0;margin-top:9px}
+.futuro-cenario p{font-size:var(--fs-body-sm);font-weight:400;color:var(--on-dark);line-height:1.5}
+.futuro-nota{font-family:var(--font-display);font-size:var(--fs-body);font-style:italic;color:var(--on-dark);line-height:1.6}
 
 /* PREÇO */
 .preco{background:var(--off-white);padding:var(--sp-section) 0}
@@ -402,7 +422,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .hvsl-right{display:none}
   .hvsl-h1{font-size:clamp(30px,10vw,42px)}
   .hvsl-vsl{width:100%}
-  .identificacao,.reframe,.historia,.para-quem{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
+  .identificacao,.reframe,.historia,.para-quem,.futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final,.footer{padding:var(--sp-section) 20px}
   .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 20px}
   .barra-topo{padding:11px 12px}
