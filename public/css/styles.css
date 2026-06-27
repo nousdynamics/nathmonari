@@ -53,12 +53,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* equilíbrio de quebra de linha em toda a página */
 h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 
-/* QUEBRA DE SEÇÃO — transição curva entre seções (--de = cor de cima, --para = cor de baixo) */
-.quebra{position:relative;height:58px;background:var(--para);line-height:0}
-.quebra-svg{display:block;width:100%;height:100%}
-.quebra-svg path{fill:var(--de)}
-.quebra-seta{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--para);border:1px solid rgba(201,168,76,0.6);display:flex;align-items:center;justify-content:center;color:var(--ouro);z-index:2;box-shadow:0 8px 22px -8px rgba(0,0,0,0.5)}
-.quebra-seta svg{width:20px;height:20px;display:block}
+/* QUEBRA DE SEÇÃO — bracket (triângulo) na cor da seção de cima, sobre a emenda */
+.bracket{height:0;position:relative;z-index:6;display:flex;justify-content:center;align-items:flex-start;pointer-events:none}
+.bracket img{display:block;width:110px;height:auto;margin-top:-25px}
 
 /* ÍCONES (Lucide, inline) — tamanho por contexto */
 .historia-seta svg{width:16px;height:16px;display:block}
