@@ -1,5 +1,7 @@
 // Protocolo RC — interações da landing page
 
+var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
 // Acordeão do FAQ: abre um, fecha os demais
 document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
   pergunta.addEventListener("click", function () {
@@ -12,11 +14,13 @@ document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
   });
 });
 
-// Rolagem suave para a seção de preço
-document.querySelectorAll('a[href="#preco"]').forEach(function (a) {
+// Rolagem interna suave, com fallback imediato para movimento reduzido
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener("click", function (e) {
+    var target = document.querySelector(this.getAttribute("href"));
+    if (!target) return;
     e.preventDefault();
-    document.querySelector("#preco").scrollIntoView({ behavior: "smooth" });
+    target.scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" });
   });
 });
 
@@ -80,9 +84,15 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     if (locked) return;
     locked = true;
     index += dir;
-    track.style.transition = "transform .55s cubic-bezier(.4,0,.2,1)";
+    track.style.transition = motionQuery.matches ? "none" : "transform .55s cubic-bezier(.4,0,.2,1)";
     track.style.transform = "translateX(" + -index * stepPct + "%)";
     setStatus(((index - pv) % total + total) % total);
+    if (motionQuery.matches) {
+      if (index >= total + pv) index -= total;
+      else if (index < pv) index += total;
+      place();
+      locked = false;
+    }
   }
 
   track.addEventListener("transitionend", function () {
@@ -91,17 +101,43 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     locked = false;
   });
 
-  // Autoplay suave; pausa ao interagir/hover
+  // Autoplay suave; só trabalha quando o carrossel e a aba estão visíveis
   var timer = null;
-  function start() { timer = setInterval(function () { go(1); }, 5000); }
+  var isVisible = false;
+  var isHovering = false;
+  var isFocused = false;
+  function canAutoPlay() {
+    return !motionQuery.matches && isVisible && !document.hidden && !isHovering && !isFocused;
+  }
+  function start() {
+    if (timer || !canAutoPlay()) return;
+    timer = setInterval(function () { go(1); }, 5000);
+  }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function syncAutoPlay() { stop(); start(); }
   function restart() { stop(); start(); }
 
   if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); restart(); });
   if (nextBtn) nextBtn.addEventListener("click", function () { go(1); restart(); });
-  root.addEventListener("mouseenter", stop);
-  root.addEventListener("mouseleave", start);
-  start();
+  root.addEventListener("mouseenter", function () { isHovering = true; syncAutoPlay(); });
+  root.addEventListener("mouseleave", function () { isHovering = false; syncAutoPlay(); });
+  root.addEventListener("focusin", function () { isFocused = true; syncAutoPlay(); });
+  root.addEventListener("focusout", function () { isFocused = false; syncAutoPlay(); });
+  document.addEventListener("visibilitychange", syncAutoPlay);
+  if (motionQuery.addEventListener) motionQuery.addEventListener("change", syncAutoPlay);
+
+  if ("IntersectionObserver" in window) {
+    var visibilityObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        isVisible = entry.isIntersecting;
+        syncAutoPlay();
+      });
+    }, { threshold: 0.15 });
+    visibilityObserver.observe(root);
+  } else {
+    isVisible = true;
+    syncAutoPlay();
+  }
 });
 
 // Reveal ao rolar — IntersectionObserver (leve, não bloqueia o carregamento)
@@ -115,6 +151,22 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   if (!els.length) return;
   els.forEach(function (el) { el.classList.add("reveal"); });
+
+  document.querySelectorAll(".reframe-esq,.historia-texto,.futuro-img-wrap,.para-quem > div:first-child").forEach(function (el) {
+    el.classList.add("reveal--left");
+  });
+  document.querySelectorAll(".reframe-dir,.historia-story,.futuro-inner,.para-quem > div:nth-child(2)").forEach(function (el) {
+    el.classList.add("reveal--right");
+  });
+
+  document.querySelectorAll(".identificacao-lista,.mecanismo-grid,.dias-grid,.modulos-grid,.bonus-list,.stack-lista,.objecao-itens,.futuro-cenarios,.faq-inner").forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (child, index) {
+      if (child.classList.contains("reveal")) {
+        child.style.setProperty("--reveal-delay", Math.min(index * 55, 240) + "ms");
+      }
+    });
+  });
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
