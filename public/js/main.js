@@ -103,3 +103,22 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   root.addEventListener("mouseleave", start);
   start();
 });
+
+// Reveal ao rolar — IntersectionObserver (leve, não bloqueia o carregamento)
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var sel = ".secao-label,.prova-abertura .carrossel,.identificacao-item," +
+    ".agitacao-inner > *,.reframe-esq,.reframe-dir,.historia-texto,.historia-story," +
+    ".mecanismo-item,.dia-item,.modulo-card,.bonus-item,.prova-densa .carrossel," +
+    ".stack-item,.stack-total,.para-quem-item,.objecao-item,.futuro-img-wrap," +
+    ".futuro-cenario,.preco-box,.garantia-inner,.cta-section-inner,.faq-item,.ps-final > *";
+  var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+  if (!els.length) return;
+  els.forEach(function (el) { el.classList.add("reveal"); });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
