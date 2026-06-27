@@ -253,7 +253,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 /* VISÃO DE FUTURO — imagem esq / cenários dir, compacto */
 .futuro{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:0.82fr 1fr;gap:64px;align-items:center}
 .futuro-img-wrap{position:relative}
-.futuro-img{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 40px 90px -45px rgba(0,0,0,0.7)}
+.futuro-img{width:100%;height:auto;display:block}
 .futuro-inner{max-width:none;margin:0}
 .futuro h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.12;letter-spacing:-0.02em;margin-bottom:28px}
 .futuro-cenarios{display:flex;flex-direction:column;margin-bottom:32px}
