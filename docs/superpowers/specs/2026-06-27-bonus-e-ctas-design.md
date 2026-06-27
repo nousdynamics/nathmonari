@@ -17,14 +17,14 @@ A grade de cinco cards será substituída por um painel editorial escuro. O cabe
 
 Cada linha conterá, nesta ordem:
 
-- ícone SVG original;
+- o mesmo ícone SVG de presente, identificando visualmente que o item é um bônus;
 - identificação do bônus e título;
 - descrição completa atual;
 - valor antigo riscado.
 
-Os valores permanecem `R$47`, `R$47`, `R$37`, `R$37` e `R$32`. O risco será explícito por CSS e terá contraste suficiente. No celular, cada linha reorganizará título, descrição e preço sem ocultar conteúdo.
+Os valores permanecem `R$47`, `R$47`, `R$37`, `R$37` e `R$32`. O risco será explícito por CSS e terá contraste suficiente. Os preços terão `15px` no desktop e `13px` em telas de até `480px`. No celular, cada linha reorganizará título, descrição e preço sem ocultar conteúdo.
 
-O painel usará a paleta escura e dourada já presente no projeto, cantos de no máximo `2px` e divisórias discretas. Não haverá animação flutuante nos ícones nesse novo formato.
+O painel usará a paleta escura e dourada já presente no projeto, cantos de no máximo `2px` e divisórias discretas. Os cinco presentes permanecerão dentro do círculo dourado atual, sem animação flutuante.
 
 ## Sistema de botões
 
@@ -83,5 +83,5 @@ A implementação será verificada nas duas páginas em desktop e mobile. A chec
 - seta SVG presente e alinhada em todos os botões;
 - ausência do pseudo-elemento antigo;
 - bordas retas em todos os CTAs;
-- cinco linhas de bônus com ícone, título, descrição e preço riscado;
+- cinco linhas de bônus com o ícone de presente, título, descrição e preço riscado em tamanho ampliado;
 - nenhuma regressão no hero, carrosséis, FAQ ou rolagem suave.
