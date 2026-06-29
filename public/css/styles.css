@@ -510,8 +510,8 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .btn-cta-wrap{align-items:stretch}
   .section-cta{margin-top:32px}
   .section-cta .btn-cta,.btn-cta-wrap .btn-cta{width:100%}
-  .btn-cta{text-align:center;font-size:var(--fs-min);letter-spacing:0.08em;white-space:normal}
-  .btn-cta-text{padding:14px 16px}
+  .btn-cta{font-size:clamp(12px,2.9vw,13px);letter-spacing:0.05em;white-space:nowrap;grid-template-columns:minmax(0,1fr) 40px}
+  .btn-cta-text{padding:14px 10px;white-space:nowrap}
   .carrossel{--pv:1;overflow-x:clip}
   .carrossel-slide img{max-height:360px}
   .carrossel-btn{width:40px;height:40px;font-size:16px}
@@ -564,8 +564,8 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .hero h1,.hvsl-h1{margin-bottom:12px}
   .hero h2,.hvsl-h2{margin-bottom:12px}
   .hero-corpo{margin-bottom:20px}
-  .btn-cta{grid-template-columns:minmax(0,1fr) 40px}
-  .btn-cta-text{padding:13px 12px}
+  .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}
+  .btn-cta-text{padding:13px 8px}
   .section-cta{margin-top:26px}
   .btn-cta-wrap{gap:10px}
   .identificacao,.reframe,.historia,.para-quem{padding:var(--sp-section) 16px;gap:24px}
