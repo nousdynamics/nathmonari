@@ -483,13 +483,13 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .hero-logo img{max-width:210px;max-height:68px;margin-inline:auto}
   .hero .hero-conteudo{justify-content:flex-start}
   .hero .hero-logo{padding-top:0}
-  .hero h1{font-size:clamp(26px,9vw,38px);max-width:100%;margin-inline:auto}
+  .hero h1{font-size:clamp(24px,7vw,32px);max-width:100%;margin-inline:auto}
   .hero h2,.hvsl-h2{max-width:100%;margin-inline:auto}
   .hero-corpo{max-width:100%;margin-inline:auto}
   .hero-vsl{min-height:0}
   .hvsl-left{min-height:0;max-width:100%;padding:24px 24px 64px}
   .hvsl-right{display:none}
-  .hvsl-h1{font-size:clamp(26px,10vw,38px);max-width:100%;margin-inline:auto}
+  .hvsl-h1{font-size:clamp(24px,7vw,32px);max-width:100%;margin-inline:auto}
   .hvsl-vsl{width:100%;max-width:100%;align-self:stretch;margin-bottom:16px}
   .hero-vsl .btn-cta-wrap{max-width:100%}
   .identificacao,.reframe,.historia,.para-quem,.futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
@@ -497,7 +497,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final,.footer{padding:var(--sp-section) 20px}
   .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 20px}
   .barra-topo{padding:11px 12px}
-  .barra-topo p{font-size:var(--fs-min);letter-spacing:0.02em;white-space:normal}
+  .barra-topo p{font-size:10px;letter-spacing:0.02em;white-space:normal}
   .mecanismo-grid,.modulos-grid,.dias-grid{grid-template-columns:1fr}
   .bonus-header{grid-template-columns:1fr;gap:10px}
   .bonus-row{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
@@ -539,7 +539,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .futuro-cenarios{margin-bottom:40px}
   .futuro-cenario{padding:16px 0}
   /* piso tipográfico mobile — nada abaixo de 14px */
-  .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.barra-topo p,.carrossel-status{font-size:var(--fs-min)}
+  .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.carrossel-status{font-size:var(--fs-min)}
 }
 
 @media(max-width:480px){
