@@ -453,6 +453,9 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   margin-left:max(var(--gutter),calc((100vw - var(--conteudo)) / 2));
 }
 
+/* line-height mais justo no corpo de texto */
+.reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
+
 /* ============================================================
    RESPONSIVO
    ============================================================ */
@@ -471,7 +474,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
     --sp-section:clamp(56px,11vw,76px);
   }
   /* line-height mais justo no mobile p/ textos corridos */
-  .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.6}
+  .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
   .hero,.hero-vsl{
     height:auto;
     min-height:0;
@@ -485,7 +488,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .hero .hero-logo{padding-top:0}
   .hero h1{font-size:clamp(24px,7vw,32px);max-width:100%;margin-inline:auto}
   .hero h2,.hvsl-h2{max-width:100%;margin-inline:auto}
-  .hero-corpo{max-width:100%;margin-inline:auto}
+  .hero-corpo{font-size:15px;max-width:100%;margin-inline:auto}
   .hero-vsl{min-height:0}
   .hvsl-left{min-height:0;max-width:100%;padding:24px 24px 64px}
   .hvsl-right{display:none}
