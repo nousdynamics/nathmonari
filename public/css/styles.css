@@ -53,8 +53,8 @@
   --motion-fast:260ms;
   --motion-base:620ms;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--branco);color:var(--preto);font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-body);background:var(--branco);color:var(--preto);font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%}
 /* equilíbrio de quebra de linha em toda a página */
 h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 
@@ -339,7 +339,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 .preco-inner{max-width:680px;margin:0 auto;text-align:center}
 .preco-inner h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
 .preco-inner>p{font-size:var(--fs-body-sm);font-weight:400;color:var(--texto-sec);line-height:1.75;margin-bottom:48px}
-.preco-box{position:relative;background:radial-gradient(130% 90% at 50% 0%,#231a0c 0%,var(--preto) 58%);border-radius:4px;padding:clamp(40px,5vw,64px) clamp(24px,4vw,52px);text-align:center;border:0.5px solid rgba(201,168,76,0.28);box-shadow:0 30px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04)}
+.preco-box{position:relative;background:radial-gradient(130% 90% at 50% 0%,#231a0c 0%,var(--preto) 58%);border-radius:4px;padding:clamp(40px,5vw,64px) clamp(24px,4vw,52px);text-align:center;border:0.5px solid rgba(201,168,76,0.28);box-shadow:0 30px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);max-width:100%;box-sizing:border-box}
 .preco-de{display:inline-block;font-size:var(--fs-min);font-weight:400;color:var(--vermelho);text-decoration:line-through;letter-spacing:0.06em;padding:8px 22px;border-radius:999px;border:0.5px solid rgba(229,57,53,0.4);background:rgba(229,57,53,0.08);margin-bottom:28px}
 .preco-parcela-label{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--on-dark-muted);margin-bottom:10px}
 .preco-parcela-valor{display:flex;align-items:baseline;justify-content:center;gap:8px;line-height:1;margin-bottom:10px}
@@ -349,7 +349,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
 .preco-cta{margin-bottom:28px}
 .btn-cta-pill{width:100%;max-width:460px;margin:0 auto}
 .preco-pagamentos{display:block;width:78%;max-width:300px;height:auto;margin:0 auto 24px}
-.preco-selos{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.preco-selos{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:22px}
 .preco-selo{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--on-dark-muted)}
 .preco-selo svg{width:15px;height:15px;stroke:var(--ouro);fill:none;flex-shrink:0}
 .preco-garantia-txt{font-size:11px;font-weight:400;color:var(--on-dark-muted);letter-spacing:0.04em}
@@ -497,7 +497,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final,.footer{padding:var(--sp-section) 20px}
   .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 20px}
   .barra-topo{padding:11px 12px}
-  .barra-topo p{font-size:var(--fs-min);letter-spacing:0.02em;white-space:nowrap}
+  .barra-topo p{font-size:var(--fs-min);letter-spacing:0.02em;white-space:normal}
   .mecanismo-grid,.modulos-grid,.dias-grid{grid-template-columns:1fr}
   .bonus-header{grid-template-columns:1fr;gap:10px}
   .bonus-row{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
@@ -512,15 +512,23 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .section-cta .btn-cta,.btn-cta-wrap .btn-cta{width:100%}
   .btn-cta{text-align:center;font-size:var(--fs-min);letter-spacing:0.08em;white-space:normal}
   .btn-cta-text{padding:14px 16px}
-  .carrossel{--pv:1}
+  .carrossel{--pv:1;overflow-x:clip}
   .carrossel-slide img{max-height:360px}
   .carrossel-btn{width:40px;height:40px;font-size:16px}
   .carrossel-controles{gap:16px;margin-top:20px}
   .secao-header{flex-direction:column;gap:12px;margin-bottom:32px}
   .secao-header h3{white-space:normal;font-size:18px}
   .secao-header-linha{width:100%;height:0.5px}
-  .preco-box{padding:40px 24px}
-  .preco-num{font-size:clamp(64px,13vw,104px)}
+  .preco-inner{min-width:0;width:100%}
+  .preco-box{padding:40px 24px;overflow-x:clip}
+  .preco-parcela-valor{max-width:100%}
+  .preco-parcela-label{letter-spacing:0.14em}
+  .preco-num{font-size:clamp(72px,15vw,108px)}
+  .preco-cifrao,.preco-cent{font-size:clamp(24px,5.5vw,36px)}
+  .preco-pagamentos{width:100%;max-width:280px}
+  .preco-cta .btn-cta-pill{max-width:100%}
+  .preco-selos{flex-direction:column;flex-wrap:nowrap;gap:10px}
+  .preco-selo{font-size:13px}
   .garantia-badge{width:min(240px,68vw);margin-bottom:32px}
   .modulos-grid{gap:16px}
   .dias-grid{gap:1px}
@@ -531,7 +539,7 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .futuro-cenarios{margin-bottom:40px}
   .futuro-cenario{padding:16px 0}
   /* piso tipográfico mobile — nada abaixo de 14px */
-  .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-selo,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.barra-topo p,.carrossel-status{font-size:var(--fs-min)}
+  .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.barra-topo p,.carrossel-status{font-size:var(--fs-min)}
 }
 
 @media(max-width:480px){
@@ -615,8 +623,10 @@ h1,h2,h3,h4,h5,h6,p,li,figcaption{text-wrap:balance}
   .preco-inner h2{margin-bottom:16px}
   .preco-inner>p{margin-bottom:32px}
   .preco-box{padding:32px 20px;border-radius:2px}
-  .preco-num{font-size:clamp(54px,16vw,80px)}
-  .preco-cifrao,.preco-cent{font-size:clamp(18px,5vw,24px)}
+  .preco-num{font-size:clamp(68px,20vw,96px)}
+  .preco-cifrao,.preco-cent{font-size:clamp(22px,6.5vw,32px)}
+  .preco-selos{gap:8px}
+  .preco-selo{font-size:13px}
   .garantia-inner{max-width:100%}
   .garantia-badge{width:min(220px,64vw);margin-bottom:24px}
   .garantia h2{font-size:18px;margin-bottom:20px}
