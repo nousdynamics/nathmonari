@@ -42,7 +42,7 @@
   /* ---------- ESPAÇAMENTO (base 8) ---------- */
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;
   --sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-14:56px;--sp-16:64px;--sp-18:72px;--sp-20:80px;
-  --sp-section:32px; /* padding vertical das seções (exceto hero) */
+  --sp-section:clamp(64px,8vw,100px); /* ritmo vertical das seções (desktop) */
 
   /* ---------- LAYOUT / FORMA ---------- */
   --conteudo:1160px;  /* largura máxima do conteúdo */
@@ -388,13 +388,13 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .faq-item.open .faq-resposta{display:block}
 
 /* PS FINAL */
-.ps-final{background:var(--areia);padding:var(--sp-section) 0;text-align:center}
+.ps-final{background:var(--areia);padding:60px 0;text-align:center}
 .ps-final p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8;max-width:640px;margin:0 auto}
 .ps-final strong{font-weight:500;color:var(--preto)}
 .ps-final .ps-cta{margin-top:40px}
 
 /* FOOTER */
-.footer{background:var(--preto);padding:var(--sp-section) 0;text-align:center}
+.footer{background:var(--preto);padding:32px 0;text-align:center}
 .footer p{font-size:11px;font-weight:400;color:var(--on-dark-faint);letter-spacing:0.06em}
 
 /* ========== HERO VSL ========== */
@@ -473,6 +473,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     --fs-eyebrow:14px;
     --fs-xs:14px;
     --fs-min:14px;
+    --sp-section:32px; /* padding vertical das seções no mobile */
   }
   /* line-height mais justo no mobile p/ textos corridos */
   .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
