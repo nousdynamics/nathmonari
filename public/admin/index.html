@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de rotas — Nath Monari</title>
+  <link rel="icon" type="image/webp" href="../images/favicon.webp" />
+  <style>
+    :root { --bg:#f5f2ec; --card:#fff; --text:#1a1208; --muted:#5c4f3a; --ouro:#c9a84c; --line:#e8e4dc; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); line-height:1.5; padding:2rem 1rem 4rem; }
+    .wrap { max-width:720px; margin:0 auto; }
+    h1 { font-size:1.35rem; margin-bottom:.35rem; }
+    .sub { color:var(--muted); font-size:.92rem; margin-bottom:1.5rem; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:4px; padding:1.25rem; margin-bottom:1rem; }
+    label { display:block; font-size:.78rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:.35rem; }
+    input { width:100%; padding:.55rem .7rem; border:1px solid var(--line); border-radius:3px; font:inherit; margin-bottom:.85rem; }
+    input:focus { outline:2px solid var(--ouro); outline-offset:1px; }
+    .row-head { font-size:.85rem; font-weight:600; margin-bottom:.75rem; padding-bottom:.5rem; border-bottom:1px solid var(--line); }
+    .actions { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem; }
+    button, .btn { appearance:none; border:none; cursor:pointer; font:inherit; font-size:.88rem; font-weight:600; padding:.6rem 1rem; border-radius:3px; text-decoration:none; display:inline-block; }
+    .btn-primary { background:var(--ouro); color:#fff; }
+    .btn-secondary { background:var(--line); color:var(--text); }
+    .btn-danger { background:#e53935; color:#fff; }
+    .msg { margin-top:1rem; padding:.75rem; border-radius:3px; font-size:.88rem; display:none; }
+    .msg.ok { display:block; background:#e8f5e9; color:#1b5e20; }
+    .msg.warn { display:block; background:#fff8e1; color:#6d4c00; }
+    pre { margin-top:1rem; background:#1a1208; color:#ede4d6; padding:1rem; border-radius:4px; overflow:auto; font-size:.75rem; max-height:240px; }
+    footer { margin-top:2rem; font-size:.82rem; color:var(--muted); }
+    footer a { color:var(--text); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Painel de rotas</h1>
+    <p class="sub">Defina URLs amigáveis para cada landing page. Após salvar, exporte o JSON, substitua <code>public/data/routes.json</code> e faça deploy.</p>
+
+    <div id="pages"></div>
+
+    <div class="actions">
+      <button type="button" class="btn-primary" id="add">+ Adicionar página</button>
+      <button type="button" class="btn-secondary" id="export">Exportar routes.json</button>
+      <button type="button" class="btn-secondary" id="reload">Recarregar</button>
+    </div>
+
+    <div class="msg warn" id="hint">
+      O deploy usa o arquivo <strong>public/data/routes.json</strong> no repositório. Use <em>Exportar</em> e commit para publicar novas rotas.
+    </div>
+    <div class="msg" id="status"></div>
+    <pre id="preview" hidden></pre>
+
+    <footer>
+      <a href="../index.html">← Voltar ao índice</a>
+    </footer>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
