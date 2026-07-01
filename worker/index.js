@@ -1,6 +1,6 @@
 /**
  * Worker: rewrites de rotas amigáveis → arquivos HTML em public/
- * Config: /data/routes.json (editável pelo painel em /admin/)
+ * Config: /data/routes.json (editável pelo painel em /)
  */
 
 const ROUTES_CACHE_TTL_MS = 30_000;
@@ -34,7 +34,7 @@ export default {
     const pages = await loadRoutes(env);
 
     if (url.pathname === "/admin" || url.pathname === "/admin/") {
-      return env.ASSETS.fetch(new URL("/admin/index.html", url.origin));
+      return Response.redirect(new URL("/", url.origin), 302);
     }
 
     if (url.pathname === "/api/routes" && request.method === "GET") {
