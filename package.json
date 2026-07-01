@@ -9,7 +9,8 @@
     "preview": "wrangler dev --remote",
     "optimize:images": "node scripts/optimize-images.mjs",
     "apply:copy": "node scripts/apply-copy-v3.mjs && node scripts/fix-page-order.mjs",
-    "clone:pages": "node scripts/clone-external-pages.mjs"
+    "clone:pages": "node scripts/clone-external-pages.mjs",
+    "fix:clone-css": "node scripts/fix-clone-css-paths.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
