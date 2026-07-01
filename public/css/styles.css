@@ -173,6 +173,11 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 
 /* PROVA ABERTURA */
 .prova-abertura{background:var(--branco);padding:var(--sp-section) 0}
+.prova-abertura .secao-header{flex-direction:column;align-items:center;text-align:center;gap:12px}
+.prova-abertura .secao-header h3{white-space:normal;text-align:center}
+.prova-abertura .secao-header-linha{width:min(100%,120px);flex:none}
+.prova-abertura .carrossel{margin-inline:auto}
+.prova-abertura .carrossel-slide img{margin-inline:auto}
 .secao-header{display:flex;align-items:center;gap:20px;margin-bottom:48px}
 .secao-header h3{font-family:var(--font-sec);font-size:20px;font-weight:700;color:var(--preto);white-space:nowrap}
 .secao-header-linha{flex:1;height:0.5px;background:var(--areia)}
