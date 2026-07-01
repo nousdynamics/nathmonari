@@ -40,6 +40,8 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   if (pv < 1) pv = 1;
   if (pv > total) pv = total;
   var stepPct = 100 / pv;
+  var carrosselDur = getComputedStyle(root).getPropertyValue("--carrossel-dur").trim() || ".3s";
+  var carrosselEase = "cubic-bezier(.4,0,.2,1)";
 
   function pad(n) { return (n < 10 ? "0" : "") + n; }
   function setStatus(real) {
@@ -84,7 +86,7 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     if (locked) return;
     locked = true;
     index += dir;
-    track.style.transition = motionQuery.matches ? "none" : "transform .55s cubic-bezier(.4,0,.2,1)";
+    track.style.transition = motionQuery.matches ? "none" : "transform " + carrosselDur + " " + carrosselEase;
     track.style.transform = "translateX(" + -index * stepPct + "%)";
     setStatus(((index - pv) % total + total) % total);
     if (motionQuery.matches) {
