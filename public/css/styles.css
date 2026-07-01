@@ -644,9 +644,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .faq-pergunta{padding:16px 0}
   .faq-pergunta::after{font-size:18px}
   .faq-resposta{padding-bottom:16px}
-  .ps-final{padding:40px 16px}
   .ps-cta{margin-top:28px}
-  .footer{padding:24px 16px}
   .hvsl-pre{gap:10px;margin-bottom:12px}
   .hvsl-pre-linha{width:20px;height:0.5px}
   .hvsl-vsl{margin-bottom:16px}
