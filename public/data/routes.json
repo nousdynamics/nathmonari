@@ -15,19 +15,19 @@
     {
       "id": "desafio-10dias",
       "label": "Desafio 10 dias (clone)",
-      "file": "clones/desafio-10dias/index.html",
+      "file": "desafio-10dias/index.html",
       "path": "/desafio-10dias"
     },
     {
       "id": "vendas-evoluto-v1",
       "label": "Evoluto v1 (clone)",
-      "file": "clones/vendas-evoluto-v1/index.html",
+      "file": "vendas-evoluto-v1/index.html",
       "path": "/vendas-evoluto-v1"
     },
     {
       "id": "vendas-evoluto-v2",
       "label": "Evoluto v2 (clone)",
-      "file": "clones/vendas-evoluto-2-0/index.html",
+      "file": "vendas-evoluto-2-0/index.html",
       "path": "/vendas-evoluto-2-0"
     }
   ]

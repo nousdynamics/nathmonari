@@ -56,8 +56,9 @@
     }
     clonesEl.innerHTML = clones
       .map(function (p) {
-        var path = p.path || "/";
-        return cardHtml(p.label, p.file, path, "Abrir rota");
+        var path = (p.path || "/").replace(/\/$/, "") || "/";
+        var staticPath = p.file ? p.file.replace(/index\.html$/, "") : path.slice(1) + "/";
+        return cardHtml(p.label, p.file, "/" + staticPath.replace(/^\//, ""), "Abrir página");
       })
       .join("");
   }

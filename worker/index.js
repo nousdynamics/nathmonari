@@ -50,8 +50,18 @@ export default {
 
     const match = findRoute(pages, url.pathname);
     if (match?.file) {
-      const assetUrl = new URL("/" + match.file.replace(/^\//, ""), url.origin);
-      return env.ASSETS.fetch(new Request(assetUrl.toString(), request));
+      const assetPath = "/" + match.file.replace(/^\//, "");
+      const assetUrl = new URL(assetPath, url.origin);
+      const res = await env.ASSETS.fetch(new Request(assetUrl.toString(), request));
+      if (res.ok) return res;
+    }
+
+    // Fallback: pasta com index.html (ex.: /vendas-evoluto-v1/)
+    const bare = normalizePath(url.pathname);
+    if (bare !== "/") {
+      const dirIndex = new URL(bare + "/index.html", url.origin);
+      const dirRes = await env.ASSETS.fetch(new Request(dirIndex.toString(), request));
+      if (dirRes.ok) return dirRes;
     }
 
     return env.ASSETS.fetch(request);
