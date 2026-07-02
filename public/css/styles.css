@@ -506,34 +506,23 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero-conteudo{height:auto;min-height:0;width:100%;margin-left:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
   .hvsl-grid{display:flex;flex-direction:column;gap:12px;width:100%;min-height:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
   .hvsl-copy{display:contents;max-width:100%}
-  .hero-conteudo,.hvsl-grid{position:relative}
-  .hvsl-grid .hero-logo{
+  .hero-conteudo,.hvsl-grid{position:static}
+  .hero-logo,.hvsl-grid .hero-logo{
     order:1;
     width:auto;
     display:flex;
     justify-content:flex-start;
     position:absolute;
-    top:198px;
-    left:24px;
-    right:24px;
-    z-index:2;
-    margin-bottom:-10px;
+    top:8px;
+    left:8px;
+    right:auto;
+    z-index:3;
+    margin-bottom:0;
   }
   .hvsl-grid .hvsl-h1{order:2}
   .hvsl-grid .hvsl-h2{order:3}
   .hvsl-grid .hvsl-vsl{order:4}
   .hvsl-grid .btn-cta-wrap{order:5;width:100%;max-width:100%;align-items:flex-start}
-  .hero-logo{
-    margin-bottom:-10px;
-    display:flex;
-    justify-content:flex-start;
-    width:auto;
-    position:absolute;
-    top:198px;
-    left:24px;
-    right:24px;
-    z-index:2;
-  }
   .hero .hero-conteudo{justify-content:flex-start}
   .hero .hero-logo{padding-top:0}
   .hero-logo img,.hero-logo picture img{max-width:210px;max-height:68px;margin-inline:0}
@@ -631,8 +620,6 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .barra-topo p{letter-spacing:0em}
   .hero-conteudo{padding:24px 16px 64px}
   .hvsl-grid{padding:24px 16px 64px}
-  .hero-logo{top:198px;left:16px;right:16px}
-  .hvsl-grid .hero-logo{left:16px;right:16px}
   .hero h1,.hvsl-h1{margin-bottom:8px;padding-top:240px}
   .hero h2,.hvsl-h2{margin-bottom:8px}
   .hero-corpo{margin-bottom:20px}
