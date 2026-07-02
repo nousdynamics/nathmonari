@@ -174,12 +174,20 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* PROVA ABERTURA */
 .prova-abertura{background:var(--branco);padding:var(--sp-section) 0}
 .prova-abertura .secao-header{flex-direction:column;align-items:center;text-align:center;gap:12px}
-.prova-abertura .secao-header h3{white-space:normal;text-align:center}
+.prova-abertura .secao-header h3{
+  white-space:normal;
+  text-align:center;
+  font-family:var(--font-display);
+  font-size:var(--fs-h2-sm);
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
 .prova-abertura .secao-header-linha{width:min(100%,120px);flex:none}
 .prova-abertura .carrossel{margin-inline:auto}
 .prova-abertura .carrossel-slide img{margin-inline:auto}
 .secao-header{display:flex;align-items:center;gap:20px;margin-bottom:48px}
-.secao-header h3{font-family:var(--font-sec);font-size:20px;font-weight:700;color:var(--preto);white-space:nowrap}
+.secao-header h3{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);white-space:nowrap;line-height:1.1;letter-spacing:-0.02em}
 .secao-header-linha{flex:1;height:0.5px;background:var(--areia)}
 
 /* IDENTIFICAÇÃO */
@@ -428,6 +436,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* LOGO NO HERO */
 .hero-logo{margin-bottom:22px}
 .hero-logo img{width:auto;height:auto;max-width:380px;max-height:56px;display:block;object-fit:contain}
+.hero-logo picture{display:block}
 
 /* ============================================================
    CARROSSEL DE DEPOIMENTOS — infinito, minimalista
@@ -486,27 +495,66 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero,.hero-vsl{
     height:auto;
     min-height:0;
-    background:var(--off-white);
+    background:
+      url("../images/bg-hero-reconstrua-se-mobile-v4.png") center top/cover no-repeat,
+      var(--off-white);
   }
   .hero{display:flex;flex-direction:column;align-items:stretch}
-  .hero-mobile-img{display:block;width:100%;max-width:100%;height:auto}
+  .hero-mobile-img{display:none}
   .hero-vsl{display:flex;flex-direction:column;align-items:stretch;min-height:0}
   .hero::after,.hero-vsl::after{display:none}
-  .hero-conteudo{height:auto;min-height:0;width:100%;margin-left:0;padding:24px 24px 64px;align-items:center;text-align:center}
-  .hvsl-grid{display:flex;flex-direction:column;gap:24px;width:100%;min-height:0;padding:24px 24px 64px;align-items:center;text-align:center}
+  .hero-conteudo{height:auto;min-height:0;width:100%;margin-left:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
+  .hvsl-grid{display:flex;flex-direction:column;gap:24px;width:100%;min-height:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
   .hvsl-copy{display:contents;max-width:100%}
-  .hvsl-grid .hero-logo{order:1;width:100%;display:flex;justify-content:center}
+  .hero-conteudo,.hvsl-grid{position:relative}
+  .hvsl-grid .hero-logo{
+    order:1;
+    width:auto;
+    display:flex;
+    justify-content:flex-start;
+    position:absolute;
+    top:168px;
+    left:24px;
+    right:24px;
+    z-index:2;
+    margin-bottom:0;
+  }
   .hvsl-grid .hvsl-h1{order:2}
   .hvsl-grid .hvsl-h2{order:3}
   .hvsl-grid .hvsl-vsl{order:4}
-  .hvsl-grid .btn-cta-wrap{order:5;width:100%;max-width:100%}
-  .hero-logo{margin-bottom:20px;display:flex;justify-content:center;width:100%}
-  .hero-logo img{max-width:300px;max-height:44px;margin-inline:auto}
+  .hvsl-grid .btn-cta-wrap{order:5;width:100%;max-width:100%;align-items:flex-start}
+  .hero-logo{
+    margin-bottom:0;
+    display:flex;
+    justify-content:flex-start;
+    width:auto;
+    position:absolute;
+    top:168px;
+    left:24px;
+    right:24px;
+    z-index:2;
+  }
   .hero .hero-conteudo{justify-content:flex-start}
   .hero .hero-logo{padding-top:0}
-  .hero h1,.hvsl-h1{font-size:27px;max-width:100%;margin-inline:auto}
-  .hero h2,.hvsl-h2{font-size:18px;line-height:1.2;max-width:100%;margin-inline:auto}
-  .hero-corpo{font-size:15px;max-width:100%;margin-inline:auto}
+  .hero-logo img,.hero-logo picture img{max-width:210px;max-height:68px;margin-inline:0}
+  .hero h1,.hvsl-h1{
+    font-size:17px;
+    line-height:1.18;
+    max-width:100%;
+    margin-inline:0;
+    padding-top:220px;
+    color:#65441C;
+  }
+  .hero h2,.hvsl-h2{
+    font-size:18px;
+    line-height:1.2;
+    max-width:100%;
+    margin-inline:0;
+    color:#65441C;
+  }
+  .hero-corpo{font-size:15px;max-width:100%;margin-inline:0;color:#65441C}
+  .hero-garantia,.hvsl-nota{color:#65441C}
+  .hero .btn-cta-wrap,.hero-vsl .btn-cta-wrap{align-items:flex-start}
   .hero-vsl{padding-inline:0}
   .hvsl-vsl{width:100%;max-width:100%;align-self:stretch;margin-bottom:0}
   .hero-vsl .btn-cta-wrap{max-width:100%}
@@ -535,7 +583,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .carrossel-btn{width:40px;height:40px;font-size:16px}
   .carrossel-controles{gap:16px;margin-top:20px}
   .secao-header{flex-direction:column;gap:12px;margin-bottom:32px}
-  .secao-header h3{white-space:normal;font-size:18px}
+  .secao-header h3{white-space:normal}
   .secao-header-linha{width:100%;height:0.5px}
   .preco-inner{min-width:0;width:100%}
   .preco-box{padding:40px 24px;overflow-x:clip}
@@ -578,8 +626,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .barra-topo p{letter-spacing:0em}
   .hero-conteudo{padding:24px 16px 64px}
   .hvsl-grid{padding:24px 16px 64px}
-  .hero-logo img{height:40px}
-  .hero h1,.hvsl-h1{margin-bottom:12px}
+  .hero-logo{top:168px;left:16px;right:16px}
+  .hvsl-grid .hero-logo{left:16px;right:16px}
+  .hero h1,.hvsl-h1{font-size:16px;margin-bottom:12px}
   .hero h2,.hvsl-h2{margin-bottom:12px}
   .hero-corpo{margin-bottom:20px}
   .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}
@@ -591,7 +640,6 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 16px}
   .secao-label{margin-bottom:16px}
   .secao-header{margin-bottom:24px}
-  .secao-header h3{font-size:16px}
   .identificacao-item{padding:16px 0;gap:12px}
   .reframe-esq{padding-top:16px}
   .reframe-corpo{gap:12px}
