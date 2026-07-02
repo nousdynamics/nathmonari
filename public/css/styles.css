@@ -107,9 +107,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .objecao-item{align-items:flex-start}
 .futuro-cenario{align-items:flex-start}
 .dia-item{align-items:flex-start}
-.dia-item .info-ic{margin-top:4px}
-.dia-marca{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;width:48px}
-.dia-marca .dia-num{font-family:var(--font-display);font-size:var(--fs-min);font-weight:400;color:var(--ouro);opacity:1;line-height:1;width:auto;display:block}
+.dia-marca{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex-shrink:0;gap:1px;min-width:68px;padding:4px 22px 4px 6px;margin-right:2px;border-right:0.5px solid rgba(201,168,76,0.38)}
+.dia-rotulo{font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--ouro-escuro);line-height:1.2}
+.dia-indice{font-family:var(--font-display);font-size:clamp(32px,4vw,42px);font-weight:400;color:var(--ouro);line-height:1.2;letter-spacing:-0.04em;font-variant-numeric:tabular-nums}
 
 /* BARRA TOPO */
 .barra-topo{background:var(--preto);padding:13px 24px;text-align:center;position:sticky;top:0;z-index:100}
@@ -194,8 +194,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .identificacao{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .secao-label{font-family:var(--font-sec);font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--ouro);margin-bottom:24px;display:block}
 /* ouro sobre areia/branco falha WCAG — tom escuro nos fundos claros */
-.agitacao .secao-label,.reframe .secao-label,.historia .secao-label,.produto .secao-label,.prova-densa .secao-label,.para-quem .secao-label,.objecao .secao-label,.preco .secao-label,.faq .secao-label,.ps-final .secao-label{color:var(--label-light)}
-.identificacao h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
+.agitacao .secao-label,.reframe .secao-label,.historia .secao-label,.prova-densa .secao-label,.para-quem .secao-label,.objecao .secao-label,.preco .secao-label,.faq .secao-label,.ps-final .secao-label{color:var(--label-light)}
+.identificacao h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
 .identificacao-intro{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8;margin-bottom:0}
 .identificacao-lista{list-style:none}
 .identificacao-item{padding:24px 0;border-bottom:0.5px solid rgba(201,168,76,0.12);display:flex;gap:20px;align-items:flex-start}
@@ -234,27 +234,27 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .historia-lista li span:last-child{font-size:var(--fs-body-sm);font-weight:500;color:var(--texto-sec);line-height:1.4}
 .historia-story{width:100%;max-width:400px;justify-self:center}
 .historia-story img{width:100%;height:auto;display:block}
+.historia-story-mobile{display:none}
 
 /* MECANISMO */
 .mecanismo{background:var(--preto);padding:var(--sp-section) 0}
-.mecanismo-header{text-align:center;max-width:680px;margin:0 auto 72px}
-.mecanismo-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
-.mecanismo-header p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8}
+.mecanismo-header{text-align:center;max-width:760px;margin:0 auto 56px}
+.mecanismo-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
+.mecanismo-subheadline{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px}
+.mecanismo-header p:not(.mecanismo-subheadline){font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8;margin-bottom:12px}
+.mecanismo-header p:not(.mecanismo-subheadline):last-of-type{margin-bottom:0}
+.mecanismo .dias-grid{max-width:var(--conteudo);margin:0 auto}
 .mecanismo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.1)}
 .mecanismo-item{background:var(--preto);padding:40px 32px;display:flex;flex-direction:column;gap:16px}
 .mecanismo-item-num{display:none}
 .mecanismo-item h3{font-family:var(--font-sec);font-size:15px;font-weight:700;color:var(--off-white);line-height:1.3}
 .mecanismo-item p{font-size:var(--fs-body);font-weight:400;color:var(--on-dark);line-height:1.7}
 
-/* PRODUTO 10 DIAS */
-.produto{background:var(--off-white);padding:var(--sp-section) 0}
-.produto-header{text-align:center;max-width:640px;margin:0 auto 72px}
-.produto-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
-.produto-header p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8}
+/* DIAS — Protocolo RC (grid dentro de .mecanismo) */
 .dias-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--areia)}
-.dia-item{background:var(--branco);padding:32px;display:flex;gap:24px;align-items:flex-start}
-.dia-num{font-family:var(--font-display);font-size:var(--fs-min);font-weight:400;color:var(--ouro);line-height:1}
-.dia-conteudo h4{font-family:var(--font-sec);font-size:14px;font-weight:700;color:var(--preto);margin-bottom:8px;line-height:1.3}
+.dia-item{background:var(--branco);padding:32px 32px 32px 28px;display:flex;gap:20px;align-items:flex-start}
+.dia-conteudo{min-width:0;padding-top:2px}
+.dia-conteudo h4{font-family:var(--font-sec);font-size:14px;font-weight:700;color:var(--preto);margin-bottom:8px;line-height:1.35}
 .dia-conteudo p{font-size:var(--fs-body);font-weight:400;color:var(--texto-sec);line-height:1.7}
 
 /* MÓDULOS EXTRAS */
@@ -459,7 +459,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
    Fundos full-bleed; conteúdo centralizado em 1160px.
    ============================================================ */
 .barra-topo,.prova-abertura,.identificacao,.agitacao,
-.reframe,.historia,.mecanismo,.produto,.modulos,.bonus,.prova-densa,
+.reframe,.historia,.mecanismo,.modulos,.bonus,.prova-densa,
 .stack,.para-quem,.objecao,.futuro,.preco,.garantia,.cta-section,
 .faq,.ps-final,.footer{
   padding-inline:max(var(--gutter),calc((100% - var(--conteudo)) / 2));
@@ -489,7 +489,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     --fs-eyebrow:14px;
     --fs-xs:14px;
     --fs-min:14px;
-    --sp-section:32px; /* padding vertical das seções no mobile */
+    --sp-section:40px; /* padding vertical das seções no mobile (exceto hero) */
   }
   /* line-height mais justo no mobile p/ textos corridos */
   .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
@@ -553,8 +553,10 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero-vsl .btn-cta-wrap{max-width:100%}
   .identificacao,.reframe,.historia,.para-quem,.futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
   .historia-story{display:none}
+  .historia-story-mobile{display:block;width:100vw;max-width:100vw;margin:20px calc(50% - 50vw) 8px}
+  .historia-story-mobile img{width:100%;height:auto;display:block}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final,.footer{padding:var(--sp-section) 20px}
-  .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 20px}
+  .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.mecanismo{padding:var(--sp-section) 20px}
   .barra-topo{padding:11px 12px}
   .barra-topo p{font-size:10px;letter-spacing:0.02em;white-space:normal}
   .mecanismo-grid,.modulos-grid,.dias-grid{grid-template-columns:1fr}
@@ -562,8 +564,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .bonus-row{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
   .bonus-row-descricao{grid-column:2/4}
   .bonus-shell{padding:28px 22px}
-  .stack-total{flex-direction:column;gap:16px;text-align:center;padding:24px 20px}
-  .stack-total-valor{align-items:center}
+  .stack-total{flex-direction:column;gap:16px;text-align:left;padding:24px 20px}
+  .stack-total-valor{align-items:flex-start}
   .reframe-esq{border-left:none;border-top:1.5px solid var(--ouro);padding-left:0;padding-top:20px}
   .historia-stats{flex-wrap:wrap;gap:16px}
   .btn-cta-wrap{align-items:stretch}
@@ -593,14 +595,60 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .garantia-badge{width:min(240px,68vw);margin-bottom:32px}
   .modulos-grid{gap:16px}
   .dias-grid{gap:1px}
-  .dia-item{padding:20px 16px;gap:16px}
-  .dia-marca{width:40px}
-  .dia-marca .dia-num{font-size:var(--fs-min);width:auto}
+  .dia-item{padding:20px 16px 20px 14px;gap:14px}
+  .dia-marca{min-width:58px;padding:2px 16px 2px 4px;margin-right:0}
+  .dia-indice{font-size:30px;line-height:1.2}
+  .dia-rotulo{font-size:9px;letter-spacing:0.18em;line-height:1.2}
   .bonus-row{gap:12px}
   .futuro-cenarios{margin-bottom:40px}
   .futuro-cenario{padding:16px 0}
   /* piso tipográfico mobile — nada abaixo de 14px */
   .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.carrossel-status{font-size:var(--fs-min)}
+
+  /* mobile: textos alinhados à esquerda */
+  .barra-topo,
+  .agitacao-inner,
+  .agitacao-quote,
+  .prova-abertura .secao-header,
+  .prova-abertura .secao-header h3,
+  .reframe:has(> .reframe-esq:only-child),
+  .reframe-esq,
+  .historia-texto,
+  .identificacao > div,
+  .mecanismo-header,
+  .modulos-header,
+  .prova-densa-header,
+  .stack-header,
+  .preco-inner,
+  .preco-box,
+  .garantia-inner,
+  .cta-section,
+  .cta-section-inner,
+  .faq-header,
+  .ps-final,
+  .footer,
+  .objecao,
+  .para-quem,
+  .futuro-inner,
+  .futuro-cenarios {
+    text-align: left;
+  }
+  .prova-abertura .secao-header,
+  .cta-section-btn,
+  .stack-total,
+  .stack-total-valor,
+  .preco-selos {
+    align-items: flex-start;
+  }
+  .prova-abertura .secao-header{align-items:flex-start}
+  .preco-selos{justify-content:flex-start}
+  .agitacao-inner,
+  .reframe:has(> .reframe-esq:only-child),
+  .mecanismo-header,
+  .stack-header,
+  .preco-inner,
+  .garantia-inner{margin-inline:0}
+  .stack-total{text-align:left}
 }
 
 @media(max-width:480px){
@@ -630,7 +678,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .btn-cta-wrap{gap:10px}
   .identificacao,.reframe,.historia,.para-quem{padding:var(--sp-section) 16px;gap:24px}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final{padding:var(--sp-section) 16px}
-  .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.produto,.mecanismo{padding:var(--sp-section) 16px}
+  .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.mecanismo{padding:var(--sp-section) 16px}
   .secao-label{margin-bottom:16px}
   .secao-header{margin-bottom:24px}
   .identificacao-item{padding:16px 0;gap:12px}
@@ -645,12 +693,13 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .historia-badge-num{font-size:20px}
   .historia-stats{gap:12px;margin-top:24px;padding-top:20px}
   .historia-stat-num{font-size:20px}
-  .mecanismo-header{margin-bottom:40px}
+  .mecanismo-header{margin-bottom:32px}
   .mecanismo-item{padding:24px 16px;gap:12px}
-  .produto-header{margin-bottom:40px}
-  .dia-item{padding:16px 12px;gap:12px}
-  .dia-marca{width:36px}
-  .dia-marca .dia-num{font-size:var(--fs-min);width:auto}
+  .mecanismo-subheadline{font-size:clamp(20px,5.2vw,24px);margin-bottom:20px}
+  .dia-item{padding:16px 12px 16px 10px;gap:12px}
+  .dia-marca{min-width:54px;padding-right:14px}
+  .dia-indice{font-size:28px;line-height:1.2}
+  .dia-rotulo{font-size:9px;line-height:1.2}
   .modulos-header{margin-bottom:32px}
   .modulos-header h2{font-size:20px}
   .modulos-grid{gap:12px}
