@@ -211,6 +211,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 
 /* REFRAME */
 .reframe{background:var(--branco);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.reframe:has(> .reframe-esq:only-child){grid-template-columns:1fr;max-width:720px;margin-inline:auto}
 .reframe-esq{border-left:1.5px solid var(--ouro);padding-left:40px}
 .reframe h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:28px}
 .reframe-corpo{display:flex;flex-direction:column;gap:18px}
