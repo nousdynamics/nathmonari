@@ -504,7 +504,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero-vsl{display:flex;flex-direction:column;align-items:stretch;min-height:0}
   .hero::after,.hero-vsl::after{display:none}
   .hero-conteudo{height:auto;min-height:0;width:100%;margin-left:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
-  .hvsl-grid{display:flex;flex-direction:column;gap:24px;width:100%;min-height:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
+  .hvsl-grid{display:flex;flex-direction:column;gap:12px;width:100%;min-height:0;padding:24px 24px 64px;align-items:flex-start;text-align:left}
   .hvsl-copy{display:contents;max-width:100%}
   .hero-conteudo,.hvsl-grid{position:relative}
   .hvsl-grid .hero-logo{
@@ -517,14 +517,14 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     left:24px;
     right:24px;
     z-index:2;
-    margin-bottom:0;
+    margin-bottom:-10px;
   }
   .hvsl-grid .hvsl-h1{order:2}
   .hvsl-grid .hvsl-h2{order:3}
   .hvsl-grid .hvsl-vsl{order:4}
   .hvsl-grid .btn-cta-wrap{order:5;width:100%;max-width:100%;align-items:flex-start}
   .hero-logo{
-    margin-bottom:0;
+    margin-bottom:-10px;
     display:flex;
     justify-content:flex-start;
     width:auto;
@@ -543,7 +543,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     width:100%;
     max-width:100%;
     margin-inline:0;
-    padding-top:250px;
+    margin-bottom:10px;
+    padding-top:240px;
     color:#65441C;
   }
   .hero h2,.hvsl-h2{
@@ -551,11 +552,12 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     line-height:1.35;
     max-width:100%;
     margin-inline:0;
+    margin-bottom:10px;
     color:#65441C;
   }
   .hero-corpo{font-size:15px;max-width:100%;margin-inline:0;color:#65441C}
   .hero-garantia,.hvsl-nota{color:#65441C}
-  .hero .btn-cta-wrap,.hero-vsl .btn-cta-wrap{align-items:flex-start}
+  .hero .btn-cta-wrap,.hero-vsl .btn-cta-wrap{align-items:flex-start;gap:8px}
   .hero-vsl{padding-inline:0}
   .hvsl-vsl{width:100%;max-width:100%;align-self:stretch;margin-bottom:0}
   .hero-vsl .btn-cta-wrap{max-width:100%}
@@ -631,8 +633,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hvsl-grid{padding:24px 16px 64px}
   .hero-logo{top:198px;left:16px;right:16px}
   .hvsl-grid .hero-logo{left:16px;right:16px}
-  .hero h1,.hvsl-h1{margin-bottom:12px}
-  .hero h2,.hvsl-h2{margin-bottom:12px}
+  .hero h1,.hvsl-h1{margin-bottom:8px;padding-top:240px}
+  .hero h2,.hvsl-h2{margin-bottom:8px}
   .hero-corpo{margin-bottom:20px}
   .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}
   .btn-cta-text{padding:13px 8px}
