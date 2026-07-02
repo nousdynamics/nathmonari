@@ -441,7 +441,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* ============================================================
    CARROSSEL DE DEPOIMENTOS — infinito, minimalista
    ============================================================ */
-.carrossel{--pv:3;--carrossel-dur:.3s;max-width:1160px;margin:0 auto;position:relative}
+.carrossel{--pv:3;--carrossel-dur:.2s;max-width:1160px;margin:0 auto;position:relative}
 .carrossel-viewport{overflow:hidden}
 .carrossel-track{display:flex;will-change:transform;transition:transform var(--carrossel-dur) cubic-bezier(.4,0,.2,1)}
 .carrossel-slide{flex:0 0 calc(100% / var(--pv));min-width:0;display:flex;align-items:center;justify-content:center;padding:0 10px}
@@ -513,7 +513,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     display:flex;
     justify-content:flex-start;
     position:absolute;
-    top:168px;
+    top:198px;
     left:24px;
     right:24px;
     z-index:2;
@@ -529,7 +529,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     justify-content:flex-start;
     width:auto;
     position:absolute;
-    top:168px;
+    top:198px;
     left:24px;
     right:24px;
     z-index:2;
@@ -538,11 +538,11 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero .hero-logo{padding-top:0}
   .hero-logo img,.hero-logo picture img{max-width:210px;max-height:68px;margin-inline:0}
   .hero h1,.hvsl-h1{
-    font-size:17px;
-    line-height:1.18;
-    max-width:100%;
+    font-size:15px;
+    line-height:1.22;
+    max-width:300px;
     margin-inline:0;
-    padding-top:220px;
+    padding-top:250px;
     color:#65441C;
   }
   .hero h2,.hvsl-h2{
@@ -579,7 +579,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .btn-cta{font-size:clamp(12px,2.9vw,13px);letter-spacing:0.05em;white-space:nowrap;grid-template-columns:minmax(0,1fr) 40px}
   .btn-cta-text{padding:14px 10px;white-space:nowrap}
   .carrossel{--pv:1;overflow-x:clip}
-  .carrossel-slide img{max-height:360px}
+  .carrossel-slide{align-items:stretch;padding:0 4px}
+  .carrossel-slide img{width:100%;max-width:100%;max-height:min(78vh,680px);height:auto;object-fit:contain}
+  .prova-abertura .carrossel-slide img{max-height:min(82vh,720px)}
   .carrossel-btn{width:40px;height:40px;font-size:16px}
   .carrossel-controles{gap:16px;margin-top:20px}
   .secao-header{flex-direction:column;gap:12px;margin-bottom:32px}
@@ -626,9 +628,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .barra-topo p{letter-spacing:0em}
   .hero-conteudo{padding:24px 16px 64px}
   .hvsl-grid{padding:24px 16px 64px}
-  .hero-logo{top:168px;left:16px;right:16px}
+  .hero-logo{top:198px;left:16px;right:16px}
   .hvsl-grid .hero-logo{left:16px;right:16px}
-  .hero h1,.hvsl-h1{font-size:16px;margin-bottom:12px}
+  .hero h1,.hvsl-h1{font-size:14px;margin-bottom:12px}
   .hero h2,.hvsl-h2{margin-bottom:12px}
   .hero-corpo{margin-bottom:20px}
   .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}
@@ -710,7 +712,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hvsl-pre{gap:10px;margin-bottom:12px}
   .hvsl-pre-linha{width:20px;height:0.5px}
   .hvsl-vsl{margin-bottom:16px}
-  .carrossel-slide img{max-height:280px}
+  .carrossel-slide img{max-height:min(76vh,640px)}
+  .prova-abertura .carrossel-slide img{max-height:min(80vh,680px)}
   .carrossel-btn{width:36px;height:36px;font-size:14px}
   .carrossel-controles{gap:12px;margin-top:16px}
 }

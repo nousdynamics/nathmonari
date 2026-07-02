@@ -103,13 +103,17 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
     locked = false;
   });
 
-  // Autoplay suave; só trabalha quando o carrossel e a aba estão visíveis
+  // Autoplay suave; pausa em interação e retoma após 2s sem atividade
   var timer = null;
+  var interactTimer = null;
   var isVisible = false;
   var isHovering = false;
   var isFocused = false;
+  var isPausedByInteraction = false;
+  var INTERACT_RESUME_MS = 2000;
+
   function canAutoPlay() {
-    return !motionQuery.matches && isVisible && !document.hidden && !isHovering && !isFocused;
+    return !motionQuery.matches && isVisible && !document.hidden && !isHovering && !isFocused && !isPausedByInteraction;
   }
   function start() {
     if (timer || !canAutoPlay()) return;
@@ -117,10 +121,22 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
   function syncAutoPlay() { stop(); start(); }
-  function restart() { stop(); start(); }
 
-  if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); restart(); });
-  if (nextBtn) nextBtn.addEventListener("click", function () { go(1); restart(); });
+  function pauseForInteraction() {
+    isPausedByInteraction = true;
+    stop();
+    if (interactTimer) clearTimeout(interactTimer);
+    interactTimer = setTimeout(function () {
+      interactTimer = null;
+      isPausedByInteraction = false;
+      syncAutoPlay();
+    }, INTERACT_RESUME_MS);
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); pauseForInteraction(); });
+  if (nextBtn) nextBtn.addEventListener("click", function () { go(1); pauseForInteraction(); });
+  root.addEventListener("pointerdown", pauseForInteraction);
+  root.addEventListener("touchstart", pauseForInteraction, { passive: true });
   root.addEventListener("mouseenter", function () { isHovering = true; syncAutoPlay(); });
   root.addEventListener("mouseleave", function () { isHovering = false; syncAutoPlay(); });
   root.addEventListener("focusin", function () { isFocused = true; syncAutoPlay(); });
