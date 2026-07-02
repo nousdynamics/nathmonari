@@ -212,7 +212,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 
 /* REFRAME */
 .reframe{background:var(--branco);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.reframe:has(> .reframe-esq:only-child){grid-template-columns:1fr;max-width:720px;margin-inline:auto}
+.reframe:has(> .reframe-esq:only-child){grid-template-columns:1fr;max-width:768px;margin-inline:auto;padding-inline:var(--gutter)}
 .reframe-esq{border-left:1.5px solid var(--ouro);padding-left:40px}
 .reframe h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:28px}
 .reframe-corpo{display:flex;flex-direction:column;gap:18px}
@@ -264,12 +264,12 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .modulos{background:var(--preto);padding:var(--sp-section) 0}
 .modulos-header{text-align:center;margin-bottom:56px}
 .modulos-header h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
-.modulos-header p{font-size:var(--fs-body-sm);font-weight:400;color:var(--on-dark)}
+.modulos-header p{font-size:16px;font-weight:400;color:var(--on-dark)}
 .modulos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto}
 .modulo-card{background:var(--preto-card);border-radius:2px;padding:40px 32px;border-top:1.5px solid rgba(201,168,76,0.3);display:flex;flex-direction:column;gap:8px}
 .modulo-card-label{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--ouro-escuro)}
-.modulo-card h4{font-family:var(--font-body);font-size:var(--fs-body-sm);font-weight:500;letter-spacing:0.04em;color:var(--ouro);line-height:1.4}
-.modulo-card p{font-size:var(--fs-body-sm);font-weight:400;color:var(--on-dark);line-height:1.7}
+.modulo-card h4{font-family:var(--font-body);font-size:18px;font-weight:500;letter-spacing:0.04em;color:var(--ouro);line-height:1.4}
+.modulo-card p{font-size:16px;font-weight:400;color:var(--on-dark);line-height:1.7}
 
 /* BÔNUS */
 .bonus{background:var(--areia);padding:var(--sp-section) 0}
@@ -282,8 +282,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .bonus-row:last-child{border-bottom:0}
 .bonus-row-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}
 .bonus-item-label{font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);flex-shrink:0}
-.bonus-row-info h4{font-family:var(--font-sec);font-size:15px;font-weight:700;color:var(--off-white);line-height:1.35;margin:0}
-.bonus-row-descricao{font-size:12px;font-weight:400;color:var(--on-dark-muted);line-height:1.6}
+.bonus-row-info h4{font-family:var(--font-sec);font-size:18px;font-weight:700;color:var(--off-white);line-height:1.35;margin:0}
+.bonus-row-descricao{font-size:16px;font-weight:400;color:var(--on-dark-muted);line-height:1.65}
 
 /* PROVA SOCIAL DENSA */
 .prova-densa{background:var(--branco);padding:var(--sp-section) 0}
@@ -528,7 +528,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     width:100%;
     max-width:100%;
     margin-inline:0;
-    margin-bottom:10px;
+    margin-bottom:16px;
     padding-top:240px;
     color:#65441C;
   }
@@ -537,7 +537,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     line-height:1.35;
     max-width:100%;
     margin-inline:0;
-    margin-bottom:10px;
+    margin-bottom:24px;
     color:#65441C;
   }
   .hero-corpo{font-size:15px;max-width:100%;margin-inline:0;color:#65441C}
@@ -660,8 +660,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .barra-topo p{letter-spacing:0em}
   .hero-conteudo{padding:24px 16px 64px}
   .hvsl-grid{padding:24px 16px 64px}
-  .hero h1,.hvsl-h1{margin-bottom:8px;padding-top:240px}
-  .hero h2,.hvsl-h2{margin-bottom:8px}
+  .hero h1,.hvsl-h1{margin-bottom:16px;padding-top:240px}
+  .hero h2,.hvsl-h2{margin-bottom:24px}
   .hero-corpo{margin-bottom:20px}
   .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}
   .btn-cta-text{padding:13px 8px}
