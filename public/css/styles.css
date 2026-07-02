@@ -192,9 +192,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 
 /* IDENTIFICAÇÃO */
 .identificacao{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.secao-label{font-family:var(--font-sec);font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--ouro);margin-bottom:24px;display:block}
-/* ouro sobre areia/branco falha WCAG — tom escuro nos fundos claros */
-.agitacao .secao-label,.reframe .secao-label,.historia .secao-label,.prova-densa .secao-label,.para-quem .secao-label,.objecao .secao-label,.preco .secao-label,.faq .secao-label,.ps-final .secao-label{color:var(--label-light)}
+.secao-label{font-family:var(--font-sec);font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--label-light);margin-bottom:24px;display:block}
+/* Fundo escuro — rótulos dourados para contraste */
+.identificacao .secao-label,.mecanismo .secao-label,.modulos .secao-label,.stack .secao-label,.futuro .secao-label,.garantia .secao-label,.bonus-shell .secao-label{color:var(--ouro)}
 .identificacao h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
 .identificacao-intro{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8;margin-bottom:0}
 .identificacao-lista{list-style:none}
@@ -225,7 +225,8 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 /* HISTÓRIA */
 /* HISTÓRIA — perfil com mockup de story (texto esq / story dir) */
 .historia{background:var(--areia);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 0.82fr;gap:72px;align-items:center}
-.historia h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}
+.historia-headline{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
+.historia-descricao{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.5;margin-bottom:20px}
 .historia-corpo{display:flex;flex-direction:column;gap:14px}
 .historia-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8}
 .historia-lista{list-style:none;margin-top:28px;border-top:0.5px solid rgba(201,168,76,0.28)}
@@ -472,7 +473,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 }
 
 /* line-height mais justo no corpo de texto */
-.reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
+.reframe-corpo p,.agitacao-inner p,.historia-corpo p,.historia-descricao,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
 
 /* ============================================================
    RESPONSIVO
@@ -492,7 +493,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
     --sp-section:40px; /* padding vertical das seções no mobile (exceto hero) */
   }
   /* line-height mais justo no mobile p/ textos corridos */
-  .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
+  .reframe-corpo p,.agitacao-inner p,.historia-corpo p,.historia-descricao,.identificacao-item-texto,.identificacao-intro,.objecao-corpo,.futuro-cenario p,.garantia-corpo p,.mecanismo-item p,.dia-conteudo p,.modulo-card p,.reframe-ponto-texto,.hero-corpo,.cta-section p,.preco-inner>p,.ps-final p,.faq-resposta,.para-quem-item p,.futuro-nota{line-height:1.5}
   .hero,.hero-vsl{
     height:auto;
     min-height:0;
@@ -528,7 +529,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero .hero-logo{padding-top:0}
   .hero-logo img,.hero-logo picture img{max-width:210px;max-height:68px;margin-inline:0}
   .hero h1,.hvsl-h1{
-    font-size:20px;
+    font-size:23px;
     line-height:1.18;
     width:100%;
     max-width:100%;
@@ -553,8 +554,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero-vsl .btn-cta-wrap{max-width:100%}
   .identificacao,.reframe,.historia,.para-quem,.futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
   .historia-story{display:none}
-  .historia-story-mobile{display:block;width:100vw;max-width:100vw;margin:20px calc(50% - 50vw) 8px}
+  .historia-story-mobile{display:block;width:100vw;max-width:100vw;margin:0 calc(50% - 50vw) 12px}
   .historia-story-mobile img{width:100%;height:auto;display:block}
+  .historia-headline{margin-bottom:10px}
   .agitacao,.objecao,.futuro,.preco,.garantia,.cta-section,.faq,.ps-final,.footer{padding:var(--sp-section) 20px}
   .prova-abertura,.modulos,.bonus,.stack,.prova-densa,.mecanismo{padding:var(--sp-section) 20px}
   .barra-topo{padding:11px 12px}
@@ -606,7 +608,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .bonus-item-label,.bonus-row-descricao,.modulo-card-label,.hero-garantia,.hero-pre-texto,.preco-garantia-txt,.preco-parcela-label,.preco-parcela-info,.stack-item-nome span,.stack-total-label,.stack-total-parcela,.footer p,.hvsl-pre-texto,.hvsl-vsl-placeholder p,.hvsl-nota,.carrossel-status{font-size:var(--fs-min)}
 
   /* mobile: textos alinhados à esquerda */
-  .barra-topo,
+  
   .agitacao-inner,
   .agitacao-quote,
   .prova-abertura .secao-header,
