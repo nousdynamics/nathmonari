@@ -162,15 +162,15 @@ document.querySelectorAll("[data-carrossel]").forEach(function (root) {
 (function () {
   if (!("IntersectionObserver" in window)) return;
   var sel = ".secao-label,.prova-abertura .carrossel,.identificacao-item," +
-    ".agitacao-inner > *,.reframe-esq,.reframe-dir,.historia-texto,.historia-story," +
+    ".agitacao-inner > *,.reframe-esq,.reframe-dir,.historia-headline,.historia-story-mobile,.historia-descricao,.historia-corpo,.historia-lista," +
     ".mecanismo-item,.dia-item,.modulo-card,.bonus-row,.prova-densa .carrossel," +
-    ".stack-item,.stack-total,.para-quem-item,.objecao-item,.futuro-img-wrap," +
+    ".stack-item,.para-quem-item,.objecao-item,.futuro-img-wrap," +
     ".futuro-cenario,.preco-box,.garantia-inner,.cta-section-inner,.faq-item,.ps-final > *";
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   if (!els.length) return;
   els.forEach(function (el) { el.classList.add("reveal"); });
 
-  document.querySelectorAll(".reframe-esq,.historia-texto,.futuro-img-wrap,.para-quem > div:first-child").forEach(function (el) {
+  document.querySelectorAll(".reframe-esq,.futuro-img-wrap,.para-quem > div:first-child").forEach(function (el) {
     el.classList.add("reveal--left");
   });
   document.querySelectorAll(".reframe-dir,.historia-story,.futuro-inner,.para-quem > div:nth-child(2)").forEach(function (el) {
