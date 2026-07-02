@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "nathmonari-landing",
+  "name": "nathmonari",
   "main": "worker/index.js",
   "compatibility_date": "2026-06-25",
   "assets": {
