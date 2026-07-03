@@ -3,64 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel — Nath Monari</title>
-    <meta name="description" content="Painel de landing pages, clones e rotas amigáveis do Protocolo RC." />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" type="image/webp" href="images/favicon.webp" />
-    <link rel="stylesheet" href="fonts/fonts-min.css" />
-    <link rel="stylesheet" href="css/panel.css" />
+    <title>@nathmonari — Links</title>
+    <meta name="description" content="Sem pressa e sem pausa! Links oficiais da Nath Monari." />
+    <meta property="og:title" content="@nathmonari" />
+    <meta property="og:description" content="Sem pressa e sem pausa!" />
+    <meta property="og:type" content="profile" />
+    <link rel="icon" type="image/webp" href="/images/favicon.webp" />
+    <link rel="stylesheet" href="/fonts/fonts-min.css" />
+    <link rel="stylesheet" href="/css/links.css" />
   </head>
   <body>
-    <div class="panel">
-      <header class="panel-topo">
-        <div class="panel-logo">
-          <img src="images/logo-reconstrua-se.svg" width="1269" height="188" alt="Reconstrua-se" decoding="async" />
-        </div>
-        <h1>Painel de landing pages</h1>
-        <p>Gerencie as páginas do Reconstrua-se, acesse os clones e configure rotas amigáveis para deploy.</p>
-      </header>
-
-      <section class="panel-secao" aria-labelledby="sec-reconstrua">
-        <div class="panel-secao-head">
-          <h2 id="sec-reconstrua">Reconstrua-se</h2>
-          <div class="panel-secao-linha" aria-hidden="true"></div>
-        </div>
-        <div class="panel-grid" id="panel-pages"></div>
-      </section>
-
-      <section class="panel-secao" aria-labelledby="sec-clones">
-        <div class="panel-secao-head">
-          <h2 id="sec-clones">Clones</h2>
-          <div class="panel-secao-linha" aria-hidden="true"></div>
-        </div>
-        <div class="panel-grid" id="panel-clones"></div>
-      </section>
-
-      <section class="panel-secao" aria-labelledby="sec-rotas">
-        <div class="panel-secao-head">
-          <h2 id="sec-rotas">Rotas amigáveis</h2>
-          <div class="panel-secao-linha" aria-hidden="true"></div>
-        </div>
-        <p class="page-card-meta" style="margin-bottom:16px">
-          As rotas abaixo funcionam no Worker após deploy. Reconstrua-se usa
-          <code>vendas-rc-v3.html</code> e <code>vendas-rc-v3-vsl.html</code> — edite os paths se precisar.
-        </p>
-        <div id="panel-routes"></div>
-        <div class="panel-acoes">
-          <button type="button" class="btn btn-ouro" id="add-route">+ Adicionar rota</button>
-          <button type="button" class="btn btn-sec" id="export-routes">Exportar routes.json</button>
-          <button type="button" class="btn btn-sec" id="reload-routes">Recarregar</button>
-        </div>
-        <div class="panel-hint">
-          <strong>Publicar rotas:</strong> exporte o JSON, substitua
-          <code>public/data/routes.json</code> no repositório e rode <code>npm run deploy</code>.
-        </div>
-        <div class="panel-msg" id="panel-status" role="status"></div>
-        <pre class="panel-preview" id="panel-preview" hidden></pre>
-      </section>
-
-      <footer class="panel-rodape">Nath Monari · Protocolo RC · Painel interno</footer>
-    </div>
-    <script src="js/panel.js"></script>
+    <main class="bio">
+      <img
+        class="bio-avatar"
+        src="/images/nath-profile-bio.jpg"
+        width="150"
+        height="150"
+        alt="Foto de Nath Monari"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <p class="bio-handle">@nathmonari</p>
+      <h1 class="bio-name">nathmonari</h1>
+      <p class="bio-tagline">Sem pressa e sem pausa!</p>
+      <ul class="bio-links" id="bio-links"></ul>
+      <footer class="bio-rodape">Nath Monari</footer>
+    </main>
+    <script src="/js/links.js"></script>
   </body>
 </html>

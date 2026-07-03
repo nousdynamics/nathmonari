@@ -146,5 +146,14 @@
 
   document.getElementById("reload-routes").addEventListener("click", load);
 
+  var logoutBtn = document.getElementById("panel-logout");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      fetch("/api/admin/logout", { method: "POST" }).finally(function () {
+        window.location.href = "/xp-pan-adm/login.html";
+      });
+    });
+  }
+
   load();
 })();

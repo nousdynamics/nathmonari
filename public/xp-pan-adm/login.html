@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Painel Nath Monari</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/webp" href="/images/favicon.webp" />
+    <link rel="stylesheet" href="/fonts/fonts-min.css" />
+    <link rel="stylesheet" href="/css/panel.css" />
+  </head>
+  <body>
+    <div class="panel panel-login">
+      <header class="panel-topo">
+        <div class="panel-logo">
+          <img src="/images/logo-reconstrua-se.svg" width="1269" height="188" alt="Reconstrua-se" decoding="async" />
+        </div>
+        <h1>Acesso ao painel</h1>
+        <p>Entre com suas credenciais para gerenciar rotas e landing pages.</p>
+      </header>
+
+      <form class="login-form" id="login-form" autocomplete="on">
+        <label class="login-field">
+          <span>Usuário</span>
+          <input type="text" name="username" autocomplete="username" required />
+        </label>
+        <label class="login-field">
+          <span>Senha</span>
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <p class="login-erro" id="login-erro" role="alert" hidden></p>
+        <button type="submit" class="btn btn-prim login-submit">Entrar</button>
+      </form>
+
+      <p class="login-voltar"><a href="/">← Voltar para links</a></p>
+    </div>
+    <script src="/js/admin-login.js"></script>
+  </body>
+</html>

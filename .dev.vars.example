@@ -1,0 +1,6 @@
+# Copie para .dev.vars (gitignored) e preencha antes de `npm run dev`.
+# Em produção: wrangler secret put ADMIN_USER / ADMIN_PASS / SESSION_SECRET
+
+ADMIN_USER=seu_usuario
+ADMIN_PASS=sua_senha
+SESSION_SECRET=string-aleatoria-com-pelo-menos-32-caracteres

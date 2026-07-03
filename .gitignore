@@ -3,7 +3,31 @@ node_modules/
 
 # wrangler / cloudflare
 .wrangler/
+.mf/
+
+# Secrets locais (Wrangler dev) — nunca commitar
 .dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Chaves, certificados e credenciais
+*.pem
+*.key
+*.p12
+*.pfx
+*.secrets
+secrets.json
+credentials.json
+**/secrets/
+
+# Arquivos temporários de teste (login, tokens, etc.)
+tmp-*.json
+*.local.json
 
 # logs
 npm-debug.log*
@@ -11,15 +35,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
-.env
-.env.production
-
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+# VS Code — config local com paths/secrets (launch.json genérico pode ir no repo)
+.vscode/settings.json
 
 # Artefatos de extração — referência local, não vão pro deploy/push
 raw/
@@ -27,5 +50,3 @@ scripts/
 
 # Mockups locais do companion visual
 .superpowers/
-
-scripts/

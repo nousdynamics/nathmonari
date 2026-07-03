@@ -1,0 +1,118 @@
+/* Link in bio — Nath Monari */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bio-bg:#0a0a0a;
+  --bio-bg-mid:#141010;
+  --bio-card:rgba(255,255,255,0.06);
+  --bio-card-border:rgba(255,255,255,0.1);
+  --bio-text:#f5f5f5;
+  --bio-muted:rgba(245,245,245,0.62);
+  --bio-btn:#ffffff;
+  --bio-btn-text:#111111;
+  --bio-btn-hover:#e8e8e8;
+  --bio-avatar-ring:rgba(255,255,255,0.18);
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-body:"Outfit",sans-serif;
+  --bio-max:420px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:radial-gradient(120% 80% at 50% 0%,var(--bio-bg-mid) 0%,var(--bio-bg) 55%);
+  color:var(--bio-text);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.bio{
+  max-width:var(--bio-max);
+  margin:0 auto;
+  padding:48px 20px 64px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.bio-avatar{
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--bio-avatar-ring);
+  margin-bottom:16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.45);
+}
+.bio-handle{
+  font-family:var(--font-body);
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  color:var(--bio-text);
+  margin-bottom:6px;
+}
+.bio-name{
+  font-family:var(--font-display);
+  font-size:clamp(1.35rem,4vw,1.6rem);
+  font-weight:400;
+  line-height:1.15;
+  margin-bottom:8px;
+}
+.bio-tagline{
+  font-size:14px;
+  font-weight:400;
+  color:var(--bio-muted);
+  line-height:1.45;
+  margin-bottom:32px;
+  max-width:28ch;
+}
+.bio-links{
+  list-style:none;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.bio-link{
+  display:block;
+  width:100%;
+  padding:16px 20px;
+  border-radius:999px;
+  background:var(--bio-btn);
+  color:var(--bio-btn-text);
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  text-align:center;
+  border:1px solid transparent;
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,0.25);
+}
+.bio-link:hover{
+  background:var(--bio-btn-hover);
+  transform:translateY(-1px);
+  box-shadow:0 8px 28px rgba(0,0,0,0.35);
+}
+.bio-link:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:3px;
+}
+.bio-link--external::after{
+  content:"";
+  display:inline-block;
+  width:0;
+  height:0;
+}
+.bio-rodape{
+  margin-top:40px;
+  font-size:11px;
+  color:rgba(245,245,245,0.35);
+  letter-spacing:0.06em;
+}
+
+@media(max-width:480px){
+  .bio{padding:40px 16px 56px}
+  .bio-avatar{width:100px;height:100px}
+  .bio-link{padding:15px 18px;font-size:12px;letter-spacing:0.1em}
+}
