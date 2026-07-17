@@ -52,6 +52,28 @@ document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
     }
   });
 
+  function avancar() {
+    indice += 1;
+    irPara(indice, true);
+  }
+
+  function voltar() {
+    if (indice <= 0) {
+      // salta para o clone equivalente antes de animar para trás
+      indice = total;
+      irPara(indice, false);
+      void track.offsetWidth;
+      track.style.transition = "";
+    }
+    indice -= 1;
+    irPara(indice, true);
+  }
+
+  var btnPrev = root.querySelector(".provas-seta--prev");
+  var btnNext = root.querySelector(".provas-seta--next");
+  if (btnPrev) btnPrev.addEventListener("click", voltar);
+  if (btnNext) btnNext.addEventListener("click", avancar);
+
   // Pausa em qualquer interação; retoma quando ela termina
   ["mouseenter", "pointerdown", "touchstart", "focusin"].forEach(function (ev) {
     root.addEventListener(ev, function () { pausado = true; }, { passive: true });
@@ -64,8 +86,7 @@ document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
   if (!reduzMotion) {
     setInterval(function () {
       if (pausado || document.hidden) return;
-      indice += 1;
-      irPara(indice, true);
+      avancar();
     }, 2000);
   }
 
