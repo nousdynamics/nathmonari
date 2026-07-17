@@ -17,8 +17,10 @@
     <link rel="icon" type="image/webp" href="/images/favicon.webp" />
     <link rel="preload" href="/fonts/ed-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/ed-ebgaramond-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/images/bg-hero-evoluto-day.webp" as="image" type="image/webp" media="(min-width: 901px)" />
+    <link rel="preload" href="/images/bg-hero-evoluto-day-mobile.webp" as="image" type="image/webp" media="(max-width: 900px)" />
     <link rel="stylesheet" href="/fonts/evoluto-day.css?v=2" />
-    <link rel="stylesheet" href="/css/evoluto-day.css?v=2" />
+    <link rel="stylesheet" href="/css/evoluto-day.css?v=3" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -31,7 +33,7 @@
       <div class="hero-fundo" aria-hidden="true"></div>
       <div class="conteudo">
         <div class="hero-inner">
-          <img class="hero-logo" src="/images/logo-evoluto-day.svg" alt="Evoluto Day" width="264" height="48" />
+          <img class="hero-logo" src="/images/logo-evoluto-day.svg" alt="Evoluto Day" width="264" height="48" fetchpriority="high" />
           <div class="hero-evento">
             <span class="hero-chip"><img src="/images/emoji-calendar.png" alt="" width="16" height="16" /> Dia 08/07/2026</span>
             <span class="hero-sep" aria-hidden="true">|</span>
@@ -81,12 +83,12 @@
 
     <!-- O QUE &Eacute; + CRONOGRAMA -->
     <section class="secao secao--branca" id="metodo">
-      <img class="metodo-bg" src="/images/logo-bg.png" alt="" aria-hidden="true" loading="lazy" />
+      <img class="metodo-bg" src="/images/logo-bg.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       <div class="conteudo">
         <div class="secao-topo">
           <h2>O que &eacute; o Evoluto Day</h2>
           <p>Uma imers&atilde;o constru&iacute;da em cima de um m&eacute;todo de 3 etapas. Em cada etapa voc&ecirc; aplica uma ferramenta pr&aacute;tica, e sai com ela pronta.</p>
-          <img class="crm-triangulo" src="/images/triangulo-crm.png" alt="M&eacute;todo CRM: Clareza, Reprograma&ccedil;&atilde;o e Manifesta&ccedil;&atilde;o" width="1024" height="282" loading="lazy" />
+          <img class="crm-triangulo" src="/images/triangulo-crm.webp" alt="M&eacute;todo CRM: Clareza, Reprograma&ccedil;&atilde;o e Manifesta&ccedil;&atilde;o" width="2048" height="565" loading="lazy" decoding="async" />
         </div>
         <div class="grid-3">
           <article class="card">
@@ -185,9 +187,9 @@
         <div class="provas-carrossel" data-provas>
           <div class="provas-viewport">
             <div class="provas-track">
-              <div class="prova"><img src="/images/depoimento-julia.png" alt="Depoimento da aluna J&uacute;lia" width="1080" height="1920" loading="lazy" /></div>
-              <div class="prova"><img src="/images/depoimento-kelly.png" alt="Depoimento da aluna Kelly" width="1080" height="1920" loading="lazy" /></div>
-              <div class="prova"><img src="/images/depoimento-3.png" alt="Depoimento de aluna" width="1082" height="720" loading="lazy" /></div>
+              <div class="prova"><img src="/images/depoimento-julia.webp" alt="Depoimento da aluna J&uacute;lia" width="760" height="1351" loading="lazy" decoding="async" /></div>
+              <div class="prova"><img src="/images/depoimento-kelly.webp" alt="Depoimento da aluna Kelly" width="760" height="1351" loading="lazy" decoding="async" /></div>
+              <div class="prova"><img src="/images/depoimento-3.webp" alt="Depoimento de aluna" width="760" height="506" loading="lazy" decoding="async" /></div>
             </div>
           </div>
         </div>
@@ -200,8 +202,8 @@
         <div class="bio">
           <div class="bio-foto">
             <picture>
-              <source media="(max-width: 900px)" srcset="/images/bio-storys-mobile.png" width="1080" height="785" />
-              <img src="/images/bio-storys.png" alt="Story do Instagram de Nath Monari" width="837" height="1410" loading="lazy" />
+              <source media="(max-width: 900px)" srcset="/images/bio-storys-mobile.webp" width="1080" height="785" />
+              <img src="/images/bio-storys.webp" alt="Story do Instagram de Nath Monari" width="837" height="1410" loading="lazy" decoding="async" />
             </picture>
           </div>
           <div class="bio-texto">
@@ -330,7 +332,7 @@
       </div>
     </footer>
 
-    <script src="/js/utms.js"></script>
-    <script src="/js/evoluto-day.js?v=2"></script>
+    <script src="/js/utms.js" defer></script>
+    <script src="/js/evoluto-day.js?v=2" defer></script>
   </body>
 </html>

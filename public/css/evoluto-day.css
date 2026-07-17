@@ -189,7 +189,7 @@ p  { margin: 0; }
 .hero-fundo {
   position: absolute;
   inset: 0;
-  background-image: url(/images/bg-hero-evoluto-day.png);
+  background-image: url(/images/bg-hero-evoluto-day.webp);
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -197,7 +197,7 @@ p  { margin: 0; }
 }
 @media (max-width: 900px) {
   .hero-fundo {
-    background-image: url(/images/bg-hero-evoluto-day-mobile.png);
+    background-image: url(/images/bg-hero-evoluto-day-mobile.webp);
     background-position: top center;
   }
 }
