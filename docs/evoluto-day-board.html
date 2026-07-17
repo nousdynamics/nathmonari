@@ -1,0 +1,266 @@
+<title>EVOLUTO DAY — Guia Visual</title>
+<style>
+  :root{
+    --fundo:#050F08; --fundo2:#0E1F14; --card:#173423;
+    --cta:#A8F05A; --cta-hover:#B8FF70;
+    --texto:#F7F8F5; --texto2:#B8C2BB; --div:rgba(255,255,255,.08);
+    --wire:#D94B4B;
+    --display:"Archivo","Archivo Black","Helvetica Neue",Arial,sans-serif;
+    --body:"Inter","Segoe UI",system-ui,sans-serif;
+    --max:1200px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fundo);color:var(--texto);font-family:var(--body);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 80% at 15% -10%, rgba(168,240,90,.10), transparent 60%),
+                     radial-gradient(90% 60% at 100% 0%, rgba(168,240,90,.05), transparent 55%);
+    background-attachment:fixed;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:64px 24px 96px;display:flex;flex-direction:column;gap:64px}
+  @media(min-width:768px){.wrap{padding:96px 48px 128px}}
+
+  .label{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--texto2)}
+  h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,7vw,64px);line-height:1.02;
+     letter-spacing:-.02em;margin:0;text-wrap:balance}
+  h1 em{font-style:normal;color:var(--cta)}
+  h2{font-family:var(--display);font-weight:900;font-size:clamp(24px,3.4vw,32px);line-height:1.1;
+     letter-spacing:-.01em;margin:0}
+  h3{font-family:var(--display);font-weight:700;font-size:20px;margin:0}
+  p{margin:0;color:var(--texto2);max-width:65ch}
+  a{color:var(--cta)}
+  hr{border:0;border-top:1px solid var(--div);margin:0}
+
+  .head{display:flex;flex-direction:column;gap:24px;border-bottom:1px solid var(--div);padding-bottom:48px}
+  .head p{font-size:20px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:999px;
+        border:1px solid var(--div);color:var(--texto2);background:rgba(255,255,255,.02)}
+
+  section{display:flex;flex-direction:column;gap:24px}
+  .sechead{display:flex;flex-direction:column;gap:8px}
+
+  .card{background:var(--card);border:1px solid var(--div);border-radius:24px;padding:32px}
+  .grid{display:grid;gap:16px}
+  @media(min-width:768px){.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
+
+  /* paleta */
+  .sw{display:flex;align-items:center;gap:16px;padding:16px;border:1px solid var(--div);border-radius:16px;
+      background:rgba(255,255,255,.02)}
+  .dot{width:48px;height:48px;border-radius:12px;flex:none;border:1px solid var(--div)}
+  .sw code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:14px;font-variant-numeric:tabular-nums;
+    color:var(--texto);display:block}
+  .sw span{font-size:12px;color:var(--texto2)}
+
+  /* escala */
+  .scale{display:flex;flex-direction:column;gap:0}
+  .row{display:flex;align-items:baseline;gap:24px;padding:16px 0;border-bottom:1px solid var(--div)}
+  .row:last-child{border-bottom:0}
+  .row .t{flex:none;width:96px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--texto2);
+    font-variant-numeric:tabular-nums}
+  .s64{font-family:var(--display);font-weight:900;font-size:64px;line-height:1;letter-spacing:-.02em}
+  .s48{font-family:var(--display);font-weight:900;font-size:48px;line-height:1;letter-spacing:-.02em}
+  .s36{font-family:var(--display);font-weight:700;font-size:36px;line-height:1.1}
+  .s28{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.1}
+  .s20{font-size:20px;color:var(--texto2)}
+  .s16{font-size:16px;color:var(--texto2)}
+
+  /* cta */
+  .cta{display:inline-flex;align-items:center;gap:12px;height:60px;padding:0 32px;border:0;border-radius:999px;
+    background:var(--cta);color:#050F08;font-family:var(--body);font-weight:700;font-size:16px;
+    letter-spacing:.04em;text-transform:uppercase;cursor:pointer;text-decoration:none;
+    animation:pulse 2.5s ease-out infinite;transition:transform .2s ease,background .2s ease}
+  .cta:hover{background:var(--cta-hover);transform:scale(1.03)}
+  .cta:focus-visible{outline:2px solid var(--cta-hover);outline-offset:4px}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(168,240,90,.45)}50%{box-shadow:0 0 0 16px rgba(168,240,90,0)}}
+  @media(prefers-reduced-motion:reduce){.cta{animation:none}}
+  .cta-2{display:inline-flex;align-items:center;height:60px;padding:0 32px;border-radius:999px;
+    border:1px solid var(--cta);color:var(--cta);background:transparent;font-weight:700;font-size:16px;
+    letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+
+  /* variantes */
+  .var{display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:24px;border:1px solid var(--div);
+    background:linear-gradient(180deg,rgba(168,240,90,.05),transparent 60%),var(--fundo2)}
+  .var .rota{font-family:ui-monospace,Menlo,monospace;font-size:14px;color:var(--cta)}
+  .var .hl{font-family:var(--display);font-weight:900;font-size:24px;line-height:1.15;letter-spacing:-.01em;
+    text-wrap:balance}
+  .var .sub{font-size:16px;color:var(--texto2)}
+
+  /* mapa */
+  .map{display:flex;flex-direction:column;gap:8px}
+  .sec{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:16px;padding:16px 24px;
+    border-radius:16px;border:1px solid var(--div)}
+  .sec .n{font-variant-numeric:tabular-nums;font-size:12px;color:var(--texto2)}
+  .sec .nm{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.02em;text-transform:uppercase}
+  .sec .bg{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2)}
+  .sec--dark{background:var(--fundo)}
+  .sec--dark2{background:var(--fundo2)}
+  .sec--claro{background:var(--cta)}
+  .sec--claro .nm,.sec--claro .n,.sec--claro .bg{color:#050F08}
+
+  /* regras */
+  .rule{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--div)}
+  .rule:last-child{border-bottom:0}
+  .mark{flex:none;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-size:14px;
+    font-weight:700}
+  .yes{background:rgba(168,240,90,.15);color:var(--cta)}
+  .no{background:rgba(217,75,75,.15);color:var(--wire)}
+  .rule p{color:var(--texto)}
+  .wirenote{border-left:2px solid var(--wire);padding-left:16px;color:var(--wire);font-size:14px}
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <p class="label">Guia visual · Landing page</p>
+    <h1>EVOLUTO <em>DAY</em></h1>
+    <p>Sistema de design das três variantes de headline. Tudo o que a página precisa: paleta, tipografia, CTA, mapa de seções e o que muda entre VA, VB e VC.</p>
+    <div class="meta">
+      <span class="chip">08/07/2026</span>
+      <span class="chip">Online · Zoom</span>
+      <span class="chip">R$497 → R$47</span>
+      <span class="chip">3 variantes</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sechead">
+      <p class="label">01 · Paleta</p>
+      <h2>Verde quase preto, um único acento</h2>
+      <p>O acento gasta-se só no CTA e em destaques pontuais. Se algo mais brigar com ele, o algo mais perde.</p>
+    </div>
+    <div class="grid g3">
+      <div class="sw"><div class="dot" style="background:#050F08"></div><div><code>#050F08</code><span>Fundo principal</span></div></div>
+      <div class="sw"><div class="dot" style="background:#0E1F14"></div><div><code>#0E1F14</code><span>Fundo secundário</span></div></div>
+      <div class="sw"><div class="dot" style="background:#173423"></div><div><code>#173423</code><span>Cards</span></div></div>
+      <div class="sw"><div class="dot" style="background:#A8F05A"></div><div><code>#A8F05A</code><span>CTA</span></div></div>
+      <div class="sw"><div class="dot" style="background:#B8FF70"></div><div><code>#B8FF70</code><span>CTA hover</span></div></div>
+      <div class="sw"><div class="dot" style="background:#F7F8F5"></div><div><code>#F7F8F5</code><span>Texto</span></div></div>
+      <div class="sw"><div class="dot" style="background:#B8C2BB"></div><div><code>#B8C2BB</code><span>Texto secundário</span></div></div>
+      <div class="sw"><div class="dot" style="background:rgba(255,255,255,.08)"></div><div><code>#FFFFFF 8%</code><span>Divisórias e bordas</span></div></div>
+      <div class="sw"><div class="dot" style="background:#D94B4B"></div><div><code>#D94B4B</code><span>Só wireframe — nunca produção</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">02 · Tipografia</p>
+      <h2>Archivo nas headlines, Inter no corpo</h2>
+      <p>Headlines pesadas e apertadas; corpo com respiro. Labels em Inter Medium, caixa alta, tracking aberto. Fontes servidas localmente, nunca por CDN.</p>
+    </div>
+    <div class="card scale">
+      <div class="row"><div class="t">H1 · 64</div><div class="s64">Evoluto Day</div></div>
+      <div class="row"><div class="t">H2 · 48</div><div class="s48">O que é o Evoluto Day</div></div>
+      <div class="row"><div class="t">H3 · 36</div><div class="s36">Clareza, Reprogramação, Manifestação</div></div>
+      <div class="row"><div class="t">H4 · 28</div><div class="s28">Diagnóstico da sua vida</div></div>
+      <div class="row"><div class="t">Body · 20</div><div class="s20">Dois dias para identificar o que te trava, reprogramar a crença que te sabota e construir o plano de 90 dias.</div></div>
+      <div class="row"><div class="t">Small · 16</div><div class="s16">Dia 08/07/2026 · Online e ao vivo no Zoom</div></div>
+      <div class="row"><div class="t">Label · 12</div><div class="label">Perguntas frequentes</div></div>
+    </div>
+    <p class="wirenote">Divergência aberta: o board de identidade sugere Montserrat/Poppins. Este guia segue o documento oficial (Archivo). Precisa de uma decisão antes de baixar as fontes.</p>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">03 · CTA</p>
+      <h2>Um texto, três posições, pulse contínuo</h2>
+      <p>Altura 60px, radius 999px, texto preto sobre verde claro. Pulse de 2.5s sem parar — desligado para quem pede movimento reduzido. Aparece no hero, na oferta e no fechamento, sempre com o mesmo texto.</p>
+    </div>
+    <div class="card" style="display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+      <a class="cta" href="#">Quero garantir minha vaga →</a>
+      <a class="cta-2" href="#">Botão secundário</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">04 · Variantes</p>
+      <h2>Só o hero muda</h2>
+      <p>Mesma estrutura, mesma CSS, mesma oferta. Muda o H1 e a sub-headline. A pré-headline é comum às três. Cada rota precisa de tracking próprio — sem isso o teste não se lê.</p>
+    </div>
+    <div class="grid g3">
+      <div class="var">
+        <div class="rota">/evoluto-day-va</div>
+        <div class="hl">Uma imersão de um fim de semana para mulheres cansadas de viver em círculos e prontas pra sair disso de uma vez por todas.</div>
+        <div class="sub">Em dois dias você vai identificar o que te trava, reprogramar a crença que te sabota e construir o plano definitivo de 90 dias.</div>
+      </div>
+      <div class="var">
+        <div class="rota">/evoluto-day-vb</div>
+        <div class="hl">Chegou a hora em que você parar de sonhar com a mudança de vida e sai com um plano de 90 dias pronto para executar</div>
+        <div class="sub">Dois dias para você identificar o que te trava, reprogramar a crença que te sabota e acessar o passo a passo.</div>
+      </div>
+      <div class="var">
+        <div class="rota">/evoluto-day-vc</div>
+        <div class="hl">Como sair do ciclo de começar e desistir em um único fim de semana, sem depender de motivação.</div>
+        <div class="sub">Dois dias de imersão ao vivo, um método de três etapas que ajudou 700 mulheres e um plano de 90 dias na sua mão até domingo.</div>
+      </div>
+    </div>
+    <p>Pré-headline comum: <em style="color:var(--texto)">Para a mulher que já tentou de tudo pra mudar de vida e continua se sentindo presa no mesmo lugar.</em> A headline de VC é a mais longa — o hero trava altura mínima e deixa o texto crescer, nunca o contrário.</p>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">05 · Mapa da página</p>
+      <h2>Onze seções, dois fundos escuros, uma clara</h2>
+      <p>A alternância de fundo marca o ritmo. A única seção clara é a oferta — é o momento em que a página muda de tom e o olho para.</p>
+    </div>
+    <div class="map">
+      <div class="sec sec--dark"><span class="n">01</span><span class="nm">Hero</span><span class="bg">#050F08 + foto</span></div>
+      <div class="sec sec--dark"><span class="n">02</span><span class="nm">Abertura · lead de história</span><span class="bg">#050F08</span></div>
+      <div class="sec sec--dark2"><span class="n">03</span><span class="nm">O que é · método CRM</span><span class="bg">#0E1F14 · 3 cards</span></div>
+      <div class="sec sec--dark"><span class="n">04</span><span class="nm">Cronograma</span><span class="bg">#050F08 · timeline</span></div>
+      <div class="sec sec--dark2"><span class="n">05</span><span class="nm">Para quem é</span><span class="bg">#0E1F14 · 7 itens</span></div>
+      <div class="sec sec--dark"><span class="n">06</span><span class="nm">Prova social</span><span class="bg">#050F08 · vídeos</span></div>
+      <div class="sec sec--dark2"><span class="n">07</span><span class="nm">Quem é a Nath</span><span class="bg">#0E1F14 · foto à esquerda</span></div>
+      <div class="sec sec--claro"><span class="n">08</span><span class="nm">Oferta</span><span class="bg">#A8F05A · texto escuro</span></div>
+      <div class="sec sec--dark2"><span class="n">09</span><span class="nm">Garantia</span><span class="bg">#0E1F14</span></div>
+      <div class="sec sec--dark"><span class="n">10</span><span class="nm">FAQ · accordion</span><span class="bg">#050F08</span></div>
+      <div class="sec sec--dark"><span class="n">11</span><span class="nm">Fechamento + CTA final</span><span class="bg">#050F08</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">06 · Grid</p>
+      <h2>Container 1200, respiro grande</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Medidas</h3>
+        <p style="margin-top:16px">Container 1200px · 12 colunas. Padding 80 desktop / 48 tablet / 24 mobile. Fundos sangram até a borda; só o conteúdo respeita o limite.</p>
+      </div>
+      <div class="card">
+        <h3>Espaçamento e breakpoints</h3>
+        <p style="margin-top:16px">Escala 8 · 16 · 24 · 32 · 48 · 64 · 96 · 128. Breakpoints 1440 / 1280 / 768 / 390.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">07 · Regras</p>
+      <h2>O que não negociar</h2>
+    </div>
+    <div class="card">
+      <div class="rule"><span class="mark no">✕</span><p>Nenhum vermelho na versão final. Os textos vermelhos da copy são anotação interna — rótulo de seção, marcação de headline. Não vão para a página.</p></div>
+      <div class="rule"><span class="mark no">✕</span><p>Nada de imagem de banco genérica. Fotografia real, mulheres de 25 a 45 anos, luz cinematográfica.</p></div>
+      <div class="rule"><span class="mark no">✕</span><p>Nunca texto claro sobre fundo verde claro. Na oferta o texto é #050F08.</p></div>
+      <div class="rule"><span class="mark yes">✓</span><p>Poucos efeitos: fade-up de 400ms na entrada, pulse no CTA, hover suave. Nada além.</p></div>
+      <div class="rule"><span class="mark yes">✓</span><p>Ícones outline, traço 2px, verde claro, SVG inline.</p></div>
+      <div class="rule"><span class="mark yes">✓</span><p>Cards do método CRM têm o mesmo tamanho — nenhum é destaque.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead">
+      <p class="label">08 · Pendências</p>
+      <h2>Bloqueios antes de publicar</h2>
+      <p>Quatro coisas na copy impedem o go-live e não dependem de design.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3>Parcelamento sem valor</h3><p style="margin-top:16px">A oferta diz “12x de R$ 00,00”. Precisa do valor real.</p></div>
+      <div class="card"><h3>Depoimentos no Drive</h3><p style="margin-top:16px">Os três vídeos estão em links do Google Drive. Precisam ser baixados e hospedados localmente.</p></div>
+      <div class="card"><h3>Cronograma de domingo</h3><p style="margin-top:16px">Está escrito “Abertura do Evoluto Day - Dia 1”. Deveria ser Dia 2.</p></div>
+      <div class="card"><h3>Ordem oferta/garantia</h3><p style="margin-top:16px">Recomendo garantia depois do preço. A copy traz na ordem inversa.</p></div>
+    </div>
+  </section>
+
+</div>

@@ -1,18 +1,47 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56FFC826');</script>
+<!-- End Google Tag Manager -->
+    <script>
+      (function () {
+        var DEFAULT_BIO_UTMS = { utm_source: "ig", utm_medium: "social", utm_content: "link_in_bio" };
+        var params = new URLSearchParams(window.location.search);
+        var changed = false;
+        Object.keys(DEFAULT_BIO_UTMS).forEach(function (key) {
+          if (!params.has(key)) {
+            params.set(key, DEFAULT_BIO_UTMS[key]);
+            changed = true;
+          }
+        });
+        if (changed) {
+          var qs = params.toString();
+          history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : "") + window.location.hash);
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@nathmonari — Links</title>
     <meta name="description" content="Sem pressa e sem pausa! Links oficiais da Nath Monari." />
     <meta property="og:title" content="@nathmonari" />
     <meta property="og:description" content="Sem pressa e sem pausa!" />
     <meta property="og:type" content="profile" />
+    <link rel="canonical" href="https://nathmonari.com.br/" />
     <link rel="icon" type="image/webp" href="/images/favicon.webp" />
     <link rel="stylesheet" href="/fonts/fonts-min.css" />
     <link rel="stylesheet" href="/css/links.css" />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56FFC826"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <main class="bio">
       <img
         class="bio-avatar"
@@ -30,5 +59,6 @@
       <footer class="bio-rodape">Nath Monari</footer>
     </main>
     <script src="/js/links.js"></script>
+    <script src="/js/utms.js"></script>
   </body>
 </html>

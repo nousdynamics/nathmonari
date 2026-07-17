@@ -1,8 +1,14 @@
 {
   "pages": [
     {
-      "id": "reconstrua-sem-vsl",
+      "id": "vendas-rc-v3",
       "label": "Reconstrua-se (sem VSL)",
+      "file": "vendas-rc-v3.html",
+      "path": "/vendas-rc-v3"
+    },
+    {
+      "id": "reconstrua-sem-vsl",
+      "label": "Reconstrua-se (alias)",
       "file": "vendas-rc-v3.html",
       "path": "/reconstrua-se"
     },
@@ -29,6 +35,24 @@
       "label": "Evoluto v2 (clone)",
       "file": "vendas-evoluto-2-0/index.html",
       "path": "/vendas-evoluto-2-0"
+    },
+    {
+      "id": "evoluto-day-va",
+      "label": "Evoluto Day (headline A)",
+      "file": "evoluto-day-va/index.html",
+      "path": "/evoluto-day-va"
+    },
+    {
+      "id": "evoluto-day-vb",
+      "label": "Evoluto Day (headline B)",
+      "file": "evoluto-day-vb/index.html",
+      "path": "/evoluto-day-vb"
+    },
+    {
+      "id": "evoluto-day-vc",
+      "label": "Evoluto Day (headline C)",
+      "file": "evoluto-day-vc/index.html",
+      "path": "/evoluto-day-vc"
     }
   ]
 }
