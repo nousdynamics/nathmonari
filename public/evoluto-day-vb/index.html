@@ -2,6 +2,12 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://www.clarity.ms" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,8 +23,8 @@
     <link rel="icon" type="image/webp" href="/images/favicon.webp" />
     <link rel="preload" href="/fonts/ed-UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/ed-ebgaramond-latin-600.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/images/bg-hero-evoluto-day.webp" as="image" type="image/webp" media="(min-width: 901px)" />
-    <link rel="preload" href="/images/bg-hero-evoluto-day-mobile.webp" as="image" type="image/webp" media="(max-width: 900px)" />
+    <link rel="preload" href="/images/bg-hero-evoluto-day.webp" as="image" type="image/webp" media="(min-width: 901px)" fetchpriority="high" />
+    <link rel="preload" href="/images/bg-hero-evoluto-day-mobile.webp" as="image" type="image/webp" media="(max-width: 900px)" fetchpriority="high" />
     <link rel="stylesheet" href="/fonts/evoluto-day.css?v=2" />
     <link rel="stylesheet" href="/css/evoluto-day.css?v=7" />
   </head>
@@ -33,7 +39,7 @@
       <div class="hero-fundo" aria-hidden="true"></div>
       <div class="conteudo">
         <div class="hero-inner">
-          <img class="hero-logo" src="/images/logo-evoluto-day.svg" alt="Evoluto Day" width="264" height="48" fetchpriority="high" />
+          <img class="hero-logo" src="/images/logo-evoluto-day.svg" alt="Evoluto Day" width="264" height="48" decoding="async" />
           <div class="hero-evento">
             <span class="hero-chip"><img src="/images/emoji-calendar.png" alt="" width="16" height="16" /> Dia 08/07/2026</span>
             <span class="hero-sep" aria-hidden="true">|</span>
