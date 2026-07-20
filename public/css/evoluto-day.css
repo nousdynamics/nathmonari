@@ -623,14 +623,13 @@ p  { margin: 0; }
 .bio-numero b { font-family: var(--display); font-weight: 700; font-size: 48px; color: var(--cta); line-height: 1; }
 .bio-numero span { font-size: 16px; color: var(--texto-2); }
 
-/* ---------- Oferta (seção clara) ---------- */
+/* ---------- Oferta ---------- */
 
-.secao--clara { background: var(--cta); color: #050f08; }
-.secao--clara .label { color: rgba(5, 15, 8, 0.7); }
-.secao--clara h2 { color: #050f08; }
+.secao--oferta { background: var(--fundo-2); color: var(--texto); }
 .oferta-box {
-  background: #050f08;
+  background: var(--fundo);
   color: var(--texto);
+  border: 1px solid var(--divisoria);
   border-radius: 24px;
   padding: var(--e6);
   display: flex;
@@ -677,6 +676,37 @@ p  { margin: 0; }
 }
 .oferta-parcela { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1.1; }
 .oferta-avista { font-size: 16px; color: var(--texto-2); }
+
+.oferta-evento {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--e3);
+  border-top: 1px solid var(--divisoria);
+  padding-top: var(--e4);
+}
+.oferta-evento-item {
+  display: flex;
+  align-items: center;
+  gap: var(--e2);
+  background: var(--card);
+  border-radius: 16px;
+  padding: var(--e2) var(--e3);
+  min-width: 240px;
+  flex: 1 1 240px;
+}
+.oferta-evento-item img { flex: none; }
+.oferta-evento-item b {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cta);
+}
+.oferta-evento-item span { display: block; font-size: 16px; color: var(--texto-2); }
+@media (max-width: 768px) {
+  .oferta-evento { gap: var(--e2); }
+  .oferta-evento-item { min-width: 0; }
+}
 
 /* ---------- Garantia ---------- */
 
