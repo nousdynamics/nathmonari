@@ -243,6 +243,15 @@ p  { margin: 0; }
   border-radius: 999px;
   color: var(--texto-2);
 }
+.hero-evento .hero-chip {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--texto);
+  background: rgba(168, 240, 90, 0.08);
+  border-color: rgba(168, 240, 90, 0.35);
+  padding: 8px 16px;
+}
+.hero-evento .hero-chip img { width: 18px; height: 18px; }
 .hero-chip img {
   width: 16px;
   height: 16px;
@@ -323,6 +332,8 @@ p  { margin: 0; }
   .hero-evento { flex-wrap: nowrap; gap: var(--e1); margin: 4px 0; }
   .hero-chip { font-size: 12px; padding: 5px 10px; white-space: nowrap; }
   .hero-chip img { width: 14px; height: 14px; }
+  .hero-evento .hero-chip { font-size: 14px; padding: 6px 12px; white-space: nowrap; }
+  .hero-evento .hero-chip img { width: 16px; height: 16px; }
   .hero-inner { gap: 4px; }
   .hero-pre { margin-top: 4px; }
   .hero-cta { margin-top: calc(4px + 20px); gap: var(--e1); }
