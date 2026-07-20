@@ -688,6 +688,7 @@ p  { margin: 0; }
 .oferta-evento-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--e2);
   background: var(--card);
   border-radius: 16px;
@@ -697,12 +698,10 @@ p  { margin: 0; }
 }
 .oferta-evento-item img { flex: none; }
 .oferta-evento-item b {
-  display: block;
   font-size: 16px;
   font-weight: 700;
   color: var(--cta);
 }
-.oferta-evento-item span { display: block; font-size: 16px; color: var(--texto-2); }
 @media (max-width: 768px) {
   .oferta-evento { gap: var(--e2); }
   .oferta-evento-item { min-width: 0; }
