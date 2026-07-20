@@ -693,18 +693,18 @@ p  { margin: 0; }
   background: var(--card);
   border-radius: 16px;
   padding: var(--e2) var(--e3);
-  min-width: 240px;
-  flex: 1 1 240px;
+  flex: 0 1 auto;
 }
 .oferta-evento-item img { flex: none; }
 .oferta-evento-item b {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--cta);
+  white-space: nowrap;
 }
 @media (max-width: 768px) {
   .oferta-evento { gap: var(--e2); }
-  .oferta-evento-item { min-width: 0; }
+  .oferta-evento-item { padding: var(--e2); }
 }
 
 /* ---------- Garantia ---------- */
