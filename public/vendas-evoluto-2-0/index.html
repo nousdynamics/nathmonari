@@ -319,18 +319,19 @@ body.elementor-page{background:#061209 none}
 /* ============================================================
    HERO — coluna única centralizada
    ============================================================ */
-#evoluto-page #hero{padding-block:var(--sp-8) var(--sp-9)}
+#evoluto-page #hero{padding-block:var(--sp-2) var(--sp-9)}
 #evoluto-page .hero-grid{
   display:flex;
   flex-direction:column;
   align-items:center;
+  gap:var(--sp-1);
   text-align:center;
   width:100%;
   max-width:880px;
   margin-inline:auto;
   padding-inline:var(--gutter);
 }
-#evoluto-page .hero-logo{width:auto;max-width:280px;margin-bottom:var(--sp-3)}
+#evoluto-page .hero-logo{width:auto;max-width:280px}
 #evoluto-page p.hero-prehead{
   font-family:var(--font-util);
   font-size:var(--fs-label);
@@ -341,14 +342,12 @@ body.elementor-page{background:#061209 none}
   background:var(--bronze);
   padding:8px 16px;
   border-radius:4px;
-  margin-bottom:var(--sp-3);
 }
 #evoluto-page .hero-prehead span{color:var(--verde-abismo);font-weight:600}
 #evoluto-page .hero-headline{
   font-size:var(--fs-hero);
   color:var(--creme);
   max-width:800px;
-  margin-bottom:var(--sp-3);
 }
 #evoluto-page .hero-headline .destaque{color:var(--bronze)}
 #evoluto-page .hero-subhead{
@@ -356,10 +355,9 @@ body.elementor-page{background:#061209 none}
   color:var(--on-dark);
   line-height:1.6;
   max-width:720px;
-  margin-bottom:var(--sp-5);
 }
 #evoluto-page .hero-subhead .destaque{color:var(--bronze)}
-#evoluto-page .hero-video{width:100%;max-width:760px;margin-bottom:var(--sp-5)}
+#evoluto-page .hero-video{width:100%;max-width:760px}
 #evoluto-page .hero-acao{width:100%;max-width:440px}
 #evoluto-page .vsl-wrap{
   position:relative;
@@ -748,11 +746,8 @@ body.elementor-page{background:#061209 none}
     --sp-section:48px;
     --gutter:16px;
   }
-  #evoluto-page #hero{padding-block:var(--sp-5) var(--sp-6)}
-  #evoluto-page .hero-logo{max-width:200px;margin-bottom:var(--sp-2)}
-  #evoluto-page .hero-headline{margin-bottom:var(--sp-2)}
-  #evoluto-page .hero-subhead{margin-bottom:var(--sp-3)}
-  #evoluto-page .hero-video{margin-bottom:var(--sp-3)}
+  #evoluto-page #hero{padding-block:var(--sp-2) var(--sp-6)}
+  #evoluto-page .hero-logo{max-width:200px}
   #evoluto-page .hero-acao{max-width:none}
   #evoluto-page .dores-inner{grid-template-columns:1fr;gap:var(--sp-4)}
   #evoluto-page .dores-title-col{position:static}
@@ -1178,6 +1173,8 @@ body.elementor-page{background:#061209 none}
 
 </body>
 </html>
+
+
 
 
 
