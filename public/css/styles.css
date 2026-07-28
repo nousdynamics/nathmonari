@@ -204,6 +204,16 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
 .identificacao-item-num{display:none}
 .identificacao-item-texto{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.7}
 
+/* IDENTIFICAÇÃO — corpo de texto corrido (copy 16/07) */
+.identificacao-corpo{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.identificacao-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.5}
+.identificacao-lista-titulo{display:block;font-family:var(--font-sec);font-size:var(--fs-body);font-weight:700;color:var(--ouro);line-height:1.4;margin-bottom:16px}
+
+/* MECANISMO — fecho depois da grade de passos */
+.mecanismo-fecho{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:48px auto 0;text-align:center}
+.mecanismo-fecho p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.5}
+.mecanismo-fecho strong{font-weight:500;color:var(--ouro)}
+
 /* AGITAÇÃO */
 .agitacao{background:var(--off-white);padding:var(--sp-section) 0}
 .agitacao-inner{max-width:720px;margin:0 auto;text-align:center}
@@ -566,6 +576,7 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .hero-vsl + .prova-abertura,
   .hero + .prova-abertura{padding-top:24px}
   .identificacao,.reframe,.para-quem,.futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}
+  .mecanismo-fecho{margin-top:32px;text-align:left;gap:16px}
   .historia{display:block;padding:28px 0 var(--sp-section);gap:0}
   .historia-texto{padding-inline:20px}
   .historia-story{display:none}
