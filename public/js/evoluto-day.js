@@ -95,12 +95,12 @@ document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
 
 (function () {
   if (!("IntersectionObserver" in window)) return;
-  var sel = ".secao-topo, .abertura-inner > *, .card, .cronograma-info, .dia, .para-quem li, .prova, .bio-foto, .bio-texto, .oferta-box, .garantia, .faq-item, .fechamento > *";
+  var sel = ".secao-topo, .abertura-inner > *, .card, .cronograma-info, .dia, .para-quem li, .saida-lista li, .prova, .bio-foto, .bio-texto, .oferta-box, .garantia, .faq-item, .fechamento > *, .faq-cta";
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   if (!els.length) return;
   els.forEach(function (el) { el.classList.add("reveal"); });
 
-  document.querySelectorAll(".grid-3, .provas, .para-quem, .cronograma-dias").forEach(function (grupo) {
+  document.querySelectorAll(".grid-3, .provas, .para-quem, .cronograma-dias, .saida-lista").forEach(function (grupo) {
     Array.prototype.forEach.call(grupo.children, function (filho, i) {
       filho.style.transitionDelay = Math.min(i * 55, 240) + "ms";
     });
