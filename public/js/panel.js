@@ -147,11 +147,23 @@
   document.getElementById("reload-routes").addEventListener("click", load);
 
   var logoutBtn = document.getElementById("panel-logout");
+  var userEl = document.getElementById("panel-user");
+  var logoutUrl = null;
+
+  fetch("/api/admin/me")
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      if (!data.ok) return;
+      logoutUrl = data.logoutUrl;
+      if (userEl) userEl.textContent = data.email || "";
+    })
+    .catch(function () {});
+
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
-      fetch("/api/admin/logout", { method: "POST" }).finally(function () {
-        window.location.href = "/xp-pan-adm/login.html";
-      });
+      window.location.href = logoutUrl || "/";
     });
   }
 

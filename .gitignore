@@ -50,3 +50,6 @@ scripts/
 
 # Mockups locais do companion visual
 .superpowers/
+docs/cloudflare-access.md
+.dev.vars.example
+.dev.vars.example

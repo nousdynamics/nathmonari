@@ -1,6 +1,10 @@
-# Copie para .dev.vars (gitignored) e preencha antes de `npm run dev`.
-# Em produção: wrangler secret put ADMIN_USER / ADMIN_PASS / SESSION_SECRET
+# Copie para .dev.vars (gitignored) antes de `npm run dev`.
+#
+# Em localhost não existe Cloudflare Access, então o painel usa um bypass
+# de desenvolvimento. Só funciona em localhost/127.0.0.1 e nunca em produção.
+ACCESS_DEV_BYPASS=1
 
-ADMIN_USER=seu_usuario
-ADMIN_PASS=sua_senha
-SESSION_SECRET=string-aleatoria-com-pelo-menos-32-caracteres
+# Para testar a validação real do JWT localmente (opcional), desligue o bypass
+# acima e preencha os valores da sua Access Application:
+# ACCESS_TEAM_DOMAIN=suaequipe
+# ACCESS_AUD=aud_tag_da_application

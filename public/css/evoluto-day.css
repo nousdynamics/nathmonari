@@ -75,7 +75,7 @@ p  { margin: 0; }
   padding-right: var(--padding-lateral);
 }
 
-.secao { padding-top: var(--e7); padding-bottom: var(--e7); }
+.secao { padding-top: var(--e6); padding-bottom: var(--e6); }
 .secao--escura { background: var(--fundo); }
 .secao--escura-2 { background: var(--fundo-2); }
 
@@ -112,7 +112,7 @@ p  { margin: 0; }
   margin-top: var(--e3);
 }
 
-@media (max-width: 768px) { .secao { padding-top: var(--e6); padding-bottom: var(--e6); } }
+@media (max-width: 768px) { .secao { padding-top: var(--e4); padding-bottom: var(--e4); } }
 
 .label {
   font-family: var(--corpo);
@@ -124,7 +124,7 @@ p  { margin: 0; }
   margin: 0;
 }
 
-.secao-topo { display: flex; flex-direction: column; gap: var(--e2); margin-bottom: var(--e6); }
+.secao-topo { display: flex; flex-direction: column; gap: var(--e2); margin-bottom: var(--e4); }
 .secao-topo p:not(.label) { color: var(--texto-2); max-width: 65ch; }
 
 /* ---------- CTA ---------- */
@@ -387,7 +387,7 @@ p  { margin: 0; }
 
 /* ---------- Abertura ---------- */
 
-.secao--abertura { padding-top: var(--e6); padding-bottom: var(--e6); }
+.secao--abertura { padding-top: var(--e4); padding-bottom: var(--e4); }
 .abertura-inner { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--e2); }
 .abertura-inner p { color: var(--texto-2); }
 .abertura-inner p strong { color: var(--texto); font-weight: 500; }
@@ -408,16 +408,16 @@ p  { margin: 0; }
 
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e3); }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--e3); }
-@media (max-width: 900px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .grid-3, .grid-2 { grid-template-columns: 1fr; gap: var(--e2); } }
 
 .card {
   background: var(--card);
   border: 1px solid var(--divisoria);
   border-radius: 24px;
-  padding: var(--e4);
+  padding: var(--e3);
   display: flex;
   flex-direction: column;
-  gap: var(--e2);
+  gap: var(--e1);
 }
 .card-icone {
   width: 48px;
@@ -427,7 +427,7 @@ p  { margin: 0; }
   place-items: center;
   background: rgba(168, 240, 90, 0.1);
   color: var(--cta);
-  margin-bottom: var(--e1);
+  margin-bottom: 0;
 }
 .card-icone svg { width: 24px; height: 24px; }
 .card p.card-etapa {
@@ -441,7 +441,7 @@ p  { margin: 0; }
 }
 .card h4 { color: var(--texto); font-size: 20px; }
 .card p { color: var(--texto-2); font-size: 16px; }
-.card ul { margin: var(--e1) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--e2); }
+.card ul { margin: var(--e1) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--e1); }
 .card li {
   position: relative;
   padding-left: var(--e3);

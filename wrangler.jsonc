@@ -3,11 +3,25 @@
   "name": "nathmonari",
   "main": "worker/index.js",
   "compatibility_date": "2026-06-25",
+  "vars": {
+    // Cloudflare Access (Zero Trust) — veja docs/cloudflare-access.md
+    // Subdomínio da equipe, sem ".cloudflareaccess.com"
+    "ACCESS_TEAM_DOMAIN": "nathmonari",
+    // Application Audience (AUD) Tag da Access Application do painel
+    "ACCESS_AUD": "3d5df0959a3064ad008236f9af7b8b221c3995ac29ca58bf1e53dd33dbc8a9c8",
+    // Domínios liberados (qualquer e-mail nesses domínios entra)
+    "ACCESS_ALLOWED_DOMAINS": "sixsevendigitall.com.br,sixsevenplataformadigital.com.br",
+    // E-mails avulsos liberados além dos domínios acima (ex.: gmail pessoal)
+    "ACCESS_ALLOWED_EMAILS": "suportenathmonari@gmail.com,nousdynamicslta@gmail.com"
+  },
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page",
+    // "none": asset não encontrado cai no Worker, que resolve os rewrites de
+    // routes.json e só então serve /404.html. Com "404-page" o asset layer
+    // respondia 404 antes do Worker rodar, quebrando os aliases.
+    "not_found_handling": "none",
     // Painel e /admin passam pelo Worker (auth) antes do asset estático
     "run_worker_first": [
       "/xp-pan-adm",
@@ -17,6 +31,4 @@
       "/api/*"
     ]
   }
-  // Secrets do painel (não commitar): wrangler secret put ADMIN_USER | ADMIN_PASS | SESSION_SECRET
-  // Local: .dev.vars (veja .dev.vars.example)
 }

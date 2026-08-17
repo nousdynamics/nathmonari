@@ -36,6 +36,8 @@ public/                    # tudo que vai pro ar
   css/styles.css           # estilo compartilhado
   js/main.js               # FAQ + scroll suave + carrossel de depoimentos
   images/                  # assets locais
+worker/index.js            # rewrites de rota + auth do painel via Cloudflare Access
+docs/cloudflare-access.md  # como configurar o Zero Trust/Access do painel
 wrangler.jsonc             # config Cloudflare Workers (assets.directory = ./public)
 package.json               # scripts dev/deploy (wrangler)
 raw/                       # HTML original do WordPress (referência, git-ignored)
