@@ -1,25 +1,35 @@
 (function () {
-  var RECONSTRUA = [
-    { id: "rc-sem-vsl", label: "Reconstrua-se sem VSL", file: "vendas-rc-v3.html" },
-    { id: "rc-vsl", label: "Reconstrua-se com VSL", file: "vendas-rc-v3-vsl.html" },
-  ];
-
-  var pagesEl = document.getElementById("panel-pages");
-  var clonesEl = document.getElementById("panel-clones");
-  var routesEl = document.getElementById("panel-routes");
+  var gridEl = document.getElementById("panel-pages");
+  var contagemEl = document.getElementById("panel-contagem");
   var statusEl = document.getElementById("panel-status");
-  var previewEl = document.getElementById("panel-preview");
-  var pages = [];
+  var buscaEl = document.getElementById("filtro-busca");
+  var ordemEl = document.getElementById("filtro-ordem");
 
-  function uid() {
-    return "page-" + Math.random().toString(36).slice(2, 9);
-  }
+  var pages = [];
+  var editando = null; // id da página aberta para edição (não índice: a lista reordena)
+  var busca = "";
+  var ordem = "url-asc";
+
+  var GEAR =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="3"/>' +
+    '<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>' +
+    "</svg>";
+
+  var FECHAR =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" ' +
+    'stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
   function esc(s) {
-    return String(s || "")
+    return String(s == null ? "" : s)
       .replace(/&/g, "&amp;")
       .replace(/"/g, "&quot;")
       .replace(/</g, "&lt;");
+  }
+
+  function uid() {
+    return "page-" + Math.random().toString(36).slice(2, 9);
   }
 
   function showStatus(text, type) {
@@ -27,78 +37,181 @@
     statusEl.className = "panel-msg " + (type || "ok");
   }
 
-  function cardHtml(title, file, href, hrefLabel) {
+  /** Normaliza para uma URL pública: sempre começa com "/", sem barra final. */
+  function normalizePath(value) {
+    var p = String(value || "").trim();
+    if (!p) return "/";
+    if (p.charAt(0) !== "/") p = "/" + p;
+    p = p.replace(/\s+/g, "-");
+    if (p.length > 1) p = p.replace(/\/+$/, "");
+    return p || "/";
+  }
+
+  function byId(id) {
+    for (var i = 0; i < pages.length; i++) {
+      if (pages[i].id === id) return pages[i];
+    }
+    return null;
+  }
+
+  /** Lista que vai pra tela: filtrada e ordenada. Não altera `pages`. */
+  function visiveis() {
+    var termo = busca.trim().toLowerCase();
+    var lista = pages.filter(function (p) {
+      if (!termo) return true;
+      return (
+        normalizePath(p.path).toLowerCase().indexOf(termo) !== -1 ||
+        String(p.file).toLowerCase().indexOf(termo) !== -1
+      );
+    });
+
+    var cmp = {
+      "url-asc": function (a, b) {
+        return normalizePath(a.path).localeCompare(normalizePath(b.path), "pt-BR");
+      },
+      "url-desc": function (a, b) {
+        return normalizePath(b.path).localeCompare(normalizePath(a.path), "pt-BR");
+      },
+      "arquivo-asc": function (a, b) {
+        return String(a.file).localeCompare(String(b.file), "pt-BR");
+      },
+    }[ordem];
+
+    return cmp ? lista.slice().sort(cmp) : lista;
+  }
+
+  function cardHtml(page) {
+    var path = normalizePath(page.path);
     return (
       '<article class="page-card">' +
-      '<h3 class="page-card-titulo">' + esc(title) + "</h3>" +
-      '<p class="page-card-meta">Arquivo: <code>' + esc(file) + "</code></p>" +
+      '<button type="button" class="page-card-gear" data-edit="' + esc(page.id) + '" ' +
+      'aria-label="Mudar a URL de ' + esc(path) + '">' + GEAR + "</button>" +
+      '<div class="page-card-id">' +
+      '<span class="page-card-dominio">' + esc(location.host) + "</span>" +
+      '<h3 class="page-card-slug">' + esc(path) + "</h3>" +
+      "</div>" +
+      '<p class="page-card-arquivo"><span>Arquivo</span>' + esc(page.file) + "</p>" +
       '<div class="page-card-acoes">' +
-      '<a class="btn btn-prim" href="' + esc(href) + '" target="_blank" rel="noopener">' +
-      esc(hrefLabel || "Abrir página") +
-      "</a></div></article>"
+      '<a class="btn btn-prim" href="' + esc(path) + '" target="_blank" rel="noopener">Abrir página</a>' +
+      "</div></article>"
     );
   }
 
-  function renderPages() {
-    pagesEl.innerHTML = RECONSTRUA.map(function (p) {
-      return cardHtml(p.label, p.file, p.file, "Abrir página");
-    }).join("");
+  function formHtml(page) {
+    var path = normalizePath(page.path);
+    return (
+      '<article class="page-card is-editando">' +
+      '<button type="button" class="page-card-gear" data-fechar="' + esc(page.id) + '" ' +
+      'aria-label="Fechar edição">' + FECHAR + "</button>" +
+      '<div class="page-card-id">' +
+      '<span class="page-card-dominio">' + esc(location.host) + "</span>" +
+      '<h3 class="page-card-slug">' + esc(path) + "</h3>" +
+      "</div>" +
+      '<div class="page-card-form">' +
+      '<div class="campo">' +
+      '<label for="url-' + esc(page.id) + '">URL pública</label>' +
+      '<input id="url-' + esc(page.id) + '" type="text" data-id="' + esc(page.id) + '" ' +
+      'value="' + esc(path) + '" spellcheck="false" autocapitalize="off" autocomplete="off">' +
+      '<p class="campo-dica">O nome do card acompanha esta URL.</p>' +
+      "</div>" +
+      '<div class="campo">' +
+      "<label>Arquivo que responde</label>" +
+      '<div class="campo-fixo">' + esc(page.file) + "</div>" +
+      "</div>" +
+      "</div>" +
+      '<div class="page-card-acoes">' +
+      '<button type="button" class="btn btn-prim" data-fechar="' + esc(page.id) + '">Concluir</button>' +
+      '<button type="button" class="btn btn-danger" data-remove="' + esc(page.id) + '">Remover</button>' +
+      "</div></article>"
+    );
   }
 
-  function renderClones() {
-    var clones = pages.filter(function (p) {
-      return p.id !== "reconstrua-sem-vsl" && p.id !== "reconstrua-vsl";
-    });
-    if (!clones.length) {
-      clonesEl.innerHTML =
-        '<p class="page-card-meta">Nenhum clone configurado em <code>routes.json</code>.</p>';
+  function atualizaContagem(mostrando) {
+    var total = pages.length;
+    if (mostrando === total) {
+      contagemEl.textContent = total + (total === 1 ? " endereço" : " endereços");
+    } else {
+      contagemEl.textContent = mostrando + " de " + total;
+    }
+  }
+
+  function render() {
+    var lista = visiveis();
+    atualizaContagem(lista.length);
+
+    if (!pages.length) {
+      gridEl.innerHTML = '<p class="panel-vazio">Nenhuma página em <code>routes.json</code>.</p>';
       return;
     }
-    clonesEl.innerHTML = clones
+    if (!lista.length) {
+      gridEl.innerHTML =
+        '<p class="panel-vazio">Nenhum card corresponde a “' + esc(busca.trim()) + "”.</p>";
+      return;
+    }
+
+    gridEl.innerHTML = lista
       .map(function (p) {
-        var path = (p.path || "/").replace(/\/$/, "") || "/";
-        var staticPath = p.file ? p.file.replace(/index\.html$/, "") : path.slice(1) + "/";
-        return cardHtml(p.label, p.file, "/" + staticPath.replace(/^\//, ""), "Abrir página");
+        return p.id === editando ? formHtml(p) : cardHtml(p);
       })
       .join("");
-  }
 
-  function renderRoutes() {
-    routesEl.innerHTML = "";
-    pages.forEach(function (p, i) {
-      var card = document.createElement("div");
-      card.className = "route-card";
-      card.innerHTML =
-        '<div class="route-card-head">Rota ' + (i + 1) + "</div>" +
-        '<label>Nome no painel</label><input data-k="label" data-i="' + i + '" value="' + esc(p.label) + '">' +
-        '<label>Arquivo (em public/)</label><input data-k="file" data-i="' + i + '" value="' + esc(p.file) + '">' +
-        '<label>URL pública</label><input data-k="path" data-i="' + i + '" value="' + esc(p.path) + '">' +
-        '<button type="button" class="btn btn-danger" data-remove="' + i + '">Remover rota</button>';
-      routesEl.appendChild(card);
-    });
-
-    routesEl.querySelectorAll("input").forEach(function (input) {
-      input.addEventListener("input", function () {
-        var idx = +input.dataset.i;
-        pages[idx][input.dataset.k] = input.value;
-        updatePreview();
-        renderClones();
-      });
-    });
-
-    routesEl.querySelectorAll("[data-remove]").forEach(function (btn) {
+    gridEl.querySelectorAll("[data-edit]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        pages.splice(+btn.dataset.remove, 1);
-        renderRoutes();
-        renderClones();
+        editando = btn.dataset.edit;
+        render();
+        var input = gridEl.querySelector("input[data-id]");
+        if (input) {
+          input.focus();
+          input.setSelectionRange(input.value.length, input.value.length);
+        }
       });
     });
 
-    updatePreview();
+    gridEl.querySelectorAll("[data-fechar]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        editando = null;
+        render();
+      });
+    });
+
+    gridEl.querySelectorAll("[data-remove]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var id = btn.dataset.remove;
+        pages = pages.filter(function (p) {
+          return p.id !== id;
+        });
+        editando = null;
+        render();
+      });
+    });
+
+    gridEl.querySelectorAll("input[data-id]").forEach(function (input) {
+      input.addEventListener("input", function () {
+        var page = byId(input.dataset.id);
+        if (!page) return;
+        page.path = input.value;
+        page.label = normalizePath(input.value);
+        var slug = gridEl.querySelector(".is-editando .page-card-slug");
+        if (slug) slug.textContent = normalizePath(input.value);
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === "Escape") {
+          e.preventDefault();
+          editando = null;
+          render();
+        }
+      });
+    });
   }
 
-  function updatePreview() {
-    previewEl.textContent = JSON.stringify({ pages: pages }, null, 2);
+  /** Exporta sempre a lista completa, na ordem original — filtro é só de tela. */
+  function saida() {
+    return {
+      pages: pages.map(function (p) {
+        var path = normalizePath(p.path);
+        return { id: p.id, label: path, file: p.file, path: path };
+      }),
+    };
   }
 
   function load() {
@@ -111,30 +224,32 @@
         pages = (data.pages || []).map(function (p) {
           return {
             id: p.id || uid(),
-            label: p.label || "",
+            label: normalizePath(p.path),
             file: p.file || "",
-            path: p.path || "/",
+            path: normalizePath(p.path),
           };
         });
-        renderPages();
-        renderClones();
-        renderRoutes();
-        previewEl.hidden = false;
+        editando = null;
+        render();
       })
       .catch(function (err) {
-        showStatus("Erro ao carregar routes.json: " + err.message, "warn");
-        renderPages();
+        showStatus("Não foi possível carregar routes.json: " + err.message, "warn");
       });
   }
 
-  document.getElementById("add-route").addEventListener("click", function () {
-    pages.push({ id: uid(), label: "Nova página", file: "pagina.html", path: "/nova-pagina" });
-    renderRoutes();
-    renderClones();
+  buscaEl.addEventListener("input", function () {
+    busca = buscaEl.value;
+    editando = null;
+    render();
+  });
+
+  ordemEl.addEventListener("change", function () {
+    ordem = ordemEl.value;
+    render();
   });
 
   document.getElementById("export-routes").addEventListener("click", function () {
-    var json = JSON.stringify({ pages: pages }, null, 2) + "\n";
+    var json = JSON.stringify(saida(), null, 2) + "\n";
     var blob = new Blob([json], { type: "application/json" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -148,22 +263,26 @@
 
   var logoutBtn = document.getElementById("panel-logout");
   var userEl = document.getElementById("panel-user");
-  var logoutUrl = null;
 
   fetch("/api/admin/me")
     .then(function (res) {
+      if (res.status === 401) {
+        window.location.replace("/xp-pan-adm/login.html");
+        return null;
+      }
       return res.json();
     })
     .then(function (data) {
-      if (!data.ok) return;
-      logoutUrl = data.logoutUrl;
-      if (userEl) userEl.textContent = data.email || "";
+      if (!data || !data.ok) return;
+      if (userEl) userEl.textContent = data.user || "";
     })
     .catch(function () {});
 
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
-      window.location.href = logoutUrl || "/";
+      fetch("/api/admin/logout", { method: "POST" }).finally(function () {
+        window.location.replace("/xp-pan-adm/login.html");
+      });
     });
   }
 

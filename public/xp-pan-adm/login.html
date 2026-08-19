@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar — Painel Nath Monari</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/webp" href="/images/favicon.webp" />
+    <link rel="stylesheet" href="/fonts/alexandria.css" />
+    <link rel="stylesheet" href="/css/panel.css?v=5" />
+  </head>
+  <body class="login-body">
+    <main class="login-caixa">
+      <div class="login-marca">Nath Monari</div>
+      <h1>Painel de páginas</h1>
+      <p class="login-sub">Acesso restrito à equipe.</p>
+
+      <form class="login-form" id="login-form" autocomplete="off">
+        <div class="campo">
+          <label for="username">Usuário</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            required
+            autocomplete="username"
+            spellcheck="false"
+            autocapitalize="off"
+          />
+        </div>
+        <div class="campo">
+          <label for="password">Senha</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+        <p class="login-erro" id="login-erro" role="alert" hidden></p>
+        <button type="submit" class="btn btn-prim login-submit" id="login-submit">Entrar</button>
+      </form>
+
+      <p class="login-voltar"><a href="/">← Voltar para o site</a></p>
+    </main>
+    <script src="/js/admin-login.js?v=5"></script>
+  </body>
+</html>

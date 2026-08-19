@@ -2,57 +2,63 @@
   "pages": [
     {
       "id": "vendas-rc-v3",
-      "label": "Reconstrua-se (sem VSL)",
+      "label": "/vendas-rc-v3",
       "file": "vendas-rc-v3.html",
       "path": "/vendas-rc-v3"
     },
     {
       "id": "reconstrua-sem-vsl",
-      "label": "Reconstrua-se (alias)",
+      "label": "/reconstrua-se",
       "file": "vendas-rc-v3.html",
       "path": "/reconstrua-se"
     },
     {
       "id": "reconstrua-vsl",
-      "label": "Reconstrua-se (com VSL)",
+      "label": "/reconstrua-se/vsl",
       "file": "vendas-rc-v3-vsl.html",
       "path": "/reconstrua-se/vsl"
     },
     {
       "id": "desafio-10dias",
-      "label": "Desafio 10 dias (clone)",
+      "label": "/desafio-10dias",
       "file": "desafio-10dias/index.html",
       "path": "/desafio-10dias"
     },
     {
       "id": "vendas-evoluto-v1",
-      "label": "Evoluto v1 (clone)",
+      "label": "/vendas-evoluto-v1",
       "file": "vendas-evoluto-v1/index.html",
       "path": "/vendas-evoluto-v1"
     },
     {
       "id": "vendas-evoluto-v2",
-      "label": "Evoluto v2 (clone)",
+      "label": "/vendas-evoluto-2-0",
       "file": "vendas-evoluto-2-0/index.html",
       "path": "/vendas-evoluto-2-0"
     },
     {
       "id": "evoluto-day-va",
-      "label": "Evoluto Day (headline A)",
+      "label": "/evoluto-day-va",
       "file": "evoluto-day-va/index.html",
       "path": "/evoluto-day-va"
     },
     {
       "id": "evoluto-day-vb",
-      "label": "Evoluto Day (headline B)",
+      "label": "/evoluto-day-vb",
       "file": "evoluto-day-vb/index.html",
       "path": "/evoluto-day-vb"
     },
     {
       "id": "evoluto-day-vc",
-      "label": "Evoluto Day (headline C)",
+      "label": "/evoluto-day-vc",
       "file": "evoluto-day-vc/index.html",
       "path": "/evoluto-day-vc"
+    },
+    {
+      "id": "evoluto-day-vd",
+      "label": "/evoluto-day-vd",
+      "file": "evoluto-day-vd/index.html",
+      "path": "/evoluto-day-vd"
     }
   ]
 }

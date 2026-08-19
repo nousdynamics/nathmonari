@@ -4,67 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painel — Nath Monari</title>
-    <meta name="description" content="Painel de landing pages, clones e rotas amigáveis do Protocolo RC." />
+    <meta name="description" content="Painel de landing pages e rotas públicas." />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/webp" href="/images/favicon.webp" />
-    <link rel="stylesheet" href="/fonts/fonts-min.css" />
-    <link rel="stylesheet" href="/css/panel.css" />
+    <link rel="stylesheet" href="/fonts/alexandria.css" />
+    <link rel="stylesheet" href="/css/panel.css?v=5" />
   </head>
   <body>
     <div class="panel">
-      <header class="panel-topo">
-        <div class="panel-logo">
-          <img src="/images/logo-reconstrua-se.svg" width="1269" height="188" alt="Reconstrua-se" decoding="async" />
+      <div class="panel-bar">
+        <div class="panel-bar-marca">Nath Monari</div>
+        <div class="panel-bar-conta">
+          <span class="panel-user" id="panel-user"></span>
+          <button type="button" class="panel-sair" id="panel-logout">Sair</button>
         </div>
-        <h1>Painel de landing pages</h1>
-        <p>Gerencie as páginas do Reconstrua-se, acesse os clones e configure rotas amigáveis para deploy.</p>
+      </div>
+
+      <header class="panel-topo">
+        <div>
+          <h1>Páginas publicadas</h1>
+          <p>
+            Cada card é uma URL pública. Abra para conferir ou use a engrenagem para mudar
+            o endereço. Páginas novas nascem no código.
+          </p>
+        </div>
+        <div class="panel-acoes">
+          <button type="button" class="btn btn-prim" id="export-routes">Exportar routes.json</button>
+          <button type="button" class="btn btn-sec" id="reload-routes">Recarregar</button>
+        </div>
       </header>
 
-      <section class="panel-secao" aria-labelledby="sec-reconstrua">
+      <div class="panel-msg" id="panel-status" role="status"></div>
+
+      <section class="panel-secao panel-secao--primeira" aria-labelledby="sec-paginas">
         <div class="panel-secao-head">
-          <h2 id="sec-reconstrua">Reconstrua-se</h2>
+          <h2 id="sec-paginas">Endereços</h2>
           <div class="panel-secao-linha" aria-hidden="true"></div>
+          <span class="panel-secao-contagem" id="panel-contagem"></span>
         </div>
+
+        <div class="panel-filtros">
+          <input
+            type="search"
+            id="filtro-busca"
+            class="filtro-busca"
+            placeholder="Filtrar por URL ou arquivo"
+            aria-label="Filtrar cards por URL ou arquivo"
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <label class="filtro-ordem" for="filtro-ordem">
+            <span>Ordem</span>
+            <select id="filtro-ordem">
+              <option value="url-asc">URL · A → Z</option>
+              <option value="url-desc">URL · Z → A</option>
+              <option value="arquivo-asc">Arquivo · A → Z</option>
+              <option value="original">Como está no routes.json</option>
+            </select>
+          </label>
+        </div>
+
         <div class="panel-grid" id="panel-pages"></div>
       </section>
 
-      <section class="panel-secao" aria-labelledby="sec-clones">
-        <div class="panel-secao-head">
-          <h2 id="sec-clones">Clones</h2>
-          <div class="panel-secao-linha" aria-hidden="true"></div>
-        </div>
-        <div class="panel-grid" id="panel-clones"></div>
-      </section>
-
-      <section class="panel-secao" aria-labelledby="sec-rotas">
-        <div class="panel-secao-head">
-          <h2 id="sec-rotas">Rotas amigáveis</h2>
-          <div class="panel-secao-linha" aria-hidden="true"></div>
-        </div>
-        <p class="page-card-meta" style="margin-bottom:16px">
-          As rotas abaixo funcionam no Worker após deploy. Reconstrua-se usa
-          <code>vendas-rc-v3.html</code> e <code>vendas-rc-v3-vsl.html</code> — edite os paths se precisar.
-        </p>
-        <div id="panel-routes"></div>
-        <div class="panel-acoes">
-          <button type="button" class="btn btn-ouro" id="add-route">+ Adicionar rota</button>
-          <button type="button" class="btn btn-sec" id="export-routes">Exportar routes.json</button>
-          <button type="button" class="btn btn-sec" id="reload-routes">Recarregar</button>
-        </div>
-        <div class="panel-hint">
-          <strong>Publicar rotas:</strong> exporte o JSON, substitua
-          <code>public/data/routes.json</code> no repositório e rode <code>npm run deploy</code>.
-        </div>
-        <div class="panel-msg" id="panel-status" role="status"></div>
-        <pre class="panel-preview" id="panel-preview" hidden></pre>
-      </section>
-
-      <footer class="panel-rodape">
-        Nath Monari · Protocolo RC · Painel interno
-        <span class="panel-user" id="panel-user"></span>
-        <button type="button" class="panel-sair" id="panel-logout">Sair</button>
-      </footer>
+      <footer class="panel-rodape">Painel interno · acesso restrito</footer>
     </div>
-    <script src="/js/panel.js"></script>
+    <script src="/js/panel.js?v=5"></script>
   </body>
 </html>
