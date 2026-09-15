@@ -54,6 +54,12 @@
     return null;
   }
 
+  /** O que responde na URL: um arquivo de public/ ou um redirecionamento. */
+  function destino(page) {
+    if (page.redirect) return { rotulo: "Redireciona para", valor: String(page.redirect) };
+    return { rotulo: "Arquivo", valor: String(page.file || "") };
+  }
+
   /** Lista que vai pra tela: filtrada e ordenada. Não altera `pages`. */
   function visiveis() {
     var termo = busca.trim().toLowerCase();
@@ -61,7 +67,7 @@
       if (!termo) return true;
       return (
         normalizePath(p.path).toLowerCase().indexOf(termo) !== -1 ||
-        String(p.file).toLowerCase().indexOf(termo) !== -1
+        destino(p).valor.toLowerCase().indexOf(termo) !== -1
       );
     });
 
@@ -73,7 +79,7 @@
         return normalizePath(b.path).localeCompare(normalizePath(a.path), "pt-BR");
       },
       "arquivo-asc": function (a, b) {
-        return String(a.file).localeCompare(String(b.file), "pt-BR");
+        return destino(a).valor.localeCompare(destino(b).valor, "pt-BR");
       },
     }[ordem];
 
@@ -90,7 +96,7 @@
       '<span class="page-card-dominio">' + esc(location.host) + "</span>" +
       '<h3 class="page-card-slug">' + esc(path) + "</h3>" +
       "</div>" +
-      '<p class="page-card-arquivo"><span>Arquivo</span>' + esc(page.file) + "</p>" +
+      '<p class="page-card-arquivo"><span>' + destino(page).rotulo + "</span>" + esc(destino(page).valor) + "</p>" +
       '<div class="page-card-acoes">' +
       '<a class="btn btn-prim" href="' + esc(path) + '" target="_blank" rel="noopener">Abrir página</a>' +
       "</div></article>"
@@ -115,8 +121,8 @@
       '<p class="campo-dica">O nome do card acompanha esta URL.</p>' +
       "</div>" +
       '<div class="campo">' +
-      "<label>Arquivo que responde</label>" +
-      '<div class="campo-fixo">' + esc(page.file) + "</div>" +
+      "<label>" + (page.redirect ? "Redireciona para" : "Arquivo que responde") + "</label>" +
+      '<div class="campo-fixo">' + esc(destino(page).valor) + "</div>" +
       "</div>" +
       "</div>" +
       '<div class="page-card-acoes">' +
@@ -190,7 +196,8 @@
         var page = byId(input.dataset.id);
         if (!page) return;
         page.path = input.value;
-        page.label = normalizePath(input.value);
+        // redirects guardam um label descritivo proprio; so paginas usam a URL como nome
+        if (!page.redirect) page.label = normalizePath(input.value);
         var slug = gridEl.querySelector(".is-editando .page-card-slug");
         if (slug) slug.textContent = normalizePath(input.value);
       });
@@ -204,12 +211,17 @@
     });
   }
 
-  /** Exporta sempre a lista completa, na ordem original — filtro é só de tela. */
+  /**
+   * Exporta sempre a lista completa, na ordem original — filtro é só de tela.
+   * Copia todos os campos da rota (redirect, status…): montar o objeto só com
+   * id/label/file/path apagava os redirecionamentos do routes.json.
+   */
   function saida() {
     return {
       pages: pages.map(function (p) {
-        var path = normalizePath(p.path);
-        return { id: p.id, label: path, file: p.file, path: path };
+        var rota = Object.assign({}, p, { path: normalizePath(p.path) });
+        if (!rota.redirect) rota.label = rota.path;
+        return rota;
       }),
     };
   }
@@ -222,12 +234,12 @@
       })
       .then(function (data) {
         pages = (data.pages || []).map(function (p) {
-          return {
-            id: p.id || uid(),
-            label: normalizePath(p.path),
-            file: p.file || "",
-            path: normalizePath(p.path),
-          };
+          var rota = Object.assign({}, p, { id: p.id || uid(), path: normalizePath(p.path) });
+          if (!rota.redirect) {
+            rota.file = rota.file || "";
+            rota.label = rota.path;
+          }
+          return rota;
         });
         editando = null;
         render();
