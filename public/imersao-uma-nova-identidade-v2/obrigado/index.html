@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscrição confirmada · Uma Nova Identidade</title>
+  <meta name="description" content="Sua inscrição foi recebida. Em instantes você será direcionada ao grupo do WhatsApp." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/webp" href="/images/favicon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/evoluto-day.css?v=10" />
+  <link rel="stylesheet" href="/css/uma-nova-identidade.css?v=14" />
+  <style>
+    .obrigado {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--e5) var(--padding-lateral);
+      background:
+        linear-gradient(180deg, rgba(28, 28, 30, 0.92), rgba(28, 28, 30, 0.98)),
+        var(--carbon);
+      text-align: center;
+    }
+    .obrigado-inner {
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--e2);
+    }
+    .obrigado h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.15;
+      color: var(--cream);
+    }
+    .obrigado p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #d8d2c8;
+    }
+    .obrigado-tempo {
+      color: var(--bronze);
+      font-weight: 500;
+    }
+    .obrigado .cta {
+      margin-top: var(--e2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 24px;
+      background: var(--green-cta);
+      color: var(--cream);
+      border-radius: var(--radius-borda);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .obrigado .cta:hover {
+      background: var(--green-hover);
+    }
+  </style>
+</head>
+<body>
+  <main class="obrigado">
+    <div class="obrigado-inner">
+      <p class="label">Uma Nova Identidade</p>
+      <h1>Inscrição confirmada</h1>
+      <p>Obrigada por se inscrever. Em <span class="obrigado-tempo" id="contador">5</span> segundos você será direcionada ao grupo do WhatsApp do evento.</p>
+      <p>Se o redirecionamento não acontecer, use o botão abaixo.</p>
+      <a
+        class="cta"
+        id="link-whatsapp"
+        href="https://chat.whatsapp.com/Dlh3d4RymAoGZckdPBMqJ8?s=cl&amp;p=a&amp;ilr=4"
+      >Entrar no grupo agora</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var url = "https://chat.whatsapp.com/Dlh3d4RymAoGZckdPBMqJ8?s=cl&p=a&ilr=4";
+      var segundos = 5;
+      var el = document.getElementById("contador");
+      var timer = setInterval(function () {
+        segundos -= 1;
+        if (el) el.textContent = String(Math.max(segundos, 0));
+        if (segundos <= 0) {
+          clearInterval(timer);
+          window.location.replace(url);
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

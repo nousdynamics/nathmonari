@@ -11,13 +11,18 @@
     // routes.json e só então serve /404.html. Com "404-page" o asset layer
     // respondia 404 antes do Worker rodar, quebrando os aliases.
     "not_found_handling": "none",
-    // Painel e /admin passam pelo Worker (auth) antes do asset estático
+    // Painel e /admin passam pelo Worker (auth) antes do asset estático.
+    // Shortlinks Pretty Links (yt-*) também precisam do Worker para 307.
     "run_worker_first": [
       "/xp-pan-adm",
       "/xp-pan-adm/*",
       "/admin",
       "/admin/*",
-      "/api/*"
+      "/api/*",
+      "/yt-reconstrua-se",
+      "/yt-reconstrua-se/",
+      "/ytb-ebook-da",
+      "/ytb-ebook-da/"
     ]
   }
 }

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1c1c1e" />
+  <title>Uma Nova Identidade v2 · Nath Monari</title>
+  <meta name="description" content="Evento online e gratuito — 16/09 às 19:30. Descubra como terminar 2026 com clareza do que fazer e quais passos dar para mudar sua vida." />
+  <link rel="icon" type="image/webp" href="/images/favicon.webp" />
+
+  <!-- CSS crítico: 1ª pintura no celular sem esperar folhas externas -->
+  <style>
+    :root {
+      --carbon: #1c1c1e;
+      --cream: #f0ede8;
+      --bronze: #c9a96e;
+      --green-cta: #3daa72;
+      --radius-borda: 4px;
+      --padding-lateral: 20px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--carbon);
+      color: var(--cream);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .conteudo { width: min(1160px, 100% - 2 * var(--padding-lateral)); margin-inline: auto; }
+    .hero--uni-sem-foto {
+      padding: 40px var(--padding-lateral) 28px;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201, 169, 110, 0.12), transparent 55%),
+        var(--carbon);
+    }
+    .hero-marca-nome, h1, h2, h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      margin: 0;
+    }
+    .label { color: var(--bronze); letter-spacing: 0.16em; text-transform: uppercase; font-size: 12px; margin: 0; }
+    .anchor { color: var(--bronze); }
+    .lead-form { display: flex; flex-direction: column; gap: 8px; max-width: 420px; width: 100%; }
+    .lead-campos { display: flex; flex-direction: column; gap: 8px; }
+    .lead-form input {
+      width: 100%; min-height: 46px; padding: 11px 14px;
+      border: 1px solid rgba(201, 169, 110, 0.62); border-radius: var(--radius-borda);
+      background: rgba(255, 255, 255, 0.11); color: var(--cream); font-size: 16px;
+    }
+    .lead-form .cta {
+      width: 100%; min-height: 48px; border: 0; border-radius: var(--radius-borda);
+      background: var(--green-cta); color: var(--cream); font-weight: 600; font-size: 14px;
+      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+    }
+    .secao--defer { content-visibility: auto; contain-intrinsic-size: auto 480px; }
+    .hero-evento { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bronze);
+    }
+    .hero-chip svg,
+    .hero-chip-icone {
+      width: 16px !important;
+      height: 16px !important;
+      max-width: 16px;
+      max-height: 16px;
+      flex: none;
+      display: block;
+      color: var(--bronze);
+    }
+    .card-icone svg,
+    .para-quem-icone svg {
+      width: 20px !important;
+      height: 20px !important;
+      max-width: 20px;
+      max-height: 20px;
+      display: block;
+    }
+    @media (min-width: 901px) {
+      :root { --padding-lateral: 0px; }
+      .conteudo { width: min(1160px, calc(100% - 48px)); }
+      .hero--uni-sem-foto { padding: 48px 0; }
+    }
+  </style>
+
+  <link rel="dns-prefetch" href="https://auto.nousdynamics.com.br" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="prefetch" href="/imersao-uma-nova-identidade-v2/obrigado/" as="document" />
+  <link rel="prefetch" href="/imersao-uma-nova-identidade-v2/images/nathalia-bio-480.webp" as="image" type="image/webp" />
+
+  <!-- Só Playfair (títulos). Corpo fica em system-ui — menos download no celular -->
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" />
+  </noscript>
+
+  <link rel="stylesheet" href="/css/evoluto-day.css?v=10" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/css/uma-nova-identidade.css?v=21" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="/css/evoluto-day.css?v=10" />
+    <link rel="stylesheet" href="/css/uma-nova-identidade.css?v=21" />
+  </noscript>
+</head>
+<body>
+
+  <header class="hero hero--uni hero--uni-sem-foto">
+    <div class="conteudo">
+      <div class="hero-inner">
+        <div class="hero-marca">
+          <p class="label">Imersão</p>
+          <p class="hero-marca-nome">Uma Nova <span class="anchor">Identidade</span></p>
+        </div>
+
+        <p class="hero-pre">O ano ainda não acabou, dá tempo de mudar…</p>
+
+        <h1>Descubra como terminar o ano de 2026 com clareza do que fazer e quais passos dar para mudar sua vida.</h1>
+
+        <div class="hero-sub-block">
+          <p class="hero-sub hero-sub-destaque">Vou te revelar um plano prático à prova de falhas para você:</p>
+          <ul class="hero-beneficios">
+            <li>Parar de Procrastinar, se Auto-sabotar e fazer o que precisa ser feito na sua vida profissional</li>
+            <li>Ter uma rotina que seja sustentável e eliminar a frustração de sempre começar a parar seus projetos pessoais</li>
+            <li>Construir uma autoimagem que esteja alinhada com os objetivos que você deseja viver</li>
+            <li>Ter clareza e coragem na decisões e não se frustrar por que vida está passando mais um ano</li>
+          </ul>
+        </div>
+
+        <div class="hero-evento">
+          <span class="hero-chip">
+            <svg class="hero-chip-icone" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+            16/09
+          </span>
+          <span class="hero-sep" aria-hidden="true">·</span>
+          <span class="hero-chip">
+            <svg class="hero-chip-icone" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            19:30
+          </span>
+          <span class="hero-sep" aria-hidden="true">·</span>
+          <span class="hero-chip">
+            <svg class="hero-chip-icone" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            Online · 100% Gratuito
+          </span>
+        </div>
+
+        <div class="hero-cta">
+          <form
+            class="lead-form"
+            action="/imersao-uma-nova-identidade-v2/obrigado/"
+            method="post"
+            data-webhook="https://auto.nousdynamics.com.br/webhook/imersao-uma-nova-identidade/6c719a8e-1cc5-4ac0-a82e-42587d2d21be"
+          >
+            <div class="lead-campos">
+              <input type="text" name="nome" placeholder="Digite seu nome" autocomplete="name" required />
+              <input type="email" name="email" placeholder="Digite seu melhor e-mail" autocomplete="email" required />
+              <input type="tel" name="whatsapp" placeholder="Digite seu Whatsapp" autocomplete="tel" inputmode="tel" required />
+            </div>
+            <button class="cta" type="submit">Quero ter uma Nova Identidade</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="secao secao--escura-2 secao--aprender secao--defer">
+    <div class="conteudo">
+      <div class="secao-topo">
+        <p class="label">O que você vai aprender no evento?</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.1-1.1"/></svg>
+          </div>
+          <h4>A forma que você se vê controla tudo na sua vida</h4>
+          <p>Você vai descobrir por que sua vida está no “Piloto Automático”, que a sua Autoimagem está controlando seus comportamentos, suas atitudes e isso está determinando os resultados da sua vida. E vai saber o que fazer para eliminar padrões antigos e repetitivos.</p>
+        </article>
+        <article class="card">
+          <div class="card-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.337 7.5a3 3 0 0 0 .398 1.375"/><path d="M20.265 7.5a3 3 0 0 1-.398 1.375"/><path d="M6 18a3 3 0 0 1-1.663.5"/><path d="M18 18a3 3 0 0 0 1.663.5"/></svg>
+          </div>
+          <h4>Porque a mudança na vida não acontece, mesmo tentando de tudo.</h4>
+          <p>Você vai entender que as mudanças não acontecem por causa das crenças que você tem sobre si mesma. E vai aprender como adicionar novas crenças alinhadas a sua nova identidade.</p>
+        </article>
+        <article class="card">
+          <div class="card-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+          </div>
+          <h4>O que te faz procrastinar e não ter coragem de tomar decisões</h4>
+          <p>Você vai descobrir o que está por trás dessa procrastinação excessiva e por que você adia o tempo todo as decisões mais importantes da sua vida. E vai aprender de uma vez por todas como agir com coragem e confiança sem depender da aprovação de qualquer pessoa.</p>
+        </article>
+        <article class="card">
+          <div class="card-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+          </div>
+          <h4>O plano a prova de falhas para construir uma nova identidade</h4>
+          <p>Você vai construir o seu plano definitivo, para mudar sua autoimagem, sua identidade, seus comportamentos, ter atitude e coragem nas suas decisões e foco para poder conquistar seus desejos: seja a liberdade/independência financeira, estruturar sua carreira profissional, mudança de cargo, abrir e empreender um novo negócio e se tornar uma mulher de alto valor.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao--escura secao--paraquem secao--defer">
+    <div class="conteudo">
+      <div class="secao-topo">
+        <p class="label">Para quem é este evento</p>
+        <h2>Se você se reconhece em algum destes momentos, <span class="anchor">este lugar é seu</span></h2>
+      </div>
+      <ul class="para-quem para-quem--icones">
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </span>
+          <span>Quer colocar a vida em ordem, com foco e coragem nas decisões</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+          </span>
+          <span>Deseja liberdade financeira e sair do improviso para construir</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </span>
+          <span>Quer crescer na carreira, mudar de cargo ou empreender</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </span>
+          <span>Busca sucesso na vida profissional e pessoal</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          </span>
+          <span>Já tentou mudar mais de uma vez e não conseguiu sustentar</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span>Quer começar e terminar o que se propõe a fazer</span>
+        </li>
+        <li>
+          <span class="para-quem-icone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+          </span>
+          <span>Sabe que tem potencial e quer tornar isso realidade</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao secao--escura-2 secao--bio secao--defer">
+    <div class="conteudo">
+      <div class="bio">
+        <div class="bio-foto">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/imersao-uma-nova-identidade-v2/images/nathalia-bio-480.webp 480w,
+                      /imersao-uma-nova-identidade-v2/images/nathalia-bio.webp 720w,
+                      /imersao-uma-nova-identidade-v2/images/nathalia-bio-960.webp 960w"
+              sizes="(max-width: 900px) 85vw, 420px"
+            />
+            <img
+              src="/imersao-uma-nova-identidade-v2/images/nathalia-bio.webp"
+              alt="Nathalia Monari"
+              width="720"
+              height="1080"
+              sizes="(max-width: 900px) 85vw, 420px"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+            />
+          </picture>
+        </div>
+        <div class="bio-texto">
+          <p class="label">Quem vai te guiar neste evento?</p>
+          <h2><span class="anchor">Nathalia</span> Monari</h2>
+          <p>Nathalia Monari é especialista em neurociência e comportamento humano, formada pela PUC/RS</p>
+          <p>Eu sei o que é viver presa num ciclo de começar com vontade e abandonar, se comparar com todo mundo e sair perdendo e terminar o dia com a sensação de que estava empurrando a vida com a barriga.</p>
+          <p>Tentei vários caminhos, alguns ajudaram um pouco e nenhum resolveu de verdade.</p>
+          <p>O que mudou tudo foi quando eu parei de tentar consertar comportamentos e comecei a reconstruir a autoimagem que eu tinha de mim mesma. A mudança aconteceu de dentro pra fora.</p>
+          <p>Hoje sou empreendedora, já fui professora de yoga e tive uma escola por mais de 10 anos. Estudei comportamento humano na prática e na teoria. E transformei o processo que eu vivi em um método que já ajudou mais de 700 mulheres.</p>
+          <div class="uni-stats">
+            <div class="uni-stat">
+              <strong>+10</strong>
+              <span>anos de prática</span>
+            </div>
+            <div class="uni-stat">
+              <strong>+750</strong>
+              <span>alunas</span>
+            </div>
+            <div class="uni-stat uni-stat--texto">
+              <span>Empreendedora</span>
+            </div>
+            <div class="uni-stat uni-stat--texto">
+              <span>Especialista em Neurociência e Mentalidade</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="conteudo rodape-inner">
+      <p class="hero-marca-nome" style="font-size: 20px;">Uma Nova <span class="anchor">Identidade</span></p>
+      <p>© 2026 Nath Monari · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="/js/uni-v2.js?v=2" defer></script>
+</body>
+</html>

@@ -59,6 +59,56 @@
       "label": "/evoluto-day-vd",
       "file": "evoluto-day-vd/index.html",
       "path": "/evoluto-day-vd"
+    },
+    {
+      "id": "imersao-uma-nova-identidade",
+      "label": "/imersao-uma-nova-identidade",
+      "file": "imersao-uma-nova-identidade/index.html",
+      "path": "/imersao-uma-nova-identidade"
+    },
+    {
+      "id": "uma-nova-identidade",
+      "label": "/uma-nova-identidade",
+      "file": "imersao-uma-nova-identidade/index.html",
+      "path": "/uma-nova-identidade"
+    },
+    {
+      "id": "imersao-uma-nova-identidade-v2",
+      "label": "/imersao-uma-nova-identidade-v2",
+      "file": "imersao-uma-nova-identidade-v2/index.html",
+      "path": "/imersao-uma-nova-identidade-v2"
+    },
+    {
+      "id": "uma-nova-identidade-v2",
+      "label": "/uma-nova-identidade-v2",
+      "file": "imersao-uma-nova-identidade-v2/index.html",
+      "path": "/uma-nova-identidade-v2"
+    },
+    {
+      "id": "imersao-uma-nova-identidade-v2-obrigado",
+      "label": "/imersao-uma-nova-identidade-v2/obrigado",
+      "file": "imersao-uma-nova-identidade-v2/obrigado/index.html",
+      "path": "/imersao-uma-nova-identidade-v2/obrigado"
+    },
+    {
+      "id": "uma-nova-identidade-v2-obrigado",
+      "label": "/uma-nova-identidade-v2/obrigado",
+      "file": "imersao-uma-nova-identidade-v2/obrigado/index.html",
+      "path": "/uma-nova-identidade-v2/obrigado"
+    },
+    {
+      "id": "yt-reconstrua-se",
+      "label": "/yt-reconstrua-se → desafio-10dias (YouTube Bio)",
+      "path": "/yt-reconstrua-se",
+      "redirect": "/desafio-10dias/?src=Rec-Org-YouTube_Bio&utm_campaign=Rec&utm_source=YouTube_Bio&utm_medium=YouTube&utm_content=link&utm_term=Organico",
+      "status": 307
+    },
+    {
+      "id": "ytb-ebook-da",
+      "label": "/ytb-ebook-da → ebook-disciplina-em-acao (YouTube Bio)",
+      "path": "/ytb-ebook-da",
+      "redirect": "/ebook-disciplina-em-acao/?src=ebook-DA-Org-YouTube_Bio&utm_campaign=ebook-DA&utm_source=YouTube_Bio&utm_medium=YouTube&utm_content=link&utm_term=Organico",
+      "status": 307
     }
   ]
 }

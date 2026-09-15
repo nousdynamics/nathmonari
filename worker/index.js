@@ -386,6 +386,20 @@ export default {
     }
 
     const match = findRoute(pages, url.pathname);
+    if (match && match.redirect) {
+      var dest = String(match.redirect);
+      var target;
+      try {
+        target = new URL(dest, url.origin);
+      } catch (e) {
+        target = null;
+      }
+      if (target) {
+        var code = Number(match.status) || 307;
+        if (code !== 301 && code !== 302 && code !== 307 && code !== 308) code = 307;
+        return Response.redirect(target.toString(), code);
+      }
+    }
     if (match && match.file) {
       const res = await fetchAsset(env, request, url.origin, assetPathFor(match.file));
       if (res.ok) return res;
