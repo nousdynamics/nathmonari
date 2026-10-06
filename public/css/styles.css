@@ -781,3 +781,9 @@ body{font-family:var(--font-body);background:var(--branco);color:var(--preto);fo
   .carrossel-btn{width:36px;height:36px;font-size:14px}
   .carrossel-controles{gap:12px;margin-top:16px}
 }
+
+/* CTA do hero: alinhado a borda esquerda do texto.
+   .btn-cta-pill traz margin:0 auto, que centraliza o botao na coluna de 500px;
+   como ele tem max-width 460, isso criava um recuo de 20px contra o titulo. */
+.hero-conteudo .hero-cta{margin:32px auto 0 0;align-self:flex-start}
+@media(max-width:900px){ .hero-conteudo .hero-cta{margin:24px 0 0;align-self:stretch;max-width:100%} }
