@@ -133,14 +133,19 @@ def escopar(css: str, wrapper: str, base_url: str, id_origem: str | None = None)
     css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
     css = _reescrever_urls(css, base_url)
 
-    nomes = set(re.findall(r"@keyframes\s+([\w-]+)", css))
-    for nome in nomes:
-        novo = f"{wrapper}-{nome}"
-        css = re.sub(rf"(@keyframes\s+){re.escape(nome)}(?![\w-])", rf"\g<1>{novo}", css)
-        padrao = rf"(?<![\w-]){re.escape(nome)}(?![\w-])"
+    nomes = sorted(set(re.findall(r"@(?:-webkit-|-moz-)?keyframes\s+([\w-]+)", css)), key=lambda n: (-len(n), n))
+    if nomes:
+        alt = "|".join(re.escape(n) for n in nomes)
+        padrao = rf"(?<![\w-])({alt})(?![\w-])"
+        troca = lambda m: f"{wrapper}-{m.group(1)}"
+        css = re.sub(
+            rf"(@(?:-webkit-|-moz-)?keyframes\s+)({alt})(?![\w-])",
+            lambda m: m.group(1) + wrapper + "-" + m.group(2),
+            css,
+        )
         css = re.sub(
             r"(animation(?:-name)?\s*:)([^;}]*)",
-            lambda m: m.group(1) + re.sub(padrao, novo, m.group(2)),
+            lambda m: m.group(1) + re.sub(padrao, troca, m.group(2)),
             css,
         )
     return _processar(css, wrapper, id_origem, avisos), avisos

@@ -56,3 +56,46 @@ def test_reset_defensivo_cobre_o_que_o_tema_injeta():
     for alvo in ("h1", "h2", "h3", "p", "ul", "li", "a", "button", "img"):
         assert f"#nm-x {alvo}" in css.replace("\n", " ")
     assert "margin:0" in css and "text-decoration:none" in css
+
+
+def test_keyframes_com_nomes_prefixo_um_do_outro_sao_deterministicos():
+    entrada = (
+        "@keyframes girar{from{opacity:0}}"
+        "@keyframes girar-lento{from{opacity:0}}"
+        "@keyframes girar-rapido{from{opacity:0}}"
+        ".a{animation:girar 1s,girar-lento 2s,girar-rapido 3s}"
+    )
+    css, _ = escopar(entrada, "nm-x", BASE)
+    assert "@keyframes nm-x-girar{" in css
+    assert "@keyframes nm-x-girar-lento{" in css
+    assert "@keyframes nm-x-girar-rapido{" in css
+    assert "animation:nm-x-girar 1s,nm-x-girar-lento 2s,nm-x-girar-rapido 3s" in css
+    assert "nm-x-nm-x" not in css
+    assert escopar(entrada, "nm-x", BASE)[0] == css
+
+
+def test_keyframes_com_prefixo_de_fabricante():
+    entrada = (
+        "@-webkit-keyframes pulsar{from{opacity:0}}@keyframes pulsar{from{opacity:0}}"
+        ".a{-webkit-animation:pulsar 1s;animation:pulsar 1s}"
+    )
+    css, _ = escopar(entrada, "nm-x", BASE)
+    assert "@-webkit-keyframes nm-x-pulsar{" in css
+    assert "@keyframes nm-x-pulsar{" in css
+    assert "-webkit-animation:nm-x-pulsar 1s" in css
+    assert "animation:nm-x-pulsar 1s" in css
+
+
+def test_keyframes_nao_prefixa_from_to_percentual():
+    css, _ = escopar("@keyframes g{from{opacity:0}50%{opacity:.5}to{opacity:1}}", "nm-x", BASE)
+    assert css == "@keyframes nm-x-g{from{opacity:0}50%{opacity:.5}to{opacity:1}}"
+
+
+def test_font_face_sai_intacto():
+    css, _ = escopar("@font-face{font-family:X;src:url(a.woff2)}", "nm-x", "https://ev.nathmonari.com.br/fonts/")
+    assert css == "@font-face{font-family:X;src:url(https://ev.nathmonari.com.br/fonts/a.woff2)}"
+
+
+def test_media_com_duas_regras_prefixa_as_duas():
+    css, _ = escopar("@media(max-width:768px){.a{color:red}.b{color:blue}}", "nm-x", BASE)
+    assert css == "@media(max-width:768px){#nm-x .a{color:red}#nm-x .b{color:blue}}"
