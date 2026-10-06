@@ -7,19 +7,36 @@ Gerado por `python scripts/elementor/conversor.py`. Não edite estes arquivos à
 mão: a próxima geração sobrescreve. Mudou algo? Mude a origem em `public/` ou o
 conversor, e gere de novo.
 
-## Os arquivos
+## Onde está cada página
 
-| Arquivo | Página de origem | URL sugerida no WordPress | Tamanho |
-| --- | --- | --- | --- |
-| `evoluto-day-va.html` | evoluto-day-va | `/evoluto-day-va` | 65 KB |
-| `evoluto-day-vb.html` | evoluto-day-vb | `/evoluto-day-vb` | 65 KB |
-| `evoluto-day-vc.html` | evoluto-day-vc | `/evoluto-day-vc` | 65 KB |
-| `evoluto-day-vd.html` | evoluto-day-vd | `/evoluto-day-vd` | 62 KB |
-| `vendas-evoluto-v1.html` | vendas-evoluto-v1 | `/vendas-evoluto-v1` | 204 KB |
-| `vendas-evoluto-2-0.html` | vendas-evoluto-2-0 | `/vendas-evoluto-2-0` | 204 KB |
-| `vendas-evoluto-v3.html` | vendas-evoluto-v3 | `/vendas-evoluto-v3` | 175 KB |
-| `vendas-rc-v3.html` | vendas-rc-v3 | `/reconstrua-se` | 87 KB |
-| `vendas-rc-v3-vsl.html` | vendas-rc-v3-vsl | `/reconstrua-se/vsl` | 91 KB |
+```text
+dist/elementor/
+├── evoluto-day/          Evoluto Day — as 4 variantes de teste
+│   ├── va.html           65 KB
+│   ├── vb.html           65 KB
+│   ├── vc.html           65 KB
+│   └── vd.html           62 KB
+├── evoluto/              Evoluto — página de vendas, 3 versões
+│   ├── v1.html          205 KB
+│   ├── v2.html          205 KB   (era "vendas-evoluto-2-0")
+│   └── v3.html          176 KB   (a da copy reescrita)
+├── reconstrua-se/        Reconstrua-se — página de vendas
+│   ├── sem-vsl.html      88 KB
+│   └── com-vsl.html      92 KB
+└── _screens/             screenshots da verificação (fora do git)
+```
+
+| Arquivo | Origem em `public/` | URL sugerida no WordPress |
+| --- | --- | --- |
+| `evoluto-day/va.html` | `evoluto-day-va/index.html` | `/evoluto-day-va` |
+| `evoluto-day/vb.html` | `evoluto-day-vb/index.html` | `/evoluto-day-vb` |
+| `evoluto-day/vc.html` | `evoluto-day-vc/index.html` | `/evoluto-day-vc` |
+| `evoluto-day/vd.html` | `evoluto-day-vd/index.html` | `/evoluto-day-vd` |
+| `evoluto/v1.html` | `vendas-evoluto-v1/index.html` | `/vendas-evoluto-v1` |
+| `evoluto/v2.html` | `vendas-evoluto-2-0/index.html` | `/vendas-evoluto-2-0` |
+| `evoluto/v3.html` | `vendas-evoluto-v3/index.html` | `/vendas-evoluto-v3` |
+| `reconstrua-se/sem-vsl.html` | `vendas-rc-v3.html` | `/reconstrua-se` |
+| `reconstrua-se/com-vsl.html` | `vendas-rc-v3-vsl.html` | `/reconstrua-se/vsl` |
 
 ## Como colar, em cada página
 
