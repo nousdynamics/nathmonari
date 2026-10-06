@@ -863,3 +863,16 @@ p  { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Abertura: texto em coluna, foto ao lado acompanhando a leitura.
+   Os <p> sao filhos diretos de .abertura-inner, entao a figura ocupa a
+   coluna 2 em todas as linhas e o texto cai sozinho na coluna 1. */
+.abertura-inner{max-width:1060px;display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:clamp(32px,5vw,56px);align-items:start;align-content:start}
+.abertura-inner > p{grid-column:1;margin-left:0;margin-right:0;max-width:none}
+.abertura-figura{grid-column:2;grid-row:1 / span 99;position:sticky;top:32px;margin:0}
+.abertura-figura img{width:100%;height:auto;display:block;border-radius:14px;object-fit:cover;aspect-ratio:9/13}
+@media(max-width:900px){
+  .abertura-inner{max-width:720px;grid-template-columns:1fr}
+  .abertura-inner > p{grid-column:1}
+  .abertura-figura{grid-column:1;grid-row:1;position:static;margin:0 auto 28px;max-width:320px}
+}
