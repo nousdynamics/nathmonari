@@ -47,9 +47,15 @@ pnpm-debug.log*
 # Artefatos de extração — referência local, não vão pro deploy/push
 raw/
 scripts/
+!scripts/elementor/
+!scripts/elementor/**
 
 # Mockups locais do companion visual
 .superpowers/
 docs/cloudflare-access.md
 .dev.vars.example
 .dev.vars.example
+
+# saida de verificacao dos blocos do Elementor (screenshots, 22 MB)
+dist/elementor/_screens/
+__pycache__/

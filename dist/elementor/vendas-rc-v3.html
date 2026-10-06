@@ -1,0 +1,838 @@
+<style>
+#nm-vendas-rc-v3,#nm-vendas-rc-v3 *{box-sizing:border-box}#nm-vendas-rc-v3 h1,#nm-vendas-rc-v3 h2,#nm-vendas-rc-v3 h3,#nm-vendas-rc-v3 h4,#nm-vendas-rc-v3 h5,#nm-vendas-rc-v3 h6,#nm-vendas-rc-v3 p,#nm-vendas-rc-v3 ul,#nm-vendas-rc-v3 ol,#nm-vendas-rc-v3 li,#nm-vendas-rc-v3 figure,#nm-vendas-rc-v3 blockquote{margin:0;padding:0;font:inherit;color:inherit;letter-spacing:inherit}#nm-vendas-rc-v3 ul,#nm-vendas-rc-v3 ol{list-style:none}#nm-vendas-rc-v3 a{color:inherit;text-decoration:none}#nm-vendas-rc-v3 img,#nm-vendas-rc-v3 svg,#nm-vendas-rc-v3 iframe{max-width:100%;display:block;border:0}#nm-vendas-rc-v3 button,#nm-vendas-rc-v3 input,#nm-vendas-rc-v3 select{font:inherit;color:inherit;margin:0}
+@font-face{
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://ev.nathmonari.com.br/fonts/-nFhOHM81r4j6k0gjAW3mujVU2B2G_VB0PD2.woff2) format('woff2');
+}@font-face{
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://ev.nathmonari.com.br/fonts/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0g.woff2) format('woff2');
+}@font-face{
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://ev.nathmonari.com.br/fonts/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2) format('woff2');
+}@font-face{
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://ev.nathmonari.com.br/fonts/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2');
+}@font-face{
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://ev.nathmonari.com.br/fonts/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2');
+}
+#nm-vendas-rc-v3 *,#nm-vendas-rc-v3 *::before,#nm-vendas-rc-v3 *::after{box-sizing:border-box;margin:0;padding:0}#nm-vendas-rc-v3{
+  
+  --ouro:#C9A84C;--ouro-claro:#E8C97A;--ouro-escuro:#8B6914;
+  --preto:#1A1208;--preto-card:#1F1A0D;
+  --off-white:#F5F2EC;--areia:#E8E4DC;--branco:#FFFFFF;
+  --texto-sec:#3A3225;--texto-ter:#4A4032;
+  --label-light:#6B5310; 
+  --on-dark:#EDE4D6;--on-dark-muted:#E2D4C2;--on-dark-faint:#CDBBA5;
+  --verde-cta:#2ECC71;--vermelho:#E53935;
+  --linha:rgba(201,168,76,0.12);  
+
+  
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-sec:"Libre Baskerville",Georgia,serif;
+  --font-body:"Outfit",sans-serif;
+  --fw-extralight:200;--fw-light:300;--fw-regular:400;--fw-medium:500;--fw-bold:700;
+
+  
+  --fs-hero:clamp(26px,2.8vw,44px);   
+  --fs-h2:clamp(28px,3vw,42px);       
+  --fs-h2-sm:clamp(26px,2.4vw,36px);  
+  --fs-h3:clamp(18px,1.6vw,24px);     
+  --fs-h4:15px;                       
+  --fs-eyebrow:12px;                  
+  --fs-lead:clamp(16px,1.2vw,18px);   
+  --fs-body:16px;                     
+  --fs-body-sm:14px;                  
+  --fs-small:14px;
+  --fs-xs:11px;
+  --fs-min:14px;
+
+  --lh-tight:1.1;--lh-snug:1.4;--lh-body:1.7;--lh-loose:1.85;
+  --ls-tight:-0.02em;--ls-eyebrow:0.14em;--ls-wide:0.2em;
+
+  
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;
+  --sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-14:56px;--sp-16:64px;--sp-18:72px;--sp-20:80px;
+  --sp-section:clamp(64px,8vw,100px); 
+
+  
+  --conteudo:1160px;  
+  --gutter:24px;
+  --radius:2px;
+  --hair:0.5px;
+  --ease-out:cubic-bezier(.22,.61,.36,1);
+  --motion-fast:260ms;
+  --motion-base:620ms;
+}#nm-vendas-rc-v3{scroll-behavior:smooth;overflow-x:clip}#nm-vendas-rc-v3{font-family:var(--font-body);background:var(--branco);color:var(--preto);font-weight:400;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%;text-wrap:balance}#nm-vendas-rc-v3 .reveal{--reveal-x:0;--reveal-y:24px;--reveal-delay:0ms;opacity:0;transform:translate3d(var(--reveal-x),var(--reveal-y),0);transition:opacity var(--motion-base) var(--ease-out),transform var(--motion-base) var(--ease-out);transition-delay:var(--reveal-delay)}#nm-vendas-rc-v3 .reveal--left{--reveal-x:-32px;--reveal-y:0}#nm-vendas-rc-v3 .reveal--right{--reveal-x:32px;--reveal-y:0}#nm-vendas-rc-v3 .reveal.in{opacity:1;transform:translate3d(0,0,0)}@keyframes nm-vendas-rc-v3-hero-enter{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:translate3d(0,0,0)}}#nm-vendas-rc-v3 .hero .hero-logo,#nm-vendas-rc-v3 .hero h1,#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hero-corpo,#nm-vendas-rc-v3 .hero .btn-cta-wrap,#nm-vendas-rc-v3 .hero-vsl .hero-logo,#nm-vendas-rc-v3 .hvsl-pre,#nm-vendas-rc-v3 .hvsl-h1,#nm-vendas-rc-v3 .hvsl-h2,#nm-vendas-rc-v3 .hvsl-vsl,#nm-vendas-rc-v3 .hvsl-nota,#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{animation:nm-vendas-rc-v3-hero-enter var(--motion-base) var(--ease-out) both}#nm-vendas-rc-v3 .hero h1,#nm-vendas-rc-v3 .hvsl-pre{animation-delay:70ms}#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hvsl-h1{animation-delay:140ms}#nm-vendas-rc-v3 .hero-corpo,#nm-vendas-rc-v3 .hvsl-h2{animation-delay:210ms}#nm-vendas-rc-v3 .hero .btn-cta-wrap,#nm-vendas-rc-v3 .hvsl-vsl{animation-delay:280ms}#nm-vendas-rc-v3 .hvsl-nota{animation-delay:350ms}#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{animation-delay:420ms}#nm-vendas-rc-v3 #preco{scroll-margin-top:76px}@media(prefers-reduced-motion:reduce){#nm-vendas-rc-v3{scroll-behavior:auto}#nm-vendas-rc-v3 .reveal,#nm-vendas-rc-v3 .reveal.in{opacity:1;transform:none;transition:none}#nm-vendas-rc-v3 .hero .hero-logo,#nm-vendas-rc-v3 .hero h1,#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hero-corpo,#nm-vendas-rc-v3 .hero .btn-cta-wrap,#nm-vendas-rc-v3 .hero-vsl .hero-logo,#nm-vendas-rc-v3 .hvsl-pre,#nm-vendas-rc-v3 .hvsl-h1,#nm-vendas-rc-v3 .hvsl-h2,#nm-vendas-rc-v3 .hvsl-vsl,#nm-vendas-rc-v3 .hvsl-nota,#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{animation:none}#nm-vendas-rc-v3 .btn-cta,#nm-vendas-rc-v3 .btn-cta-icon svg,#nm-vendas-rc-v3 .carrossel-track{transition:none!important}}#nm-vendas-rc-v3 .bracket{height:0;position:relative;z-index:6;display:flex;justify-content:center;align-items:flex-start;pointer-events:none}#nm-vendas-rc-v3 .bracket img{display:block;width:110px;height:auto;margin-top:-25px}#nm-vendas-rc-v3 .historia-seta svg{width:16px;height:16px;display:block}#nm-vendas-rc-v3 .para-quem-item-check svg,#nm-vendas-rc-v3 .para-quem-item-x svg{width:15px;height:15px;display:block}#nm-vendas-rc-v3 .carrossel-btn svg{width:20px;height:20px;display:block}#nm-vendas-rc-v3 .bonus-ic{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin:0 auto 14px;border-radius:50%;border:0.5px solid rgba(201,168,76,0.4);background:rgba(201,168,76,0.08);color:var(--ouro)}#nm-vendas-rc-v3 .bonus-ic svg{width:23px;height:23px;display:block}#nm-vendas-rc-v3 .info-ic{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:0.5px solid rgba(201,168,76,0.35);background:rgba(201,168,76,0.08);color:var(--ouro)}#nm-vendas-rc-v3 .info-ic svg{width:18px;height:18px;display:block}#nm-vendas-rc-v3 .info-ic--md{width:40px;height:40px}#nm-vendas-rc-v3 .info-ic--md svg{width:20px;height:20px}#nm-vendas-rc-v3 .identificacao .info-ic,#nm-vendas-rc-v3 .mecanismo .info-ic,#nm-vendas-rc-v3 .modulo-card .info-ic,#nm-vendas-rc-v3 .stack .info-ic,#nm-vendas-rc-v3 .futuro .info-ic{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.1)}#nm-vendas-rc-v3 .reframe-ponto .info-ic,#nm-vendas-rc-v3 .objecao-item .info-ic,#nm-vendas-rc-v3 .dia-item .info-ic{border-color:rgba(201,168,76,0.45);background:rgba(201,168,76,0.06);color:var(--ouro-escuro)}#nm-vendas-rc-v3 .modulo-card .info-ic{margin-bottom:4px}#nm-vendas-rc-v3 .mecanismo-item .info-ic{margin-bottom:4px}#nm-vendas-rc-v3 .reframe-ponto{align-items:flex-start}#nm-vendas-rc-v3 .objecao-item{align-items:flex-start}#nm-vendas-rc-v3 .futuro-cenario{align-items:flex-start}#nm-vendas-rc-v3 .dia-item{align-items:flex-start}#nm-vendas-rc-v3 .dia-marca{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex-shrink:0;gap:2px;min-width:76px;padding:4px 24px 4px 8px;margin-right:2px;border-right:0.5px solid rgba(201,168,76,0.38)}#nm-vendas-rc-v3 .dia-rotulo{font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ouro-escuro);line-height:1.2}#nm-vendas-rc-v3 .dia-indice{font-family:var(--font-display);font-size:clamp(40px,5.2vw,52px);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.04em;font-variant-numeric:tabular-nums}#nm-vendas-rc-v3 .barra-topo{background:var(--preto);padding:13px 24px;text-align:center;position:sticky;top:0;z-index:100}#nm-vendas-rc-v3 .barra-topo p{font-family:var(--font-body);font-size:12px;font-weight:400;letter-spacing:0.12em;color:var(--on-dark-muted);text-transform:uppercase}#nm-vendas-rc-v3 .barra-topo strong{font-weight:500;color:var(--branco)}#nm-vendas-rc-v3 .hero,#nm-vendas-rc-v3 .hero-vsl{
+  position:relative;
+  isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(245,242,236,.18) 0%,rgba(245,242,236,.08) 48%,rgba(245,242,236,.14) 100%),
+    url("https://ev.nathmonari.com.br/images/bg-hero-reconstrua-se-v2.webp") center top/cover no-repeat,
+    var(--off-white);
+}#nm-vendas-rc-v3 .hero{height:720px;overflow:hidden}#nm-vendas-rc-v3 .hero-vsl{height:auto;min-height:720px;overflow:visible}#nm-vendas-rc-v3 .hero::after,#nm-vendas-rc-v3 .hero-vsl::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:30%;
+  z-index:-1;
+  background:linear-gradient(180deg,transparent,var(--off-white));
+  pointer-events:none;
+}#nm-vendas-rc-v3 .hero{display:flex;align-items:center}#nm-vendas-rc-v3 .hero-conteudo,#nm-vendas-rc-v3 .hvsl-copy{
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  z-index:2;
+  padding-right:0;
+}#nm-vendas-rc-v3 .hero-conteudo{
+  width:min(100%,500px);
+  height:720px;
+  justify-content:center;
+  padding-block:64px;
+}#nm-vendas-rc-v3 .hero-pre{display:flex;align-items:center;gap:16px;margin-bottom:20px;max-width:520px}#nm-vendas-rc-v3 .hero-pre-linha{width:40px;height:0.5px;background:var(--ouro);flex:0 0 auto}#nm-vendas-rc-v3 .hero-pre-texto{font-family:var(--font-sec);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--label-light);line-height:1.45}#nm-vendas-rc-v3 .hero h1,#nm-vendas-rc-v3 .hvsl-h1{font-family:var(--font-display);font-size:40px;font-weight:400;color:var(--preto);line-height:1.04;letter-spacing:0;margin-bottom:24px;max-width:600px}#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hvsl-h2{font-family:var(--font-body);font-size:20px;font-weight:400;font-style:normal;color:var(--texto-sec);line-height:1.5;margin-bottom:24px;max-width:540px}#nm-vendas-rc-v3 .hero-corpo{font-size:17px;font-weight:400;color:var(--texto-sec);line-height:1.75;max-width:560px;margin-bottom:28px}#nm-vendas-rc-v3 .btn-cta{display:inline-grid;grid-template-columns:minmax(0,1fr) 44px;align-items:stretch;background:linear-gradient(180deg,#3fe084 0%,var(--verde-cta) 100%);color:var(--branco);font-family:var(--font-body);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border-radius:2px;overflow:hidden;cursor:pointer;border:none;box-shadow:0 12px 30px -12px rgba(46,204,113,0.55);transition:transform .25s ease,box-shadow .25s ease}#nm-vendas-rc-v3 .btn-cta-text{display:flex;align-items:center;justify-content:center;padding:15px 24px}#nm-vendas-rc-v3 .btn-cta-icon{display:flex;align-items:center;justify-content:center;border-left:1px solid rgba(255,255,255,.36)}#nm-vendas-rc-v3 .btn-cta-icon svg{width:18px;height:18px;display:block;transition:transform .25s ease}#nm-vendas-rc-v3 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 18px 42px -12px rgba(46,204,113,0.7)}#nm-vendas-rc-v3 .btn-cta:hover .btn-cta-icon svg{transform:translateX(2px)}#nm-vendas-rc-v3 .btn-cta:focus-visible{outline:2px solid var(--ouro);outline-offset:4px}#nm-vendas-rc-v3 .btn-cta-wrap{display:flex;flex-direction:column;gap:12px;align-items:flex-start}#nm-vendas-rc-v3 .section-cta{width:100%;display:flex;justify-content:center;margin-top:48px}#nm-vendas-rc-v3 .section-cta--grid{grid-column:1/-1}#nm-vendas-rc-v3 .section-cta .btn-cta{width:min(100%,430px)}#nm-vendas-rc-v3 .hero-garantia{font-size:11px;font-weight:400;color:var(--texto-sec);letter-spacing:0.04em}#nm-vendas-rc-v3 .hero-foto{display:none}#nm-vendas-rc-v3 .hero-mobile-img{display:none;width:100%;max-width:100%;height:auto;vertical-align:top}#nm-vendas-rc-v3 .prova-abertura{background:var(--branco);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .prova-abertura .secao-header{flex-direction:column;align-items:center;text-align:center;gap:12px}#nm-vendas-rc-v3 .prova-abertura .secao-header h3{
+  white-space:normal;
+  text-align:center;
+  font-family:var(--font-display);
+  font-size:var(--fs-h2-sm);
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}#nm-vendas-rc-v3 .prova-abertura .secao-header-linha{width:min(100%,120px);flex:none}#nm-vendas-rc-v3 .prova-abertura .carrossel{margin-inline:auto}#nm-vendas-rc-v3 .prova-abertura .carrossel-slide img{margin-inline:auto}#nm-vendas-rc-v3 .secao-header{display:flex;align-items:center;gap:20px;margin-bottom:48px}#nm-vendas-rc-v3 .secao-header h3{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);white-space:nowrap;line-height:1.1;letter-spacing:-0.02em}#nm-vendas-rc-v3 .secao-header-linha{flex:1;height:0.5px;background:var(--areia)}#nm-vendas-rc-v3 .identificacao{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}#nm-vendas-rc-v3 .secao-label{font-family:var(--font-sec);font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--label-light);margin-bottom:24px;display:block}#nm-vendas-rc-v3 .identificacao .secao-label,#nm-vendas-rc-v3 .mecanismo .secao-label,#nm-vendas-rc-v3 .modulos .secao-label,#nm-vendas-rc-v3 .stack .secao-label,#nm-vendas-rc-v3 .futuro .secao-label,#nm-vendas-rc-v3 .garantia .secao-label,#nm-vendas-rc-v3 .bonus-shell .secao-label{color:var(--ouro)}#nm-vendas-rc-v3 .identificacao h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.02em;margin-bottom:24px}#nm-vendas-rc-v3 .identificacao-intro{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8;margin-bottom:0}#nm-vendas-rc-v3 .identificacao-lista{list-style:none}#nm-vendas-rc-v3 .identificacao-item{padding:24px 0;border-bottom:0.5px solid rgba(201,168,76,0.12);display:flex;gap:20px;align-items:flex-start}#nm-vendas-rc-v3 .identificacao-item:first-child{border-top:0.5px solid rgba(201,168,76,0.12)}#nm-vendas-rc-v3 .identificacao-item-num{display:none}#nm-vendas-rc-v3 .identificacao-item-texto{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.7}#nm-vendas-rc-v3 .identificacao-corpo{display:flex;flex-direction:column;gap:16px;margin-top:8px}#nm-vendas-rc-v3 .identificacao-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.5}#nm-vendas-rc-v3 .identificacao-lista-titulo{display:block;font-family:var(--font-sec);font-size:var(--fs-body);font-weight:700;color:var(--ouro);line-height:1.4;margin-bottom:16px}#nm-vendas-rc-v3 .mecanismo-fecho{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:48px auto 0;text-align:center}#nm-vendas-rc-v3 .mecanismo-fecho p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.5}#nm-vendas-rc-v3 .mecanismo-fecho strong{font-weight:500;color:var(--ouro)}#nm-vendas-rc-v3 .agitacao{background:var(--off-white);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .agitacao-inner{max-width:720px;margin:0 auto;text-align:center}#nm-vendas-rc-v3 .agitacao-inner p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.75;margin-bottom:20px}#nm-vendas-rc-v3 .agitacao-quote{font-family:var(--font-display);font-size:clamp(22px,2.5vw,32px);font-style:italic;color:var(--preto);text-align:center;padding:40px 0;border-top:0.5px solid var(--ouro);border-bottom:0.5px solid var(--ouro);margin:32px 0}#nm-vendas-rc-v3 .reframe{background:var(--branco);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}#nm-vendas-rc-v3 .reframe:has(> .reframe-esq:only-child){grid-template-columns:1fr;max-width:768px;margin-inline:auto;padding-inline:var(--gutter)}#nm-vendas-rc-v3 .reframe-esq{border-left:1.5px solid var(--ouro);padding-left:40px}#nm-vendas-rc-v3 .reframe h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:28px}#nm-vendas-rc-v3 .reframe-corpo{display:flex;flex-direction:column;gap:18px}#nm-vendas-rc-v3 .reframe-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.85}#nm-vendas-rc-v3 .reframe-dir{background:var(--off-white);border-radius:2px;padding:48px 40px;display:flex;flex-direction:column;gap:24px}#nm-vendas-rc-v3 .reframe-destaque{font-family:var(--font-display);font-size:20px;font-style:italic;color:var(--preto);line-height:1.5;padding-bottom:24px;border-bottom:0.5px solid var(--areia)}#nm-vendas-rc-v3 .reframe-ponto{display:flex;gap:16px;align-items:flex-start}#nm-vendas-rc-v3 .reframe-ponto-dot{display:none}#nm-vendas-rc-v3 .reframe-ponto-texto{font-size:16px;font-weight:400;color:var(--texto-sec);line-height:1.7}#nm-vendas-rc-v3 .historia{background:var(--areia);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 0.82fr;gap:72px;align-items:center}#nm-vendas-rc-v3 .historia-texto{display:flex;flex-direction:column;min-width:0}#nm-vendas-rc-v3 .historia-headline{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}#nm-vendas-rc-v3 .historia-descricao{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.5;margin-bottom:16px}#nm-vendas-rc-v3 .historia-corpo{display:flex;flex-direction:column;gap:14px}#nm-vendas-rc-v3 .historia-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8}#nm-vendas-rc-v3 .historia-lista{list-style:none;margin-top:28px;border-top:0.5px solid rgba(201,168,76,0.28)}#nm-vendas-rc-v3 .historia-lista li{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:0.5px solid rgba(201,168,76,0.28)}#nm-vendas-rc-v3 .historia-seta{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:0.5px solid var(--ouro);color:var(--ouro);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1}#nm-vendas-rc-v3 .historia-lista li span:last-child{font-size:var(--fs-body-sm);font-weight:500;color:var(--texto-sec);line-height:1.4}#nm-vendas-rc-v3 .historia-story{width:100%;max-width:400px;justify-self:center}#nm-vendas-rc-v3 .historia-story img{width:100%;height:auto;display:block}#nm-vendas-rc-v3 .historia-story-mobile{display:none}#nm-vendas-rc-v3 .mecanismo{background:var(--preto);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .mecanismo-header{text-align:center;max-width:760px;margin:0 auto 56px}#nm-vendas-rc-v3 .mecanismo-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--ouro);line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}#nm-vendas-rc-v3 .mecanismo-subheadline{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px}#nm-vendas-rc-v3 .mecanismo-header p:not(.mecanismo-subheadline){font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8;margin-bottom:12px}#nm-vendas-rc-v3 .mecanismo-header p:not(.mecanismo-subheadline):last-of-type{margin-bottom:0}#nm-vendas-rc-v3 .mecanismo .dias-grid{max-width:var(--conteudo);margin:0 auto}#nm-vendas-rc-v3 .mecanismo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.1)}#nm-vendas-rc-v3 .mecanismo-item{background:var(--preto);padding:40px 32px;display:flex;flex-direction:column;gap:16px}#nm-vendas-rc-v3 .mecanismo-item-num{display:none}#nm-vendas-rc-v3 .mecanismo-item h3{font-family:var(--font-sec);font-size:15px;font-weight:700;color:var(--off-white);line-height:1.3}#nm-vendas-rc-v3 .mecanismo-item p{font-size:var(--fs-body);font-weight:400;color:var(--on-dark);line-height:1.7}#nm-vendas-rc-v3 .dias-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--areia)}#nm-vendas-rc-v3 .dia-item{background:var(--branco);padding:32px 32px 32px 28px;display:flex;gap:20px;align-items:flex-start}#nm-vendas-rc-v3 .dia-conteudo{min-width:0;padding-top:2px}#nm-vendas-rc-v3 .dia-conteudo h4{font-family:var(--font-sec);font-size:14px;font-weight:700;color:var(--preto);margin-bottom:8px;line-height:1.35}#nm-vendas-rc-v3 .dia-conteudo p{font-size:var(--fs-body);font-weight:400;color:var(--texto-sec);line-height:1.7}#nm-vendas-rc-v3 .modulos{background:var(--preto);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .modulos-header{text-align:center;margin-bottom:56px}#nm-vendas-rc-v3 .modulos-header h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}#nm-vendas-rc-v3 .modulos-header p{font-size:16px;font-weight:400;color:var(--on-dark)}#nm-vendas-rc-v3 .modulos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto}#nm-vendas-rc-v3 .modulo-card{background:var(--preto-card);border-radius:2px;padding:40px 32px;border-top:1.5px solid rgba(201,168,76,0.3);display:flex;flex-direction:column;gap:8px}#nm-vendas-rc-v3 .modulo-card-label{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--ouro-escuro)}#nm-vendas-rc-v3 .modulo-card h4{font-family:var(--font-body);font-size:18px;font-weight:500;letter-spacing:0.04em;color:var(--ouro);line-height:1.4}#nm-vendas-rc-v3 .modulo-card p{font-size:16px;font-weight:400;color:var(--on-dark);line-height:1.7}#nm-vendas-rc-v3 .bonus{background:var(--areia);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .bonus-shell{background:var(--preto);border-radius:2px;padding:clamp(32px,5vw,58px);box-shadow:0 30px 70px -45px rgba(0,0,0,.8)}#nm-vendas-rc-v3 .bonus-header{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:end;text-align:left;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(201,168,76,.22)}#nm-vendas-rc-v3 .bonus-header h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin:0}#nm-vendas-rc-v3 .bonus-header p{font-size:16px;font-weight:400;color:var(--on-dark);line-height:1.7}#nm-vendas-rc-v3 .bonus-list{display:flex;flex-direction:column}#nm-vendas-rc-v3 .bonus-row{display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.09)}#nm-vendas-rc-v3 .bonus-row:last-child{border-bottom:0}#nm-vendas-rc-v3 .bonus-row-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px}#nm-vendas-rc-v3 .bonus-item-label{font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro);flex-shrink:0}#nm-vendas-rc-v3 .bonus-row-info h4{font-family:var(--font-sec);font-size:18px;font-weight:700;color:var(--off-white);line-height:1.35;margin:0}#nm-vendas-rc-v3 .bonus-row-descricao{font-size:16px;font-weight:400;color:var(--on-dark-muted);line-height:1.65}#nm-vendas-rc-v3 .prova-densa{background:var(--branco);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .prova-densa-header{text-align:center;margin-bottom:64px}#nm-vendas-rc-v3 .prova-densa-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}#nm-vendas-rc-v3 .prova-densa-header p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec)}#nm-vendas-rc-v3 .stack{background:var(--preto);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .stack-header{text-align:center;max-width:600px;margin:0 auto 48px}#nm-vendas-rc-v3 .stack-header h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--off-white);line-height:1.1;letter-spacing:-0.02em;margin:0}#nm-vendas-rc-v3 .stack-produto-nome{font-family:var(--font-display);font-size:var(--fs-h3);font-style:italic;font-weight:400;color:var(--off-white);margin-bottom:8px}#nm-vendas-rc-v3 .stack-grupo-label{font-family:var(--font-sec);font-size:var(--fs-body-sm);font-weight:700;color:var(--off-white);padding:20px 0 8px;border-top:0.5px solid rgba(201,168,76,0.1)}#nm-vendas-rc-v3 .stack-lista{max-width:680px;margin:0 auto 40px;display:flex;flex-direction:column}#nm-vendas-rc-v3 .stack-item{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:0.5px solid rgba(201,168,76,0.1)}#nm-vendas-rc-v3 .stack-item:first-of-type{border-top:0.5px solid rgba(201,168,76,0.1)}#nm-vendas-rc-v3 .stack-item-nome{font-size:var(--fs-body-sm);font-weight:400;color:var(--on-dark);line-height:1.5;min-width:0}#nm-vendas-rc-v3 .stack-item-valor{font-family:var(--font-body);font-size:15px;font-weight:500;color:var(--vermelho);text-decoration:line-through;text-decoration-color:var(--vermelho);white-space:nowrap;flex-shrink:0}#nm-vendas-rc-v3 .stack-item-valor--incluido{font-family:var(--font-display);font-weight:400;color:var(--ouro);text-decoration:none}#nm-vendas-rc-v3 .stack-total{max-width:680px;margin:0 auto;background:var(--preto-card);border-radius:2px;padding:22px 28px;border:0.5px solid rgba(201,168,76,0.2);display:flex;justify-content:space-between;align-items:baseline;gap:16px}#nm-vendas-rc-v3 .stack-total-label{font-family:var(--font-body);font-size:var(--fs-min);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-dark-muted);flex-shrink:0}#nm-vendas-rc-v3 .stack-total-valor{font-family:var(--font-body);font-size:clamp(22px,4.2vw,32px);font-weight:500;color:var(--ouro);line-height:1.1;white-space:nowrap;flex-shrink:0;-webkit-text-fill-color:currentColor}#nm-vendas-rc-v3 .para-quem{background:var(--off-white);padding:var(--sp-section) 0;display:grid;grid-template-columns:1fr 1fr;gap:80px}#nm-vendas-rc-v3 .para-quem h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:32px}#nm-vendas-rc-v3 .para-quem-lista{list-style:none;display:flex;flex-direction:column}#nm-vendas-rc-v3 .para-quem-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:0.5px solid var(--areia)}#nm-vendas-rc-v3 .para-quem-item:first-child{border-top:0.5px solid var(--areia)}#nm-vendas-rc-v3 .para-quem-item-check,#nm-vendas-rc-v3 .para-quem-item-x{flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:0.5px solid rgba(201,168,76,0.35);background:rgba(201,168,76,0.08);color:var(--ouro);font-weight:700;line-height:1}#nm-vendas-rc-v3 .para-quem-item-x{color:var(--texto-ter);border-color:rgba(74,64,50,0.25);background:rgba(74,64,50,0.06)}#nm-vendas-rc-v3 .para-quem-item p{font-size:var(--fs-body-sm);font-weight:400;color:var(--texto-sec);line-height:1.65}#nm-vendas-rc-v3 .objecao{background:var(--branco);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .objecao-inner{max-width:720px;margin:0 auto}#nm-vendas-rc-v3 .objecao h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:32px}#nm-vendas-rc-v3 .objecao-corpo{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.75;display:flex;flex-direction:column;gap:18px;margin-bottom:48px}#nm-vendas-rc-v3 .objecao-itens{display:flex;flex-direction:column;gap:20px}#nm-vendas-rc-v3 .objecao-item{display:flex;gap:20px;align-items:flex-start;padding:24px;background:var(--off-white);border-radius:2px;border-left:2px solid var(--ouro)}#nm-vendas-rc-v3 .objecao-item-num{display:none}#nm-vendas-rc-v3 .objecao-item-conteudo h4{font-family:var(--font-sec);font-size:var(--fs-min);font-weight:700;color:var(--preto);margin-bottom:8px}#nm-vendas-rc-v3 .objecao-item-conteudo p{font-size:var(--fs-body-sm);font-weight:400;color:var(--texto-sec);line-height:1.65}#nm-vendas-rc-v3 .futuro{background:var(--preto);padding:var(--sp-section) 0;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}#nm-vendas-rc-v3 .futuro-img-wrap{position:relative}#nm-vendas-rc-v3 .futuro-img{width:100%;height:auto;display:block}#nm-vendas-rc-v3 .futuro-inner{max-width:none;margin:0}#nm-vendas-rc-v3 .futuro h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.12;letter-spacing:-0.02em;margin-bottom:28px}#nm-vendas-rc-v3 .futuro-cenarios{display:flex;flex-direction:column;margin-bottom:32px}#nm-vendas-rc-v3 .futuro-cenario{padding:13px 0;border-bottom:0.5px solid rgba(201,168,76,0.12);display:flex;gap:16px;align-items:flex-start}#nm-vendas-rc-v3 .futuro-cenario:first-child{border-top:0.5px solid rgba(201,168,76,0.12)}#nm-vendas-rc-v3 .futuro-cenario-dot{display:none}#nm-vendas-rc-v3 .futuro-cenario p{font-size:var(--fs-body-sm);font-weight:400;color:var(--on-dark);line-height:1.5}#nm-vendas-rc-v3 .futuro-nota{font-family:var(--font-display);font-size:var(--fs-body);font-style:italic;color:var(--on-dark);line-height:1.6}#nm-vendas-rc-v3 .preco{background:var(--off-white);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .preco-inner{max-width:680px;margin:0 auto;text-align:center}#nm-vendas-rc-v3 .preco-inner h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin:0 0 24px}#nm-vendas-rc-v3 .preco-inner>p{font-size:var(--fs-body-sm);font-weight:400;color:var(--texto-sec);line-height:1.75;margin-bottom:48px}#nm-vendas-rc-v3 .preco-box{position:relative;background:radial-gradient(130% 90% at 50% 0%,#231a0c 0%,var(--preto) 58%);border-radius:4px;padding:clamp(40px,5vw,64px) clamp(24px,4vw,52px);text-align:center;border:0.5px solid rgba(201,168,76,0.28);box-shadow:0 30px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);max-width:100%;box-sizing:border-box}#nm-vendas-rc-v3 .preco-de{display:inline-block;font-family:var(--font-body);font-size:clamp(17px,2.6vw,22px);font-weight:500;color:var(--vermelho);text-decoration:line-through;letter-spacing:0.04em;padding:10px 24px;border-radius:999px;border:0.5px solid rgba(229,57,53,0.4);background:rgba(229,57,53,0.08);margin-bottom:24px}#nm-vendas-rc-v3 .preco-parcela-label{font-family:var(--font-body);font-size:clamp(14px,2vw,16px);font-weight:400;letter-spacing:0.08em;text-transform:lowercase;color:var(--on-dark-muted);margin-bottom:10px}#nm-vendas-rc-v3 .preco-parcela-label strong{font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:var(--on-dark)}#nm-vendas-rc-v3 .preco-parcela-valor{display:flex;align-items:baseline;justify-content:center;gap:8px;line-height:1;margin-bottom:10px}#nm-vendas-rc-v3 .preco-cifrao,#nm-vendas-rc-v3 .preco-cent,#nm-vendas-rc-v3 .preco-num{font-family:var(--font-display);font-weight:400;color:var(--verde-cta);-webkit-text-fill-color:var(--verde-cta)}#nm-vendas-rc-v3 .preco-cifrao,#nm-vendas-rc-v3 .preco-cent{font-size:clamp(22px,3.4vw,36px)}#nm-vendas-rc-v3 .preco-num{font-size:clamp(72px,15vw,132px);line-height:.9}#nm-vendas-rc-v3 .preco-parcela-info{font-size:var(--fs-min);font-weight:400;color:var(--on-dark-muted);margin-bottom:36px}#nm-vendas-rc-v3 .preco-cta{margin-bottom:20px}#nm-vendas-rc-v3 .btn-cta-pill{width:100%;max-width:460px;margin:0 auto}#nm-vendas-rc-v3 .preco-garantia-txt{font-size:var(--fs-min);font-weight:400;color:var(--on-dark-muted);letter-spacing:0.02em;line-height:1.55;margin:0 auto 24px;max-width:36ch}#nm-vendas-rc-v3 .preco-pagamentos{display:block;width:78%;max-width:300px;height:auto;margin:0 auto}#nm-vendas-rc-v3 .garantia{background:var(--preto);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .garantia-inner{max-width:680px;margin:0 auto;text-align:center}#nm-vendas-rc-v3 .garantia-badge{display:block;width:min(260px,72vw);height:auto;margin:0 auto 40px}#nm-vendas-rc-v3 .garantia h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--off-white);line-height:1.2;margin-bottom:24px}#nm-vendas-rc-v3 .garantia-corpo{display:flex;flex-direction:column;gap:16px}#nm-vendas-rc-v3 .garantia-corpo p{font-size:var(--fs-lead);font-weight:400;color:var(--on-dark);line-height:1.8}#nm-vendas-rc-v3 .garantia-ass{margin-top:32px;font-family:var(--font-display);font-size:15px;font-style:italic;color:var(--ouro-claro)}#nm-vendas-rc-v3 .cta-section{background:var(--off-white);padding:var(--sp-section) 0;text-align:center}#nm-vendas-rc-v3 .cta-section-inner{max-width:560px;margin:0 auto}#nm-vendas-rc-v3 .cta-section h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}#nm-vendas-rc-v3 .cta-section p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8;margin-bottom:40px}#nm-vendas-rc-v3 .cta-section-btn{display:flex;flex-direction:column;align-items:center;gap:12px}#nm-vendas-rc-v3 .faq{background:var(--branco);padding:var(--sp-section) 0}#nm-vendas-rc-v3 .faq-inner{max-width:720px;margin:0 auto}#nm-vendas-rc-v3 .faq-header{text-align:center;margin-bottom:56px}#nm-vendas-rc-v3 .faq-header h2{font-family:var(--font-display);font-size:var(--fs-h2-sm);font-weight:400;color:var(--preto);line-height:1.1;letter-spacing:-0.02em}#nm-vendas-rc-v3 .faq-item{border-bottom:0.5px solid var(--areia)}#nm-vendas-rc-v3 .faq-item:first-of-type{border-top:0.5px solid var(--areia)}#nm-vendas-rc-v3 .faq-pergunta{padding:24px 0;font-family:var(--font-sec);font-size:15px;font-weight:700;color:var(--preto);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none;user-select:none}#nm-vendas-rc-v3 .faq-pergunta::after{content:"+";font-family:var(--font-display);font-size:22px;color:var(--ouro);flex-shrink:0;transition:transform 0.2s ease}#nm-vendas-rc-v3 .faq-item.open .faq-pergunta::after{transform:rotate(45deg)}#nm-vendas-rc-v3 .faq-resposta{font-size:var(--fs-body);font-weight:400;color:var(--texto-sec);line-height:1.8;padding-bottom:24px;display:none}#nm-vendas-rc-v3 .faq-item.open .faq-resposta{display:block}#nm-vendas-rc-v3 .ps-final{background:var(--areia);padding:60px 0;text-align:center}#nm-vendas-rc-v3 .ps-final p{font-size:var(--fs-lead);font-weight:400;color:var(--texto-sec);line-height:1.8;max-width:640px;margin:0 auto}#nm-vendas-rc-v3 .ps-final strong{font-weight:500;color:var(--preto)}#nm-vendas-rc-v3 .ps-final .ps-cta{margin-top:40px}#nm-vendas-rc-v3 .footer{background:var(--preto);padding:32px 0;text-align:center}#nm-vendas-rc-v3 .footer p{font-size:11px;font-weight:400;color:var(--on-dark-faint);letter-spacing:0.06em}#nm-vendas-rc-v3 .hero-vsl{display:flex;align-items:center;min-height:720px;padding-inline:max(var(--gutter),calc((100vw - var(--conteudo)) / 2))}#nm-vendas-rc-v3 .hvsl-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:48px;
+  width:100%;
+  max-width:var(--conteudo);
+  align-items:center;
+  padding-block:56px;
+}#nm-vendas-rc-v3 .hvsl-copy{
+  width:100%;
+  max-width:520px;
+  justify-content:center;
+}#nm-vendas-rc-v3 .hvsl-pre{display:flex;align-items:center;gap:12px;margin-bottom:14px}#nm-vendas-rc-v3 .hvsl-pre-linha{width:28px;height:1px;background:var(--ouro);flex-shrink:0}#nm-vendas-rc-v3 .hvsl-pre-texto{font-family:var(--font-sec);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--label-light)}#nm-vendas-rc-v3 .hvsl-vsl{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;height:auto;flex-shrink:0;background:var(--preto);border-radius:2px;overflow:hidden;border:1px solid rgba(201,168,76,0.34);box-shadow:0 22px 70px rgba(26,18,8,.2);z-index:2}#nm-vendas-rc-v3 .hvsl-vsl iframe{position:absolute;inset:0;width:100%;height:100%;border:none}#nm-vendas-rc-v3 .hvsl-vsl-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}#nm-vendas-rc-v3 .hvsl-play{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--ouro);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--ouro);padding-left:4px}#nm-vendas-rc-v3 .hvsl-vsl-placeholder p{font-family:var(--font-body);font-size:10px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--texto-sec)}#nm-vendas-rc-v3 .hvsl-nota{font-size:12px;color:var(--texto-sec);letter-spacing:0.04em;margin:0 0 24px}#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{width:100%;max-width:430px}#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap .btn-cta{width:100%}#nm-vendas-rc-v3 .hero-logo{margin-bottom:22px}#nm-vendas-rc-v3 .hero-logo img{width:auto;height:auto;max-width:380px;max-height:56px;display:block;object-fit:contain}#nm-vendas-rc-v3 .hero-logo picture{display:block}#nm-vendas-rc-v3 .carrossel{--pv:3;--carrossel-dur:.2s;max-width:1160px;margin:0 auto;position:relative}#nm-vendas-rc-v3 .carrossel-viewport{overflow:hidden}#nm-vendas-rc-v3 .carrossel-track{display:flex;will-change:transform;transition:transform var(--carrossel-dur) cubic-bezier(.4,0,.2,1)}#nm-vendas-rc-v3 .carrossel-slide{flex:0 0 calc(100% / var(--pv));min-width:0;display:flex;align-items:center;justify-content:center;padding:0 10px}#nm-vendas-rc-v3 .carrossel-slide img{width:100%;max-width:100%;height:auto;max-height:480px;object-fit:contain;border-radius:2px;display:block}#nm-vendas-rc-v3 .carrossel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:0.5px solid var(--ouro);background:rgba(255,255,255,0.85);color:var(--ouro);font-family:var(--font-body);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0 0 2px;transition:background .25s ease,color .25s ease}#nm-vendas-rc-v3 .carrossel-prev{left:6px}#nm-vendas-rc-v3 .carrossel-next{right:6px}#nm-vendas-rc-v3 .carrossel-btn:hover{background:var(--ouro);color:var(--preto)}#nm-vendas-rc-v3 .carrossel-btn:focus-visible{outline:1px solid var(--ouro);outline-offset:3px}#nm-vendas-rc-v3 .barra-topo,#nm-vendas-rc-v3 .prova-abertura,#nm-vendas-rc-v3 .identificacao,#nm-vendas-rc-v3 .agitacao,#nm-vendas-rc-v3 .reframe,#nm-vendas-rc-v3 .historia,#nm-vendas-rc-v3 .mecanismo,#nm-vendas-rc-v3 .modulos,#nm-vendas-rc-v3 .bonus,#nm-vendas-rc-v3 .prova-densa,#nm-vendas-rc-v3 .stack,#nm-vendas-rc-v3 .para-quem,#nm-vendas-rc-v3 .objecao,#nm-vendas-rc-v3 .futuro,#nm-vendas-rc-v3 .preco,#nm-vendas-rc-v3 .garantia,#nm-vendas-rc-v3 .cta-section,#nm-vendas-rc-v3 .faq,#nm-vendas-rc-v3 .ps-final,#nm-vendas-rc-v3 .footer{
+  padding-inline:max(var(--gutter),calc((100% - var(--conteudo)) / 2));
+}#nm-vendas-rc-v3 .hero-conteudo{
+  margin-left:max(var(--gutter),calc((100vw - var(--conteudo)) / 2));
+}#nm-vendas-rc-v3 .reframe-corpo p,#nm-vendas-rc-v3 .agitacao-inner p,#nm-vendas-rc-v3 .historia-corpo p,#nm-vendas-rc-v3 .historia-descricao,#nm-vendas-rc-v3 .identificacao-item-texto,#nm-vendas-rc-v3 .identificacao-intro,#nm-vendas-rc-v3 .objecao-corpo,#nm-vendas-rc-v3 .futuro-cenario p,#nm-vendas-rc-v3 .garantia-corpo p,#nm-vendas-rc-v3 .mecanismo-item p,#nm-vendas-rc-v3 .dia-conteudo p,#nm-vendas-rc-v3 .modulo-card p,#nm-vendas-rc-v3 .reframe-ponto-texto,#nm-vendas-rc-v3 .hero-corpo,#nm-vendas-rc-v3 .cta-section p,#nm-vendas-rc-v3 .preco-inner>p,#nm-vendas-rc-v3 .ps-final p,#nm-vendas-rc-v3 .faq-resposta,#nm-vendas-rc-v3 .para-quem-item p,#nm-vendas-rc-v3 .futuro-nota{line-height:1.5}@media(max-width:768px){#nm-vendas-rc-v3{
+    --fs-hero:clamp(26px,6.5vw,34px);
+    --fs-h2:clamp(28px,6.8vw,38px);
+    --fs-h2-sm:clamp(26px,6.2vw,34px);
+    --fs-h3:clamp(17px,4.2vw,21px);
+    --fs-lead:clamp(15px,3.8vw,17px);
+    --fs-body:15px;
+    --fs-body-sm:15px;
+    --fs-eyebrow:14px;
+    --fs-xs:14px;
+    --fs-min:14px;
+    --sp-section:40px; 
+  }#nm-vendas-rc-v3 .reframe-corpo p,#nm-vendas-rc-v3 .agitacao-inner p,#nm-vendas-rc-v3 .historia-corpo p,#nm-vendas-rc-v3 .historia-descricao,#nm-vendas-rc-v3 .identificacao-item-texto,#nm-vendas-rc-v3 .identificacao-intro,#nm-vendas-rc-v3 .objecao-corpo,#nm-vendas-rc-v3 .futuro-cenario p,#nm-vendas-rc-v3 .garantia-corpo p,#nm-vendas-rc-v3 .mecanismo-item p,#nm-vendas-rc-v3 .dia-conteudo p,#nm-vendas-rc-v3 .modulo-card p,#nm-vendas-rc-v3 .reframe-ponto-texto,#nm-vendas-rc-v3 .hero-corpo,#nm-vendas-rc-v3 .cta-section p,#nm-vendas-rc-v3 .preco-inner>p,#nm-vendas-rc-v3 .ps-final p,#nm-vendas-rc-v3 .faq-resposta,#nm-vendas-rc-v3 .para-quem-item p,#nm-vendas-rc-v3 .futuro-nota{line-height:1.5}#nm-vendas-rc-v3 .hero,#nm-vendas-rc-v3 .hero-vsl{
+    height:auto;
+    min-height:0;
+  }#nm-vendas-rc-v3 .hero{
+    background:
+      url("https://ev.nathmonari.com.br/images/bg-hero-reconstrua-se-mobile-v4.webp") center top/cover no-repeat,
+      var(--off-white);
+  }#nm-vendas-rc-v3 .hero-vsl{
+    background:var(--off-white);
+  }#nm-vendas-rc-v3 .hero{display:flex;flex-direction:column;align-items:stretch}#nm-vendas-rc-v3 .hero-mobile-img{display:none}#nm-vendas-rc-v3 .hero-vsl{display:flex;flex-direction:column;align-items:stretch;min-height:0}#nm-vendas-rc-v3 .hero::after,#nm-vendas-rc-v3 .hero-vsl::after{display:none}#nm-vendas-rc-v3 .hero-conteudo{height:auto;min-height:0;width:100%;margin-left:0;padding:24px 24px 0;align-items:flex-start;text-align:left}#nm-vendas-rc-v3 .hvsl-grid{display:flex;flex-direction:column;gap:8px;width:100%;min-height:0;padding:20px 24px 0;align-items:flex-start;text-align:left}#nm-vendas-rc-v3 .hvsl-copy{display:contents;max-width:100%}#nm-vendas-rc-v3 .hero-conteudo,#nm-vendas-rc-v3 .hvsl-grid{position:static}#nm-vendas-rc-v3 .hero .hero-logo{
+    order:1;
+    width:auto;
+    display:flex;
+    justify-content:flex-start;
+    position:absolute;
+    top:8px;
+    left:8px;
+    right:auto;
+    z-index:3;
+    margin-bottom:0;
+  }#nm-vendas-rc-v3 .hero-vsl .hero-logo{
+    order:1;
+    position:static;
+    top:auto;
+    left:auto;
+    z-index:auto;
+    margin-bottom:8px;
+  }#nm-vendas-rc-v3 .hvsl-grid .hvsl-h1{order:2}#nm-vendas-rc-v3 .hvsl-grid .hvsl-h2{order:3}#nm-vendas-rc-v3 .hvsl-grid .hvsl-vsl{order:4}#nm-vendas-rc-v3 .hvsl-grid .btn-cta-wrap{order:5;width:100%;max-width:100%;align-items:flex-start}#nm-vendas-rc-v3 .hero .hero-conteudo{justify-content:flex-start}#nm-vendas-rc-v3 .hero .hero-logo{padding-top:0}#nm-vendas-rc-v3 .hero-logo img,#nm-vendas-rc-v3 .hero-logo picture img{max-width:210px;max-height:68px;margin-inline:0}#nm-vendas-rc-v3 .hero h1,#nm-vendas-rc-v3 .hvsl-h1{
+    font-size:23px;
+    line-height:1.18;
+    width:100%;
+    max-width:100%;
+    margin-inline:0;
+    margin-bottom:16px;
+    padding-top:240px;
+    color:#65441C;
+  }#nm-vendas-rc-v3 .hero-vsl .hvsl-h1{padding-top:0;color:var(--preto);margin-bottom:8px;line-height:1.15}#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hvsl-h2{
+    font-size:16px;
+    line-height:1.35;
+    max-width:100%;
+    margin-inline:0;
+    margin-bottom:24px;
+    color:#65441C;
+  }#nm-vendas-rc-v3 .hero-vsl .hvsl-h2{color:var(--texto-sec);margin-bottom:10px;line-height:1.32}#nm-vendas-rc-v3 .hero-corpo{font-size:15px;max-width:100%;margin-inline:0;color:#65441C}#nm-vendas-rc-v3 .hero-garantia{color:#65441C}#nm-vendas-rc-v3 .hero-vsl .hvsl-nota{color:var(--texto-sec)}#nm-vendas-rc-v3 .hero .btn-cta-wrap,#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{align-items:flex-start;gap:8px}#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{gap:6px}#nm-vendas-rc-v3 .hero-vsl{padding-inline:0}#nm-vendas-rc-v3 .hero-vsl .hvsl-vsl{width:100%;max-width:100%;align-self:stretch;margin-bottom:0}#nm-vendas-rc-v3 .hero-vsl .btn-cta-wrap{max-width:100%}#nm-vendas-rc-v3 .hero-vsl + .prova-abertura,#nm-vendas-rc-v3 .hero + .prova-abertura{padding-top:24px}#nm-vendas-rc-v3 .identificacao,#nm-vendas-rc-v3 .reframe,#nm-vendas-rc-v3 .para-quem,#nm-vendas-rc-v3 .futuro{grid-template-columns:1fr;padding:var(--sp-section) 20px;gap:32px}#nm-vendas-rc-v3 .mecanismo-fecho{margin-top:32px;text-align:left;gap:16px}#nm-vendas-rc-v3 .historia{display:block;padding:28px 0 var(--sp-section);gap:0}#nm-vendas-rc-v3 .historia-texto{padding-inline:20px}#nm-vendas-rc-v3 .historia-story{display:none}#nm-vendas-rc-v3 .historia-story-mobile{display:block;width:calc(100% + 40px);max-width:none;margin:0 -20px 16px}#nm-vendas-rc-v3 .historia-story-mobile img{width:100%;height:auto;display:block;vertical-align:top}#nm-vendas-rc-v3 .historia-headline{margin-bottom:8px}#nm-vendas-rc-v3 .historia-descricao{margin-bottom:16px}#nm-vendas-rc-v3 .agitacao,#nm-vendas-rc-v3 .objecao,#nm-vendas-rc-v3 .futuro,#nm-vendas-rc-v3 .preco,#nm-vendas-rc-v3 .garantia,#nm-vendas-rc-v3 .cta-section,#nm-vendas-rc-v3 .faq,#nm-vendas-rc-v3 .ps-final,#nm-vendas-rc-v3 .footer{padding:var(--sp-section) 20px}#nm-vendas-rc-v3 .prova-abertura,#nm-vendas-rc-v3 .modulos,#nm-vendas-rc-v3 .bonus,#nm-vendas-rc-v3 .stack,#nm-vendas-rc-v3 .prova-densa,#nm-vendas-rc-v3 .mecanismo{padding:var(--sp-section) 20px}#nm-vendas-rc-v3 .barra-topo{padding:11px 12px}#nm-vendas-rc-v3 .barra-topo p{font-size:10px;letter-spacing:0.02em;white-space:normal}#nm-vendas-rc-v3 .mecanismo-grid,#nm-vendas-rc-v3 .modulos-grid,#nm-vendas-rc-v3 .dias-grid{grid-template-columns:1fr}#nm-vendas-rc-v3 .bonus-header{grid-template-columns:1fr;gap:10px}#nm-vendas-rc-v3 .bonus-row{gap:8px}#nm-vendas-rc-v3 .bonus-shell{padding:28px 22px}#nm-vendas-rc-v3 .stack-total{padding:20px}#nm-vendas-rc-v3 .stack-lista{margin-bottom:28px}#nm-vendas-rc-v3 .reframe-esq{border-left:none;border-top:1.5px solid var(--ouro);padding-left:0;padding-top:20px}#nm-vendas-rc-v3 .historia-stats{flex-wrap:wrap;gap:16px}#nm-vendas-rc-v3 .btn-cta-wrap{align-items:stretch}#nm-vendas-rc-v3 .section-cta{margin-top:32px}#nm-vendas-rc-v3 .section-cta .btn-cta,#nm-vendas-rc-v3 .btn-cta-wrap .btn-cta{width:100%}#nm-vendas-rc-v3 .btn-cta{font-size:clamp(12px,2.9vw,13px);letter-spacing:0.05em;white-space:nowrap;grid-template-columns:minmax(0,1fr) 40px}#nm-vendas-rc-v3 .btn-cta-text{padding:14px 10px;white-space:nowrap}#nm-vendas-rc-v3 .carrossel{--pv:1;overflow-x:clip}#nm-vendas-rc-v3 .carrossel-slide{align-items:stretch;padding:0 4px}#nm-vendas-rc-v3 .carrossel-slide img{width:100%;max-width:100%;max-height:min(78vh,680px);height:auto;object-fit:contain}#nm-vendas-rc-v3 .prova-abertura .carrossel-slide img{max-height:min(82vh,720px)}#nm-vendas-rc-v3 .carrossel-btn{width:40px;height:40px;font-size:16px}#nm-vendas-rc-v3 .carrossel-controles{gap:16px;margin-top:20px}#nm-vendas-rc-v3 .secao-header{flex-direction:column;gap:12px;margin-bottom:32px}#nm-vendas-rc-v3 .secao-header h3{white-space:normal}#nm-vendas-rc-v3 .secao-header-linha{width:100%;height:0.5px}#nm-vendas-rc-v3 .preco-inner{min-width:0;width:100%}#nm-vendas-rc-v3 .preco-box{padding:40px 24px;overflow-x:clip}#nm-vendas-rc-v3 .preco-parcela-valor{max-width:100%}#nm-vendas-rc-v3 .preco-parcela-label{letter-spacing:0.14em}#nm-vendas-rc-v3 .preco-num{font-size:clamp(72px,15vw,108px)}#nm-vendas-rc-v3 .preco-cifrao,#nm-vendas-rc-v3 .preco-cent{font-size:clamp(24px,5.5vw,36px)}#nm-vendas-rc-v3 .preco-pagamentos{width:100%;max-width:280px}#nm-vendas-rc-v3 .preco-cta .btn-cta-pill{max-width:100%}#nm-vendas-rc-v3 .garantia-badge{width:min(240px,68vw);margin-bottom:32px}#nm-vendas-rc-v3 .modulos-grid{gap:16px}#nm-vendas-rc-v3 .dias-grid{gap:1px}#nm-vendas-rc-v3 .dia-item{padding:20px 16px 20px 14px;gap:14px}#nm-vendas-rc-v3 .dia-marca{min-width:68px;padding:2px 18px 2px 6px;margin-right:0}#nm-vendas-rc-v3 .dia-indice{font-size:clamp(36px,9vw,42px);line-height:1.1}#nm-vendas-rc-v3 .dia-rotulo{font-size:10px;letter-spacing:0.18em;line-height:1.2}#nm-vendas-rc-v3 .bonus-row{gap:12px}#nm-vendas-rc-v3 .futuro-cenarios{margin-bottom:40px}#nm-vendas-rc-v3 .futuro-cenario{padding:16px 0}#nm-vendas-rc-v3 .bonus-item-label,#nm-vendas-rc-v3 .bonus-row-descricao,#nm-vendas-rc-v3 .modulo-card-label,#nm-vendas-rc-v3 .hero-garantia,#nm-vendas-rc-v3 .hero-pre-texto,#nm-vendas-rc-v3 .preco-garantia-txt,#nm-vendas-rc-v3 .preco-parcela-label,#nm-vendas-rc-v3 .preco-parcela-info,#nm-vendas-rc-v3 .footer p,#nm-vendas-rc-v3 .hvsl-pre-texto,#nm-vendas-rc-v3 .hvsl-vsl-placeholder p,#nm-vendas-rc-v3 .hvsl-nota,#nm-vendas-rc-v3 .carrossel-status{font-size:var(--fs-min)}#nm-vendas-rc-v3 .agitacao-inner,#nm-vendas-rc-v3 .agitacao-quote,#nm-vendas-rc-v3 .prova-abertura .secao-header,#nm-vendas-rc-v3 .prova-abertura .secao-header h3,#nm-vendas-rc-v3 .reframe:has(> .reframe-esq:only-child),#nm-vendas-rc-v3 .reframe-esq,#nm-vendas-rc-v3 .historia-texto,#nm-vendas-rc-v3 .identificacao > div,#nm-vendas-rc-v3 .mecanismo-header,#nm-vendas-rc-v3 .modulos-header,#nm-vendas-rc-v3 .prova-densa-header,#nm-vendas-rc-v3 .stack-header,#nm-vendas-rc-v3 .garantia-inner,#nm-vendas-rc-v3 .cta-section,#nm-vendas-rc-v3 .cta-section-inner,#nm-vendas-rc-v3 .faq-header,#nm-vendas-rc-v3 .ps-final,#nm-vendas-rc-v3 .footer,#nm-vendas-rc-v3 .objecao,#nm-vendas-rc-v3 .para-quem,#nm-vendas-rc-v3 .futuro-inner,#nm-vendas-rc-v3 .futuro-cenarios{
+    text-align: left;
+  }#nm-vendas-rc-v3 .prova-abertura .secao-header,#nm-vendas-rc-v3 .cta-section-btn{
+    align-items: flex-start;
+  }#nm-vendas-rc-v3 .prova-abertura .secao-header{align-items:flex-start}#nm-vendas-rc-v3 .preco-inner{text-align:center}#nm-vendas-rc-v3 .preco-box{text-align:center}#nm-vendas-rc-v3 .preco-parcela-valor{justify-content:center}#nm-vendas-rc-v3 .agitacao-inner,#nm-vendas-rc-v3 .reframe:has(> .reframe-esq:only-child),#nm-vendas-rc-v3 .mecanismo-header,#nm-vendas-rc-v3 .stack-header,#nm-vendas-rc-v3 .garantia-inner{margin-inline:0}}@media(max-width:480px){#nm-vendas-rc-v3{
+    --fs-hero:clamp(24px,7vw,30px);
+    --fs-h2:clamp(26px,7.2vw,32px);
+    --fs-h2-sm:clamp(24px,6.8vw,30px);
+    --fs-h3:clamp(16px,4.4vw,19px);
+    --fs-lead:clamp(15px,4vw,17px);
+    --fs-body:15px;
+    --fs-body-sm:15px;
+    --fs-eyebrow:14px;
+    --fs-xs:14px;
+    --fs-min:14px;
+    --gutter:16px;
+  }#nm-vendas-rc-v3 .barra-topo{padding:9px 16px}#nm-vendas-rc-v3 .barra-topo p{letter-spacing:0em}#nm-vendas-rc-v3 .hero-conteudo{padding:24px 16px 0}#nm-vendas-rc-v3 .hero-vsl .hvsl-grid{padding:20px 16px 16px;gap:8px}#nm-vendas-rc-v3 .hero h1{margin-bottom:16px;padding-top:240px}#nm-vendas-rc-v3 .hero-vsl .hvsl-h1{margin-bottom:8px;padding-top:0}#nm-vendas-rc-v3 .hero h2,#nm-vendas-rc-v3 .hvsl-h2{margin-bottom:24px}#nm-vendas-rc-v3 .hero-vsl .hvsl-h2{margin-bottom:10px}#nm-vendas-rc-v3 .hero-corpo{margin-bottom:20px}#nm-vendas-rc-v3 .btn-cta{grid-template-columns:minmax(0,1fr) 36px;font-size:12px;letter-spacing:0.04em}#nm-vendas-rc-v3 .btn-cta-text{padding:13px 8px}#nm-vendas-rc-v3 .section-cta{margin-top:26px}#nm-vendas-rc-v3 .btn-cta-wrap{gap:10px}#nm-vendas-rc-v3 .identificacao,#nm-vendas-rc-v3 .reframe,#nm-vendas-rc-v3 .para-quem{padding:var(--sp-section) 16px;gap:24px}#nm-vendas-rc-v3 .historia{padding:24px 0 var(--sp-section)}#nm-vendas-rc-v3 .historia-texto{padding-inline:16px}#nm-vendas-rc-v3 .historia-story-mobile{width:calc(100% + 32px);margin:0 -16px 14px}#nm-vendas-rc-v3 .historia-headline{margin-bottom:6px}#nm-vendas-rc-v3 .agitacao,#nm-vendas-rc-v3 .objecao,#nm-vendas-rc-v3 .futuro,#nm-vendas-rc-v3 .preco,#nm-vendas-rc-v3 .garantia,#nm-vendas-rc-v3 .cta-section,#nm-vendas-rc-v3 .faq,#nm-vendas-rc-v3 .ps-final{padding:var(--sp-section) 16px}#nm-vendas-rc-v3 .prova-abertura,#nm-vendas-rc-v3 .modulos,#nm-vendas-rc-v3 .bonus,#nm-vendas-rc-v3 .stack,#nm-vendas-rc-v3 .prova-densa,#nm-vendas-rc-v3 .mecanismo{padding:var(--sp-section) 16px}#nm-vendas-rc-v3 .secao-label{margin-bottom:16px}#nm-vendas-rc-v3 .secao-header{margin-bottom:24px}#nm-vendas-rc-v3 .identificacao-item{padding:16px 0;gap:12px}#nm-vendas-rc-v3 .reframe-esq{padding-top:16px}#nm-vendas-rc-v3 .reframe-corpo{gap:12px}#nm-vendas-rc-v3 .reframe-dir{padding:32px 20px;gap:16px}#nm-vendas-rc-v3 .reframe-destaque{font-size:16px;padding-bottom:16px}#nm-vendas-rc-v3 .reframe-ponto{gap:12px}#nm-vendas-rc-v3 .reframe-ponto-dot{margin-top:6px}#nm-vendas-rc-v3 .historia-foto-wrap{margin-bottom:20px}#nm-vendas-rc-v3 .historia-badge{bottom:-16px;right:-16px;padding:16px 20px}#nm-vendas-rc-v3 .historia-badge-num{font-size:20px}#nm-vendas-rc-v3 .historia-stats{gap:12px;margin-top:24px;padding-top:20px}#nm-vendas-rc-v3 .historia-stat-num{font-size:20px}#nm-vendas-rc-v3 .mecanismo-header{margin-bottom:32px}#nm-vendas-rc-v3 .mecanismo-item{padding:24px 16px;gap:12px}#nm-vendas-rc-v3 .mecanismo-subheadline{font-size:clamp(20px,5.2vw,24px);margin-bottom:20px}#nm-vendas-rc-v3 .dia-item{padding:16px 12px 16px 10px;gap:12px}#nm-vendas-rc-v3 .dia-marca{min-width:64px;padding-right:16px}#nm-vendas-rc-v3 .dia-indice{font-size:clamp(34px,8.5vw,38px);line-height:1.1}#nm-vendas-rc-v3 .dia-rotulo{font-size:10px;line-height:1.2}#nm-vendas-rc-v3 .modulos-header{margin-bottom:32px}#nm-vendas-rc-v3 .modulos-header h2{font-size:20px}#nm-vendas-rc-v3 .modulos-grid{gap:12px}#nm-vendas-rc-v3 .modulo-card{padding:24px 16px;gap:8px}#nm-vendas-rc-v3 .bonus-header{margin-bottom:24px;padding-bottom:24px}#nm-vendas-rc-v3 .bonus-row{padding:18px 0}#nm-vendas-rc-v3 .prova-densa-header{margin-bottom:40px}#nm-vendas-rc-v3 .stack-header{margin-bottom:40px}#nm-vendas-rc-v3 .stack-header h2{font-size:20px}#nm-vendas-rc-v3 .stack-lista{margin-bottom:32px}#nm-vendas-rc-v3 .stack-item{padding:16px 0}#nm-vendas-rc-v3 .stack-total{padding:20px 16px}#nm-vendas-rc-v3 .para-quem h2{margin-bottom:24px}#nm-vendas-rc-v3 .para-quem-item{padding:12px 0}#nm-vendas-rc-v3 .para-quem-item-check,#nm-vendas-rc-v3 .para-quem-item-x{width:26px;height:26px;margin-top:2px}#nm-vendas-rc-v3 .para-quem-item-check svg,#nm-vendas-rc-v3 .para-quem-item-x svg{width:13px;height:13px}#nm-vendas-rc-v3 .objecao-inner{max-width:100%}#nm-vendas-rc-v3 .objecao h2{margin-bottom:24px}#nm-vendas-rc-v3 .objecao-corpo{gap:12px;margin-bottom:32px}#nm-vendas-rc-v3 .objecao-itens{gap:12px}#nm-vendas-rc-v3 .objecao-item{padding:16px;border-left-width:1.5px}#nm-vendas-rc-v3 .objecao-item-num{font-size:16px}#nm-vendas-rc-v3 .futuro-inner{max-width:100%}#nm-vendas-rc-v3 .futuro h2{margin-bottom:28px}#nm-vendas-rc-v3 .futuro-cenarios{margin-bottom:28px}#nm-vendas-rc-v3 .futuro-cenario{padding:12px 0}#nm-vendas-rc-v3 .preco-inner{max-width:100%}#nm-vendas-rc-v3 .preco-inner h2{margin-bottom:16px}#nm-vendas-rc-v3 .preco-inner>p{margin-bottom:32px}#nm-vendas-rc-v3 .preco-box{padding:32px 20px;border-radius:2px}#nm-vendas-rc-v3 .preco-num{font-size:clamp(68px,20vw,96px)}#nm-vendas-rc-v3 .preco-cifrao,#nm-vendas-rc-v3 .preco-cent{font-size:clamp(22px,6.5vw,32px)}#nm-vendas-rc-v3 .garantia-inner{max-width:100%}#nm-vendas-rc-v3 .garantia-badge{width:min(220px,64vw);margin-bottom:24px}#nm-vendas-rc-v3 .garantia h2{font-size:18px;margin-bottom:20px}#nm-vendas-rc-v3 .garantia-corpo{gap:12px}#nm-vendas-rc-v3 .garantia-ass{margin-top:20px}#nm-vendas-rc-v3 .cta-section-inner{max-width:100%}#nm-vendas-rc-v3 .cta-section h2{margin-bottom:12px}#nm-vendas-rc-v3 .cta-section p{margin-bottom:28px}#nm-vendas-rc-v3 .faq-inner{max-width:100%}#nm-vendas-rc-v3 .faq-header{margin-bottom:32px}#nm-vendas-rc-v3 .faq-pergunta{padding:16px 0}#nm-vendas-rc-v3 .faq-pergunta::after{font-size:18px}#nm-vendas-rc-v3 .faq-resposta{padding-bottom:16px}#nm-vendas-rc-v3 .ps-cta{margin-top:28px}#nm-vendas-rc-v3 .hvsl-pre{gap:10px;margin-bottom:12px}#nm-vendas-rc-v3 .hvsl-pre-linha{width:20px;height:0.5px}#nm-vendas-rc-v3 .hero-vsl .hvsl-vsl{margin-bottom:0}#nm-vendas-rc-v3 .carrossel-slide img{max-height:min(76vh,640px)}#nm-vendas-rc-v3 .prova-abertura .carrossel-slide img{max-height:min(80vh,680px)}#nm-vendas-rc-v3 .carrossel-btn{width:36px;height:36px;font-size:14px}#nm-vendas-rc-v3 .carrossel-controles{gap:12px;margin-top:16px}}
+/* Camada de animacao — nm-vendas-rc-v3 e trocado pelo id da pagina na conversao. */
+#nm-vendas-rc-v3 .nm-anim-cta{position:relative;overflow:hidden;isolation:isolate}
+#nm-vendas-rc-v3 .nm-anim-cta::after{content:'';position:absolute;top:0;bottom:0;left:-45%;width:45%;z-index:1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);animation:nm-vendas-rc-v3-brilho 5s ease-in-out infinite}
+#nm-vendas-rc-v3 .nm-anim-cta:hover{transform:translateY(-2px)}
+#nm-vendas-rc-v3 .nm-anim-cta{transition:transform .2s ease}
+@keyframes nm-vendas-rc-v3-brilho{0%,55%{transform:translateX(0)}100%{transform:translateX(330%)}}
+@media (prefers-reduced-motion: reduce){
+  #nm-vendas-rc-v3 .nm-anim-cta::after{display:none;animation:none}
+  #nm-vendas-rc-v3 *{animation:none !important;transition:none !important}
+}
+</style>
+
+<div id="nm-vendas-rc-v3" class="nm-bloco">
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- BARRA TOPO -->
+<div class="barra-topo">
+  <p>Protocolo RC &nbsp;·&nbsp; <strong>10 dias</strong> &nbsp;·&nbsp; 10 minutos por dia &nbsp;·&nbsp; <strong>Garantia de 30 dias</strong></p>
+</div>
+
+<!-- DOBRA 1 — HEADLINE + SUB-HEADLINE -->
+<div class="hero">
+  <div class="hero-conteudo">
+    <div class="hero-logo">
+      <img decoding="async" fetchpriority="high" width="560" height="112" src="https://ev.nathmonari.com.br/images/logo-nath-monari.webp" alt="Reconstrua-se — Protocolo RC">
+    </div>
+    <h1>A mulher que você quer se tornar já existe, ela só está presa debaixo de uma imagem que não é sua.</h1>
+    <h2>Você não precisa de mais disciplina, mais força de vontade ou mais um método. Você precisa reconstruir a base que controla tudo: <strong>a imagem que você tem de si mesma.</strong></h2>
+  </div>
+</div>
+
+<!-- DOBRA 2 — CONVERSA COM O LEAD -->
+<div class="identificacao">
+  <div>
+    <h2>Começa na segunda, vai bem até quarta, na quinta já desandou e no domingo a culpa chega. E na segunda seguinte, o ciclo recomeça.</h2>
+    <div class="identificacao-corpo">
+      <p>Você acorda pensando no que tem pra fazer, dorme pensando no que não fez e durante o dia, vive entre picos de animação e quedas que você não consegue explicar.</p>
+      <p>Você já leu os livros, fez as listas de tarefas, montou a rotina perfeita, prometeu pra si mesma que dessa vez seria diferente e toda vez que não sustentou, se culpou de ter feito tudo errado de novo.</p>
+      <p>Você abre o Instagram e vê uma mulher com a vida organizada, o corpo cuidado, o relacionamento bonito e começam as críticas e julgamentos sobre por que a sua vida ainda está no mesmo lugar.</p>
+      <p>No trabalho você procrastina, no relacionamento só entra em furadas ou vive uma relação tóxica, e o medo cada vez mais toma conta.</p>
+    </div>
+  </div>
+  <div>
+    <span class="identificacao-lista-titulo">E a cabeça vive com os mesmos questionamentos…</span>
+    <ul class="identificacao-lista">
+    <li class="identificacao-item">
+      <div class="info-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+      <p class="identificacao-item-texto">“Eu sei o que preciso fazer, só não consigo fazer.”</p>
+    </li>
+    <li class="identificacao-item">
+      <div class="info-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l3 2"/></svg></div>
+      <p class="identificacao-item-texto">“Eu já tentei de tudo, talvez o problema seja eu mesma.”</p>
+    </li>
+    <li class="identificacao-item">
+      <div class="info-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <p class="identificacao-item-texto">“As outras mulheres conseguem e eu não.”</p>
+    </li>
+    <li class="identificacao-item">
+      <div class="info-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <p class="identificacao-item-texto">“Eu tenho um potencial muito grande, mas na hora de agir eu simplesmente travo.”</p>
+    </li>
+    </ul>
+  </div>
+</div>
+
+<div class="bracket"><img src="https://ev.nathmonari.com.br/images/bracket-marrom.svg" width="110" height="51" alt="" aria-hidden="true"></div>
+
+<!-- DOBRA 3 — MECANISMO -->
+<div class="reframe">
+  <div class="reframe-esq">
+    <h2>A verdade sobre por que você trava é uma só:</h2>
+    <div class="reframe-corpo">
+      <p>O que trava você não é falta de informação, é a autoimagem, ou seja, a imagem que você construiu de si mesma ao longo de anos de frustrações, comparações e autocrítica.</p>
+      <p>O seu cérebro funciona como um termostato. Ele regula tudo: ações, decisões e hábitos, pra manter coerência com a identidade que você acredita que é.</p>
+      <p>Se por dentro você acredita que é “alguém que começa e não termina”, o sistema vai sabotar qualquer tentativa de mudar, com cansaço, procrastinação e desânimo. E tudo acontece no automático.</p>
+      <p>É um sistema de proteção do seu cérebro trabalhando contra você porque a imagem está distorcida.</p>
+      <p>Quando a imagem muda, tudo muda. Você para de precisar de motivação pra agir, para de sabotar o que começa. A mudança deixa de ser esforço e vira consequência de quem você acredita que é.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bracket"><img src="https://ev.nathmonari.com.br/images/bracket-branco.svg" width="110" height="51" alt="" aria-hidden="true"></div>
+
+<!-- DOBRA 3 — JORNADA DE TRANSFORMAÇÃO -->
+<div class="mecanismo">
+  <div class="mecanismo-header">
+    <h2>O caminho para reconstruir sua imagem</h2>
+  </div>
+  <div class="dias-grid">
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">01</span></div>
+      <div class="dia-conteudo">
+        <h4>Descobrir o que está te controlando</h4>
+        <p>Você vai enxergar exatamente qual imagem de si mesma está no comando da sua vida e por que ela explica tudo que não está funcionando.</p>
+      </div>
+    </div>
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">02</span></div>
+      <div class="dia-conteudo">
+        <h4>Desarmar e eliminar o que te sabota</h4>
+        <p>Aquela voz que te critica, te compara e te paralisa é uma crença. Você vai aprender a identificar cada uma delas.</p>
+      </div>
+    </div>
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">03</span></div>
+      <div class="dia-conteudo">
+        <h4>Substituir o que trava pelo que move</h4>
+        <p>Mudar as crenças e adicionar novas que você consegue sustentar dia após dia.</p>
+      </div>
+    </div>
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">04</span></div>
+      <div class="dia-conteudo">
+        <h4>Alinhar corpo, mente e ação</h4>
+        <p>Usar o seu corpo como ferramenta de mudança interna e transformar a mente em aliada da nova imagem, que sustenta tudo mesmo nos dias difíceis.</p>
+      </div>
+    </div>
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">05</span></div>
+      <div class="dia-conteudo">
+        <h4>Imprimir quem você está se tornando</h4>
+        <p>Ao construir uma imagem clara da mulher que você escolheu ser, você vai usar essa imagem como bússola pra cada decisão daqui pra frente.</p>
+      </div>
+    </div>
+    <div class="dia-item">
+      <div class="dia-marca" aria-hidden="true"><span class="dia-rotulo">Passo</span><span class="dia-indice">06</span></div>
+      <div class="dia-conteudo">
+        <h4>Sustentar sem recomeçar do zero</h4>
+        <p>A sua imagem estará alinhada com a sua identidade, você terá clareza da vida que deseja viver e vai manifestar ela todos os dias.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mecanismo-fecho">
+    <p>Se você deseja viver essa nova vida, eu quero te mostrar que esse caminho existe. E você precisa estar comigo durante 10 dias.</p>
+    <p><strong>O Reconstrua-se é um desafio de 10 dias</strong> com aulas curtas e exercícios práticos que levam 10 minutos, com aplicação no mesmo dia. Cada dia reconstrói uma camada da sua autoimagem.</p>
+  </div>
+</div>
+
+<div class="bracket"><img src="https://ev.nathmonari.com.br/images/bracket-marrom.svg" width="110" height="51" alt="" aria-hidden="true"></div>
+
+<!-- DOBRA 4 — PROVA SOCIAL -->
+<div class="prova-abertura">
+  <div class="secao-header">
+    <h3>Mais de 700 mulheres já fizeram esse caminho e provaram que é possível</h3>
+    <div class="secao-header-linha"></div>
+  </div>
+  <div class="carrossel" data-carrossel>
+    <div class="carrossel-viewport">
+      <div class="carrossel-track">
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="380" height="678" src="https://ev.nathmonari.com.br/images/depoimento-3-topo.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="720" height="320" src="https://ev.nathmonari.com.br/images/depoimento-2-topo.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="512" height="324" src="https://ev.nathmonari.com.br/images/depoimento-1-topo.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="484" height="390" src="https://ev.nathmonari.com.br/images/2026-05-Captura-de-Tela-2026-05-29-as-18.51.07.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="489" height="301" src="https://ev.nathmonari.com.br/images/2026-05-Captura-de-Tela-2026-05-29-as-18.50.09.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="1600" height="1273" src="https://ev.nathmonari.com.br/images/2026-05-Captura-de-Tela-2026-05-29-as-18.49.08.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="1173" height="669" src="https://ev.nathmonari.com.br/images/2026-05-Captura-de-Tela-2026-05-29-as-18.45.30.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+<div class="carrossel-slide"><img loading="lazy" decoding="async" width="900" height="1600" src="https://ev.nathmonari.com.br/images/2026-05-JULIA-1-1.webp" alt="Depoimento de aluna do Reconstrua-se" sizes="(max-width: 768px) 100vw, 33vw"></div>
+      </div>
+    </div>
+    <button class="carrossel-btn carrossel-prev" type="button" data-prev aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="carrossel-btn carrossel-next" type="button" data-next aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+</div>
+
+<div class="bracket"><img src="https://ev.nathmonari.com.br/images/bracket-branco.svg" width="110" height="51" alt="" aria-hidden="true"></div>
+
+<!-- DOBRA 5 — GARANTIA -->
+<div class="garantia">
+  <div class="garantia-inner">
+    <img class="garantia-badge" src="https://ev.nathmonari.com.br/images/garantia-30-dias.webp" width="480" height="418" alt="Selo de 30 dias de garantia incondicional do Protocolo RC Nath Monari" loading="lazy" decoding="async">
+    <h2>30 dias de garantia incondicional</h2>
+    <div class="garantia-corpo">
+      <p>Você tem 30 dias completos pra entrar, fazer as aulas, aplicar os exercícios e viver o processo intensamente.</p>
+      <p>Se ao final desse período você sentir que não foi o que esperava, um e-mail resolve. Sem formulário, sem perguntas, sem julgamento. Devolvo cada centavo.</p>
+      <p>Eu coloco essa garantia porque sei o que esse método faz. Porque eu vivi e porque mais de 700 mulheres viveram. Se não funcionasse, eu não teria coragem de fazer essa promessa.</p>
+      <p>A decisão de mudar de vida é sua. O risco é meu.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DOBRA 6 — OFERTA -->
+<div class="stack">
+  <div class="stack-header">
+    <h2>Tudo o que você recebe ao entrar no Reconstrua-se:</h2>
+  </div>
+  <div class="stack-lista">
+    <p class="stack-grupo-label">Reconstrua-se</p>
+    <div class="stack-item">
+      <div class="stack-item-nome">Protocolo RC — 10 dias completos</div>
+      <div class="stack-item-valor">R$ 297</div>
+    </div>
+    <p class="stack-grupo-label">3 Módulos</p>
+    <div class="stack-item">
+      <div class="stack-item-nome">Antes de Começar, Você Precisa Saber Isso</div>
+      <div class="stack-item-valor stack-item-valor--incluido">Incluído</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">Da Visão à Execução (hábitos + trackeamento)</div>
+      <div class="stack-item-valor stack-item-valor--incluido">Incluído</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">Protocolo Anti Desistência + Diário da Autoimagem 30 dias</div>
+      <div class="stack-item-valor stack-item-valor--incluido">Incluído</div>
+    </div>
+    <p class="stack-grupo-label">5 Bônus</p>
+    <div class="stack-item">
+      <div class="stack-item-nome">Indicação de livros</div>
+      <div class="stack-item-valor">R$ 47</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">Mentalidade para shape</div>
+      <div class="stack-item-valor">R$ 47</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">O mínimo sobre relacionamentos</div>
+      <div class="stack-item-valor">R$ 37</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">Inteligência emocional</div>
+      <div class="stack-item-valor">R$ 37</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">E-book aplicação prática</div>
+      <div class="stack-item-valor">R$ 32</div>
+    </div>
+    <p class="stack-grupo-label">Acesso e garantia</p>
+    <div class="stack-item">
+      <div class="stack-item-nome">1 ano de acesso completo</div>
+      <div class="stack-item-valor stack-item-valor--incluido">Incluído</div>
+    </div>
+    <div class="stack-item">
+      <div class="stack-item-nome">Garantia incondicional de 30 dias</div>
+      <div class="stack-item-valor stack-item-valor--incluido">Incluída</div>
+    </div>
+  </div>
+  <div class="stack-total">
+    <span class="stack-total-label">Total</span>
+    <span class="stack-total-valor">R$497,00</span>
+  </div>
+</div>
+
+<!-- DOBRA 6 — PREÇO -->
+<div class="preco" id="preco">
+  <div class="preco-inner">
+    <h2>Quanto vale reconstruir quem você é?</h2>
+    <div class="preco-box">
+      <p class="preco-de">De R$497,00</p>
+      <p class="preco-parcela-label"><strong>Por apenas</strong> 12x de</p>
+      <p class="preco-parcela-valor"><span class="preco-cifrao">R$</span><span class="preco-num">10</span><span class="preco-cent">,03</span></p>
+      <p class="preco-parcela-info">ou R$97,00 à vista</p>
+      <div class="preco-cta">
+        <a href="https://pay.kiwify.com.br/xEsijQa" class="btn-cta btn-cta-pill nm-anim-cta"><span class="btn-cta-text">Quero me reconstruir agora</span><span class="btn-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+      </div>
+      <p class="preco-garantia-txt">Garantia de 30 dias · Acesso imediato · Cartão, Pix ou boleto</p>
+      <img class="preco-pagamentos" src="https://ev.nathmonari.com.br/images/kiwify-pagamentos.webp" width="768" height="122" alt="Formas de pagamento: Visa, Mastercard, Elo, Pix, boleto" loading="lazy" decoding="async">
+    </div>
+  </div>
+</div>
+
+<!-- DOBRA 7 — BIO -->
+<div class="historia">
+  <div class="historia-texto">
+    <h2 class="historia-headline">Quem vai te guiar nesse desafio?</h2>
+    <div class="historia-story-mobile">
+      <img src="https://ev.nathmonari.com.br/images/storys-section-mobile-v2.webp" width="1206" height="911" alt="Stories da Nath Monari" loading="lazy" decoding="async">
+    </div>
+    <p class="historia-descricao">Nathalia Monari</p>
+    <div class="historia-corpo">
+      <p>Eu sei o que é viver presa num ciclo. Começar com vontade e abandonar. Se comparar com todo mundo e sair perdendo. Terminar o dia com a sensação de que estava empurrando a vida com a barriga.</p>
+      <p>Tentei vários caminhos. Alguns ajudaram um pouco. Nenhum resolveu de verdade.</p>
+      <p>O que mudou tudo foi quando eu parei de tentar consertar comportamentos e comecei a reconstruir a imagem que eu tinha de mim mesma. A mudança foi real. De dentro pra fora.</p>
+      <p>Hoje sou empreendedora, já fui professora de yoga e tive uma escola por mais de 10 anos. Estudei comportamento humano na prática e na teoria. E transformei o processo que eu vivi em um método que já ajudou mais de 700 mulheres.</p>
+      <p><strong>Eu não vendo perfeição. Eu ensino reconstrução.</strong></p>
+    </div>
+    <ul class="historia-lista">
+      <li><span class="historia-seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S13 8 12 2c-1 6-2 6.5-4 8.5S5 15 5 15a7 7 0 0 0 7 7z"/></svg></span><span>+10 anos de prática</span></li>
+      <li><span class="historia-seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span>+700 alunas</span></li>
+      <li><span class="historia-seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span><span>Empreendedora</span></li>
+      <li><span class="historia-seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125"/><path d="M12 5a3 3 0 1 1 5.997.125"/><path d="M6.003 5.125A3 3 0 0 0 4.5 10.5"/><path d="M17.997 5.125A3 3 0 0 1 19.5 10.5"/><path d="M4.5 10.5a3 3 0 0 0 1.5 5.5"/><path d="M19.5 10.5a3 3 0 0 1-1.5 5.5"/><path d="M6 16a3 3 0 0 0 6 0V5"/><path d="M18 16a3 3 0 0 1-6 0"/></svg></span><span>Especialista em Neurociência e Mentalidade</span></li>
+    </ul>
+  </div>
+  <div class="historia-story">
+    <img src="https://ev.nathmonari.com.br/images/storys-section-v1.webp" width="837" height="1410" alt="Nath Monari" loading="lazy" decoding="async">
+  </div>
+</div>
+
+<div class="bracket"><img src="https://ev.nathmonari.com.br/images/bracket-areia.svg" width="110" height="51" alt="" aria-hidden="true"></div>
+
+<!-- DOBRA 8 — FAQ -->
+<div class="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <h2>Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">O que é exatamente o Reconstrua-se?</p>
+      <div class="faq-resposta">É um desafio de 10 dias com aulas curtas e exercícios práticos focados em reconstruir a imagem que você tem de si mesma. Cada dia tem um tema e uma aplicação. O objetivo não é te motivar — é mudar a base que sustenta todos os seus comportamentos.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">Eu tenho pouco tempo. Quanto preciso dedicar por dia?</p>
+      <div class="faq-resposta">10 minutos pra aula, mais alguns minutos pro exercício. Dá pra fazer no caminho do trabalho, no banho ou antes de dormir. Foi pensado pra quem tem rotina corrida.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">E se eu não conseguir acompanhar todos os dias?</p>
+      <div class="faq-resposta">O material fica disponível por 1 ano. Você faz no seu ritmo. E o Protocolo Anti Desistência existe exatamente pra te ajudar nos dias em que a vontade de largar aparecer.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">Já tentei de tudo e nada funcionou. Por que isso seria diferente?</p>
+      <div class="faq-resposta">Porque os outros métodos tentam mudar o que você faz. O Reconstrua-se muda QUEM está fazendo. Quando a autoimagem muda, a ação muda como consequência — não como esforço.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">Os bônus custam algo a mais?</p>
+      <div class="faq-resposta">Não. Tudo está incluído no valor de R$97. Os 5 bônus, os 3 módulos extras e o acesso por 1 ano.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">Quais as formas de pagamento?</p>
+      <div class="faq-resposta">Cartão de crédito, Pix à vista e boleto. O acesso é liberado imediatamente após confirmação.</div>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-pergunta">A garantia de 30 dias é real?</p>
+      <div class="faq-resposta">100% real. Se em 30 dias você sentir que não foi o que esperava, um e-mail pra contato@nathmonari.com.br resolve. Sem formulário, sem burocracia, sem julgamento. Devolvo cada centavo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- RODAPÉ -->
+<div class="footer">
+  <p>© 2026 Nath Monari &nbsp;·&nbsp; Todos os direitos reservados &nbsp;·&nbsp; <a href="#" style="color:#4a3f30">Termos de Uso</a> &nbsp;·&nbsp; <a href="#" style="color:#4a3f30">Política de Privacidade</a></p>
+</div>
+</div>
+
+<script>
+(function () {
+  var KIWIFY_PREFIX = ["https://pay.kiwify.com.br"];
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+  function kiwifySck() {
+    var sck = "";
+    var href = window.top.location.href;
+    var url = new URL(href);
+    if (url != null && href.indexOf("?") !== -1) {
+      sck =
+        "&sck=" +
+        url.searchParams.get("utm_source") +
+        "|" +
+        url.searchParams.get("utm_medium") +
+        "|" +
+        url.searchParams.get("utm_campaign") +
+        "|" +
+        url.searchParams.get("utm_term") +
+        "|" +
+        url.searchParams.get("utm_content");
+    }
+    return sck;
+  }
+
+  function applyKiwifyUtms() {
+    var params = new URLSearchParams(window.location.search);
+    if (!params.toString()) return;
+
+    document.querySelectorAll("a").forEach(function (anchor) {
+      for (var i = 0; i < KIWIFY_PREFIX.length; i++) {
+        if (anchor.href.indexOf(KIWIFY_PREFIX[i]) === -1) continue;
+        if (anchor.href.indexOf("?") === -1) {
+          anchor.href += "?" + params.toString() + kiwifySck();
+        } else {
+          anchor.href += "&" + params.toString() + kiwifySck();
+        }
+      }
+    });
+  }
+
+  function applyGreennUtms() {
+    var params = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(function (key) {
+      if (params.has(key)) localStorage.setItem(key, params.get(key));
+    });
+
+    function buildUtmString() {
+      var query = [];
+      UTM_KEYS.forEach(function (key) {
+        var value = localStorage.getItem(key);
+        if (value) query.push(key + "=" + encodeURIComponent(value));
+      });
+      return query.length ? "?" + query.join("&") : "";
+    }
+
+    document.querySelectorAll('a[href*="greenn.co"], a[href*="greenn.club"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var baseUrl = link.getAttribute("href").split("?")[0];
+        window.location.href = baseUrl + buildUtmString();
+      });
+    });
+  }
+
+  applyKiwifyUtms();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyGreennUtms);
+  } else {
+    applyGreennUtms();
+  }
+})();
+
+// Protocolo RC — interações da landing page
+
+var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+// Acordeão do FAQ: abre um, fecha os demais
+document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
+  pergunta.addEventListener("click", function () {
+    var item = this.closest(".faq-item");
+    var aberto = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function (i) {
+      i.classList.remove("open");
+    });
+    if (!aberto) item.classList.add("open");
+  });
+});
+
+// Rolagem interna suave, com fallback imediato para movimento reduzido
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    var target = document.querySelector(this.getAttribute("href"));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" });
+  });
+});
+
+// Carrossel infinito de depoimentos
+// Mostra N imagens por vez (CSS var --pv), avança 1 por clique, loop sem emenda.
+document.querySelectorAll("[data-carrossel]").forEach(function (root) {
+  var track = root.querySelector(".carrossel-track");
+  if (!track) return;
+  var reals = Array.prototype.slice.call(track.children);
+  var total = reals.length;
+  var statusEl = root.querySelector("[data-status]");
+  var prevBtn = root.querySelector("[data-prev]");
+  var nextBtn = root.querySelector("[data-next]");
+
+  // quantos slides visíveis por vez (definido no CSS: .carrossel{--pv:3})
+  var pv = parseInt(getComputedStyle(root).getPropertyValue("--pv"), 10) || 1;
+  if (pv < 1) pv = 1;
+  if (pv > total) pv = total;
+  var stepPct = 100 / pv;
+  var carrosselDur = getComputedStyle(root).getPropertyValue("--carrossel-dur").trim() || ".3s";
+  var carrosselEase = "cubic-bezier(.4,0,.2,1)";
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function setStatus(real) {
+    if (statusEl) statusEl.textContent = pad(real + 1) + " / " + pad(total);
+  }
+
+  // Sem movimento se tudo já cabe na tela e só há um conjunto
+  if (total <= 1) {
+    setStatus(0);
+    if (prevBtn) prevBtn.style.display = "none";
+    if (nextBtn) nextBtn.style.display = "none";
+    return;
+  }
+
+  // Clona `pv` slides em cada ponta para o loop sem "rebobinar"
+  var lead = document.createDocumentFragment();
+  for (var i = total - pv; i < total; i++) {
+    var cl = reals[i].cloneNode(true);
+    cl.setAttribute("aria-hidden", "true");
+    lead.appendChild(cl);
+  }
+  track.insertBefore(lead, reals[0]);
+  var trail = document.createDocumentFragment();
+  for (var j = 0; j < pv; j++) {
+    var ct = reals[j].cloneNode(true);
+    ct.setAttribute("aria-hidden", "true");
+    trail.appendChild(ct);
+  }
+  track.appendChild(trail);
+
+  var index = pv; // primeiro slide real (depois dos clones iniciais)
+  var locked = false;
+
+  function place() {
+    track.style.transition = "none";
+    track.style.transform = "translateX(" + -index * stepPct + "%)";
+  }
+  place();
+  setStatus(0);
+
+  function go(dir) {
+    if (locked) return;
+    locked = true;
+    index += dir;
+    track.style.transition = motionQuery.matches ? "none" : "transform " + carrosselDur + " " + carrosselEase;
+    track.style.transform = "translateX(" + -index * stepPct + "%)";
+    setStatus(((index - pv) % total + total) % total);
+    if (motionQuery.matches) {
+      if (index >= total + pv) index -= total;
+      else if (index < pv) index += total;
+      place();
+      locked = false;
+    }
+  }
+
+  track.addEventListener("transitionend", function () {
+    if (index >= total + pv) { index -= total; place(); }
+    else if (index < pv) { index += total; place(); }
+    locked = false;
+  });
+
+  // Autoplay suave; pausa em interação e retoma após 2s sem atividade
+  var timer = null;
+  var interactTimer = null;
+  var isVisible = false;
+  var isHovering = false;
+  var isFocused = false;
+  var isPausedByInteraction = false;
+  var INTERACT_RESUME_MS = 2000;
+
+  function canAutoPlay() {
+    return !motionQuery.matches && isVisible && !document.hidden && !isHovering && !isFocused && !isPausedByInteraction;
+  }
+  function start() {
+    if (timer || !canAutoPlay()) return;
+    timer = setInterval(function () { go(1); }, 5000);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function syncAutoPlay() { stop(); start(); }
+
+  function pauseForInteraction() {
+    isPausedByInteraction = true;
+    stop();
+    if (interactTimer) clearTimeout(interactTimer);
+    interactTimer = setTimeout(function () {
+      interactTimer = null;
+      isPausedByInteraction = false;
+      syncAutoPlay();
+    }, INTERACT_RESUME_MS);
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", function () { go(-1); pauseForInteraction(); });
+  if (nextBtn) nextBtn.addEventListener("click", function () { go(1); pauseForInteraction(); });
+  root.addEventListener("pointerdown", pauseForInteraction);
+  root.addEventListener("touchstart", pauseForInteraction, { passive: true });
+  root.addEventListener("mouseenter", function () { isHovering = true; syncAutoPlay(); });
+  root.addEventListener("mouseleave", function () { isHovering = false; syncAutoPlay(); });
+  root.addEventListener("focusin", function () { isFocused = true; syncAutoPlay(); });
+  root.addEventListener("focusout", function () { isFocused = false; syncAutoPlay(); });
+  document.addEventListener("visibilitychange", syncAutoPlay);
+  if (motionQuery.addEventListener) motionQuery.addEventListener("change", syncAutoPlay);
+
+  if ("IntersectionObserver" in window) {
+    var visibilityObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        isVisible = entry.isIntersecting;
+        syncAutoPlay();
+      });
+    }, { threshold: 0.15 });
+    visibilityObserver.observe(root);
+  } else {
+    isVisible = true;
+    syncAutoPlay();
+  }
+});
+
+// Reveal ao rolar — IntersectionObserver (leve, não bloqueia o carregamento)
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var sel = ".secao-label,.prova-abertura .carrossel,.identificacao-item," +
+    ".agitacao-inner > *,.reframe-esq,.reframe-dir,.historia-headline,.historia-story-mobile,.historia-descricao,.historia-corpo,.historia-lista," +
+    ".mecanismo-item,.dia-item,.modulo-card,.bonus-row,.prova-densa .carrossel," +
+    ".stack-item,.para-quem-item,.objecao-item,.futuro-img-wrap," +
+    ".futuro-cenario,.preco-box,.garantia-inner,.cta-section-inner,.faq-item,.ps-final > *";
+  var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+  if (!els.length) return;
+  els.forEach(function (el) { el.classList.add("reveal"); });
+
+  document.querySelectorAll(".reframe-esq,.futuro-img-wrap,.para-quem > div:first-child").forEach(function (el) {
+    el.classList.add("reveal--left");
+  });
+  document.querySelectorAll(".reframe-dir,.historia-story,.futuro-inner,.para-quem > div:nth-child(2)").forEach(function (el) {
+    el.classList.add("reveal--right");
+  });
+
+  document.querySelectorAll(".identificacao-lista,.mecanismo-grid,.dias-grid,.modulos-grid,.bonus-list,.stack-lista,.objecao-itens,.futuro-cenarios,.faq-inner").forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (child, index) {
+      if (child.classList.contains("reveal")) {
+        child.style.setProperty("--reveal-delay", Math.min(index * 55, 240) + "ms");
+      }
+    });
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+/* Camada de animacao — nm-vendas-rc-v3 e trocado pelo id da pagina na conversao. */
+(function () {
+  var NM_ENTRADA = false; // falso quando a propria pagina ja anima a entrada
+  var raiz = document.getElementById('nm-vendas-rc-v3');
+  if (!raiz) return;
+  var parado = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (NM_ENTRADA) {
+    var alvos = raiz.querySelectorAll('.nm-anim-entrada');
+    if (parado || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(alvos, function (el) { el.classList.add('nm-visivel'); });
+    } else {
+      var obs = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('nm-visivel');
+          obs.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      Array.prototype.forEach.call(alvos, function (el, i) {
+        el.style.transitionDelay = (i % 5) * 80 + 'ms';
+        obs.observe(el);
+      });
+    }
+  }
+})();
+</script>

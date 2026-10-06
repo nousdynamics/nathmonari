@@ -1,0 +1,1118 @@
+<style>
+#nm-evoluto-day-vc,#nm-evoluto-day-vc *{box-sizing:border-box}#nm-evoluto-day-vc h1,#nm-evoluto-day-vc h2,#nm-evoluto-day-vc h3,#nm-evoluto-day-vc h4,#nm-evoluto-day-vc h5,#nm-evoluto-day-vc h6,#nm-evoluto-day-vc p,#nm-evoluto-day-vc ul,#nm-evoluto-day-vc ol,#nm-evoluto-day-vc li,#nm-evoluto-day-vc figure,#nm-evoluto-day-vc blockquote{margin:0;padding:0;font:inherit;color:inherit;letter-spacing:inherit}#nm-evoluto-day-vc ul,#nm-evoluto-day-vc ol{list-style:none}#nm-evoluto-day-vc a{color:inherit;text-decoration:none}#nm-evoluto-day-vc img,#nm-evoluto-day-vc svg,#nm-evoluto-day-vc iframe{max-width:100%;display:block;border:0}#nm-evoluto-day-vc button,#nm-evoluto-day-vc input,#nm-evoluto-day-vc select{font:inherit;color:inherit;margin:0}
+#nm-evoluto-day-vc{
+  --fundo: #050f08;
+  --fundo-2: #0e1f14;
+  --card: #173423;
+  --cta: #a8f05a;
+  --cta-escuro: #5a9e2f;
+  --cta-hover: #b8ff70;
+  --texto: #f7f8f5;
+  --texto-2: #b8c2bb;
+  --divisoria: rgba(255, 255, 255, 0.08);
+
+  --display: "EB Garamond", Georgia, "Times New Roman", serif;
+  --corpo: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  --conteudo: 1160px;
+  --padding-lateral: 0;
+
+  --e1: 8px;
+  --e2: 16px;
+  --e3: 24px;
+  --e4: 32px;
+  --e5: 48px;
+  --e6: 64px;
+  --e7: 96px;
+  --e8: 128px;
+
+  --marquee-velocidade: 1.3;
+}#nm-evoluto-day-vc *,#nm-evoluto-day-vc *::before,#nm-evoluto-day-vc *::after{ box-sizing: border-box; }#nm-evoluto-day-vc{ scroll-behavior: smooth; }@media (prefers-reduced-motion: reduce){#nm-evoluto-day-vc{ scroll-behavior: auto; }}#nm-evoluto-day-vc{
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--corpo);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}#nm-evoluto-day-vc img{ max-width: 100%; height: auto; display: block; }#nm-evoluto-day-vc h1,#nm-evoluto-day-vc h2,#nm-evoluto-day-vc h3,#nm-evoluto-day-vc h4{
+  font-family: var(--display);
+  margin: 0;
+  text-wrap: balance;
+}#nm-evoluto-day-vc h1{ font-weight: 600; font-size: 48px; line-height: 1.1; letter-spacing: -0.01em; }#nm-evoluto-day-vc h2{ font-weight: 600; font-size: 36px; line-height: 1.15; letter-spacing: -0.01em; }#nm-evoluto-day-vc h3{ font-weight: 600; font-size: 28px; line-height: 1.2; }#nm-evoluto-day-vc h4{ font-weight: 600; font-size: 22px; line-height: 1.25; }#nm-evoluto-day-vc p{ margin: 0; }@media (max-width: 768px){#nm-evoluto-day-vc{ font-size: 16px; }#nm-evoluto-day-vc h1{ font-size: 28px; }#nm-evoluto-day-vc h2{ font-size: 28px; }#nm-evoluto-day-vc h3{ font-size: 22px; }#nm-evoluto-day-vc h4{ font-size: 18px; }}#nm-evoluto-day-vc .verde{ color: var(--cta); }#nm-evoluto-day-vc .conteudo{
+  width: 100%;
+  max-width: var(--conteudo);
+  margin: 0 auto;
+  padding-left: var(--padding-lateral);
+  padding-right: var(--padding-lateral);
+}#nm-evoluto-day-vc .secao{ padding-top: var(--e6); padding-bottom: var(--e6); }#nm-evoluto-day-vc .secao--escura{ background: var(--fundo); }#nm-evoluto-day-vc .secao--escura-2{ background: var(--fundo-2); }#nm-evoluto-day-vc .secao--branca{ position: relative; overflow: hidden; background: #ffffff; color: var(--fundo-2); }#nm-evoluto-day-vc .secao--branca .conteudo{ position: relative; z-index: 1; }#nm-evoluto-day-vc .metodo-bg{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  filter: grayscale(80%);
+}#nm-evoluto-day-vc .secao--branca h2,#nm-evoluto-day-vc .secao--branca h3,#nm-evoluto-day-vc .secao--branca h4{ color: var(--fundo-2); }#nm-evoluto-day-vc .secao--branca .label{ color: var(--cta-escuro); }#nm-evoluto-day-vc .secao--branca .secao-topo p:not(.label){ color: var(--card); }#nm-evoluto-day-vc .secao--branca .secao-topo{ align-items: center; text-align: center; }#nm-evoluto-day-vc .secao--branca .card{ background: #f3f8ed; border-color: rgba(14, 31, 20, 0.12); }#nm-evoluto-day-vc .secao--branca .card p,#nm-evoluto-day-vc .secao--branca .card li{ color: var(--card); }#nm-evoluto-day-vc .secao--branca .card p.card-etapa{ color: var(--fundo-2); }#nm-evoluto-day-vc .secao--branca .card h4{ color: var(--cta-escuro); }#nm-evoluto-day-vc .secao--branca .card-icone{ background: rgba(90, 158, 47, 0.12); color: var(--cta-escuro); }#nm-evoluto-day-vc .secao--branca .card li::before{ background: var(--cta-escuro); }#nm-evoluto-day-vc .crm-triangulo{
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  margin-top: var(--e3);
+}@media (max-width: 768px){#nm-evoluto-day-vc .secao{ padding-top: var(--e4); padding-bottom: var(--e4); }}#nm-evoluto-day-vc .label{
+  font-family: var(--corpo);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--texto-2);
+  margin: 0;
+}#nm-evoluto-day-vc .secao-topo{ display: flex; flex-direction: column; gap: var(--e2); margin-bottom: var(--e4); }#nm-evoluto-day-vc .secao-topo p:not(.label){ color: var(--texto-2); max-width: 65ch; }#nm-evoluto-day-vc .cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e1);
+  min-height: 48px;
+  padding: 10px var(--e3);
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cta-escuro), var(--cta), var(--cta-escuro));
+  background-size: 200% 100%;
+  color: #050f08;
+  font-family: var(--corpo);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  animation:
+    nm-evoluto-day-vc-cta-pulse 2.5s ease-out infinite,
+    nm-evoluto-day-vc-cta-gradiente 3s linear infinite;
+  transition: transform 0.2s ease;
+}#nm-evoluto-day-vc .cta:hover{ transform: scale(1.03); }#nm-evoluto-day-vc .cta:focus-visible{ outline: 2px solid var(--cta-hover); outline-offset: 4px; }#nm-evoluto-day-vc .cta svg{ width: 18px; height: 18px; flex: none; }#nm-evoluto-day-vc .cta--grande{ min-height: 52px; padding: 12px var(--e4); font-size: 18px; }@keyframes nm-evoluto-day-vc-cta-pulse{
+  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 240, 90, 0.45); }
+  50%      { box-shadow: 0 0 0 16px rgba(168, 240, 90, 0); }
+}@keyframes nm-evoluto-day-vc-cta-gradiente{
+  0%   { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}@media (prefers-reduced-motion: reduce){#nm-evoluto-day-vc .cta{ animation: none; background: var(--cta); }#nm-evoluto-day-vc .cta:hover{ transform: none; }}@media (max-width: 768px){#nm-evoluto-day-vc .cta{ width: 100%; padding: 14px var(--e3); font-size: 14px; text-align: center; }#nm-evoluto-day-vc .hero-cta .cta{ font-size: 13px; }}#nm-evoluto-day-vc .hero{
+  position: relative;
+  height: 920px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--fundo);
+}#nm-evoluto-day-vc .hero-fundo{
+  position: absolute;
+  inset: 0;
+  background-image: url(https://ev.nathmonari.com.br/images/bg-hero-evoluto-day.webp);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}@media (max-width: 900px){#nm-evoluto-day-vc .hero-fundo{
+    background-image: url(https://ev.nathmonari.com.br/images/bg-hero-evoluto-day-mobile.webp);
+    background-position: top center;
+  }}#nm-evoluto-day-vc .hero-foto{
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 52%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.5;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 45%);
+  mask-image: linear-gradient(90deg, transparent, #000 45%);
+}#nm-evoluto-day-vc .hero .conteudo{ position: relative; z-index: 1; }#nm-evoluto-day-vc .hero-inner{
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e1);
+}#nm-evoluto-day-vc .hero-logo{
+  width: auto;
+  height: 48px;
+  align-self: flex-start;
+  margin-bottom: var(--e2);
+}#nm-evoluto-day-vc .hero-evento{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e2);
+  margin: var(--e1) 0;
+}#nm-evoluto-day-vc .hero-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--corpo);
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid var(--divisoria);
+  border-radius: 999px;
+  color: var(--texto-2);
+}#nm-evoluto-day-vc .hero-evento .hero-chip{
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--texto);
+  background: rgba(168, 240, 90, 0.08);
+  border-color: rgba(168, 240, 90, 0.35);
+  padding: 8px 16px;
+}#nm-evoluto-day-vc .hero-evento .hero-chip img{ width: 18px; height: 18px; }#nm-evoluto-day-vc .hero-chip img{
+  width: 16px;
+  height: 16px;
+  flex: none;
+}#nm-evoluto-day-vc .hero-sep{
+  color: var(--texto-2);
+  opacity: 0.5;
+  font-size: 14px;
+}#nm-evoluto-day-vc .hero-pre{
+  color: var(--texto-2);
+  font-size: 16px;
+  max-width: 56ch;
+  margin-top: var(--e1);
+}#nm-evoluto-day-vc .hero-sub{
+  color: var(--texto-2);
+  font-size: 16px;
+  max-width: 60ch;
+  margin-bottom: 0;
+}#nm-evoluto-day-vc .hero-preco{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, calc(-100% + 8px));
+  margin: 0;
+  padding: 4px 8px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 6px;
+  font-family: var(--corpo);
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1;
+}#nm-evoluto-day-vc .hero-preco s{ color: #d3402b; }#nm-evoluto-day-vc .hero-preco strong{ color: var(--cta-escuro); font-weight: 700; }#nm-evoluto-day-vc .hero-cta{
+  position: relative;
+  margin-top: calc(var(--e1) + 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--e2);
+  max-width: 420px;
+}#nm-evoluto-day-vc .hero-barra{
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(247, 248, 245, 0.12);
+  border: 1px solid rgba(247, 248, 245, 0.2);
+  overflow: hidden;
+}#nm-evoluto-day-vc .hero-barra-fill{
+  display: block;
+  height: 100%;
+  width: 25%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cta-escuro), var(--cta));
+}#nm-evoluto-day-vc .hero-lote{
+  font-family: var(--corpo);
+  font-size: 14px;
+  color: var(--texto);
+  text-align: left;
+}#nm-evoluto-day-vc .hero-lote strong{ font-weight: 700; }@media (max-width: 900px){#nm-evoluto-day-vc{ --padding-lateral: 16px; }#nm-evoluto-day-vc .hero{ height: auto; min-height: 0; padding: 170px 12px 12px; }#nm-evoluto-day-vc .hero-foto{ width: 100%; opacity: 0.22; -webkit-mask-image: linear-gradient(180deg, transparent, #000 70%); mask-image: linear-gradient(180deg, transparent, #000 70%); }#nm-evoluto-day-vc .hero-cta{ align-self: stretch; max-width: none; }#nm-evoluto-day-vc .hero-logo{ height: 40px; }#nm-evoluto-day-vc .hero-evento{ flex-wrap: wrap; gap: 6px; margin: 4px 0; }#nm-evoluto-day-vc .hero-chip{ font-size: 11px; padding: 4px 8px; white-space: nowrap; }#nm-evoluto-day-vc .hero-chip img{ width: 12px; height: 12px; }#nm-evoluto-day-vc .hero-evento .hero-chip{ font-size: 11px; padding: 4px 8px; white-space: nowrap; }#nm-evoluto-day-vc .hero-evento .hero-chip img{ width: 12px; height: 12px; }#nm-evoluto-day-vc .hero-sep{ display: none; }#nm-evoluto-day-vc .hero-inner{ gap: 4px; }#nm-evoluto-day-vc .hero-pre{ margin-top: 4px; }#nm-evoluto-day-vc .hero-cta{ margin-top: calc(4px + 20px); gap: var(--e1); }#nm-evoluto-day-vc .hero-lote{ text-align: center; }#nm-evoluto-day-vc .hero-logo{ margin-bottom: var(--e1); }}#nm-evoluto-day-vc .marquee{
+  background: var(--fundo-2);
+  border-top: 1px solid var(--divisoria);
+  border-bottom: 1px solid var(--divisoria);
+  padding: 18px 0;
+  overflow: hidden;
+}#nm-evoluto-day-vc .marquee-track{
+  display: flex;
+  width: max-content;
+  animation: nm-evoluto-day-vc-marquee-scroll calc(20s / var(--marquee-velocidade)) linear infinite;
+}#nm-evoluto-day-vc .marquee-grupo{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  white-space: nowrap;
+  font-family: var(--corpo);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto);
+}#nm-evoluto-day-vc .marquee-estrela{
+  width: 14px;
+  height: 14px;
+  flex: none;
+  color: var(--cta);
+}@keyframes nm-evoluto-day-vc-marquee-scroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}@media (prefers-reduced-motion: reduce){#nm-evoluto-day-vc .marquee-track{ animation: none; }}#nm-evoluto-day-vc .secao--abertura{ padding-top: var(--e4); padding-bottom: var(--e4); }#nm-evoluto-day-vc .abertura-inner{ max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--e2); }#nm-evoluto-day-vc .abertura-inner p{ color: var(--texto-2); }#nm-evoluto-day-vc .abertura-inner p strong{ color: var(--texto); font-weight: 500; }#nm-evoluto-day-vc .abertura-destaque{
+  font-family: var(--display);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--texto);
+  border-left: 2px solid var(--cta);
+  padding-left: var(--e4);
+}@media (max-width: 768px){#nm-evoluto-day-vc .abertura-destaque{ font-size: 20px; padding-left: var(--e3); }}#nm-evoluto-day-vc .abertura-fecho{ font-size: 22px; font-family: var(--display); font-weight: 600; color: var(--texto); }#nm-evoluto-day-vc .grid-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e3); }#nm-evoluto-day-vc .grid-2{ display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--e3); }@media (max-width: 900px){#nm-evoluto-day-vc .grid-3,#nm-evoluto-day-vc .grid-2{ grid-template-columns: 1fr; gap: var(--e2); }}#nm-evoluto-day-vc .card{
+  background: var(--card);
+  border: 1px solid var(--divisoria);
+  border-radius: 24px;
+  padding: var(--e3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e1);
+}#nm-evoluto-day-vc .card-icone{
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(168, 240, 90, 0.1);
+  color: var(--cta);
+  margin-bottom: 0;
+}#nm-evoluto-day-vc .card-icone svg{ width: 24px; height: 24px; }#nm-evoluto-day-vc .card p.card-etapa{
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--cta);
+}#nm-evoluto-day-vc .card h4{ color: var(--texto); font-size: 20px; }#nm-evoluto-day-vc .card p{ color: var(--texto-2); font-size: 16px; }#nm-evoluto-day-vc .card ul{ margin: var(--e1) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--e1); }#nm-evoluto-day-vc .card li{
+  position: relative;
+  padding-left: var(--e3);
+  font-size: 16px;
+  color: var(--texto-2);
+}#nm-evoluto-day-vc .card li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--cta);
+}#nm-evoluto-day-vc .cronograma{
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: var(--e6);
+  align-items: start;
+  margin-top: var(--e7);
+}#nm-evoluto-day-vc .cronograma-info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e3);
+}#nm-evoluto-day-vc .cronograma-logo{ width: auto; height: 31px; }#nm-evoluto-day-vc .cronograma-evento{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e2);
+}#nm-evoluto-day-vc .cronograma-evento .hero-chip{
+  border-color: rgba(14, 31, 20, 0.15);
+  color: var(--card);
+}#nm-evoluto-day-vc .cronograma-dias{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e5);
+}@media (max-width: 900px){#nm-evoluto-day-vc .cronograma{ grid-template-columns: 1fr; gap: var(--e4); }#nm-evoluto-day-vc .cronograma-dias{ grid-template-columns: 1fr; }}#nm-evoluto-day-vc .dia{ display: flex; flex-direction: column; gap: var(--e2); }#nm-evoluto-day-vc .dia-titulo{ font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cta-escuro); font-weight: 500; }#nm-evoluto-day-vc .agenda{ list-style: none; margin: 0; padding: 0; }#nm-evoluto-day-vc .agenda li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--e3);
+  padding: var(--e3) 0;
+  border-bottom: 1px solid rgba(14, 31, 20, 0.12);
+}#nm-evoluto-day-vc .agenda li:last-child{ border-bottom: 0; }#nm-evoluto-day-vc .agenda .hora{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fundo-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}@media (max-width: 900px){#nm-evoluto-day-vc .agenda .hora{ font-size: 15px; white-space: normal; }}#nm-evoluto-day-vc .agenda .hora svg{ width: 20px; height: 20px; flex: none; color: var(--cta-escuro); }#nm-evoluto-day-vc .agenda .item{ font-size: 15px; color: var(--card); text-align: right; }#nm-evoluto-day-vc .secao--paraquem .secao-topo{ align-items: center; text-align: center; margin-bottom: var(--e5); }#nm-evoluto-day-vc .para-quem{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e2);
+}#nm-evoluto-day-vc .para-quem li{
+  display: flex;
+  gap: var(--e2);
+  align-items: flex-start;
+  padding: var(--e3);
+  border: 1px solid var(--divisoria);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--texto-2);
+  font-size: 15px;
+  line-height: 1.55;
+}#nm-evoluto-day-vc .para-quem li:last-child{ grid-column: 1 / -1; }#nm-evoluto-day-vc .para-quem svg{
+  width: 32px;
+  height: 32px;
+  flex: none;
+  padding: 7px;
+  border-radius: 999px;
+  background: rgba(168, 240, 90, 0.1);
+  color: var(--cta);
+}#nm-evoluto-day-vc .para-quem strong{ color: var(--texto); font-weight: 500; }@media (max-width: 900px){#nm-evoluto-day-vc .para-quem{ grid-template-columns: 1fr; }#nm-evoluto-day-vc .para-quem li:last-child{ grid-column: auto; }}#nm-evoluto-day-vc .secao--saida .secao-topo{ align-items: center; text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }#nm-evoluto-day-vc .secao--saida .secao-topo p{ color: var(--texto-2); }#nm-evoluto-day-vc .saida-lista{
+  list-style: none;
+  margin: var(--e5) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e2);
+}#nm-evoluto-day-vc .saida-lista li{
+  display: flex;
+  flex-direction: column;
+  gap: var(--e1);
+  padding: var(--e3);
+  border: 1px solid var(--divisoria);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}#nm-evoluto-day-vc .saida-lista strong{
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--cta);
+}#nm-evoluto-day-vc .saida-lista span{
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--texto-2);
+}@media (max-width: 900px){#nm-evoluto-day-vc .saida-lista{ grid-template-columns: 1fr; }}#nm-evoluto-day-vc .faq-cta{
+  display: flex;
+  justify-content: center;
+  margin-top: var(--e5);
+}#nm-evoluto-day-vc .secao--provas .secao-topo{ align-items: center; text-align: center; }#nm-evoluto-day-vc .provas-carrossel{ position: relative; }#nm-evoluto-day-vc .provas-viewport{ overflow: hidden; }#nm-evoluto-day-vc .provas-track{
+  display: flex;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}#nm-evoluto-day-vc .prova{
+  flex: 0 0 calc(100% / 3);
+  min-width: 0;
+  padding: 0 calc(var(--e2) / 2);
+  box-sizing: border-box;
+}#nm-evoluto-day-vc .prova img{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: var(--card);
+  border: 1px solid var(--divisoria);
+  border-radius: 24px;
+}#nm-evoluto-day-vc .provas-seta{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--divisoria);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--texto);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}#nm-evoluto-day-vc .provas-seta:hover{ background: var(--cta); color: #0c1108; }#nm-evoluto-day-vc .provas-seta svg{ width: 20px; height: 20px; }#nm-evoluto-day-vc .provas-seta--prev{ left: -8px; }#nm-evoluto-day-vc .provas-seta--next{ right: -8px; }@media (max-width: 900px){#nm-evoluto-day-vc .prova{ flex: 0 0 100%; }#nm-evoluto-day-vc .provas-setas{
+    display: flex;
+    justify-content: center;
+    gap: var(--e2);
+    margin-bottom: var(--e2);
+  }#nm-evoluto-day-vc .provas-seta{ position: static; transform: none; }}#nm-evoluto-day-vc .bio{ display: grid; grid-template-columns: 5fr 7fr; gap: var(--e6); align-items: center; }@media (max-width: 900px){#nm-evoluto-day-vc .bio{ grid-template-columns: 1fr; gap: var(--e2); }#nm-evoluto-day-vc .bio-foto img{ width: 100%; max-width: none; margin: -16px auto; }}#nm-evoluto-day-vc .bio-foto img{ width: 100%; height: auto; max-width: 480px; margin: 0 auto; }#nm-evoluto-day-vc .bio-texto{ display: flex; flex-direction: column; gap: var(--e3); }#nm-evoluto-day-vc .bio-texto p{ color: var(--texto-2); }#nm-evoluto-day-vc .bio-numero{
+  display: flex;
+  align-items: baseline;
+  gap: var(--e2);
+  padding-top: var(--e3);
+  border-top: 1px solid var(--divisoria);
+}#nm-evoluto-day-vc .bio-numero b{ font-family: var(--display); font-weight: 700; font-size: 48px; color: var(--cta); line-height: 1; }#nm-evoluto-day-vc .bio-numero span{ font-size: 16px; color: var(--texto-2); }#nm-evoluto-day-vc .secao--oferta{ background: var(--fundo-2); color: var(--texto); }#nm-evoluto-day-vc .oferta-box{
+  background: var(--fundo);
+  color: var(--texto);
+  border: 1px solid var(--divisoria);
+  border-radius: 24px;
+  padding: var(--e6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e4);
+  max-width: 720px;
+  margin: 0 auto;
+}@media (max-width: 768px){#nm-evoluto-day-vc .oferta-box{ padding: var(--e4); }}#nm-evoluto-day-vc .oferta-box .oferta-titulo{ color: var(--texto); font-size: 30px; text-align: center; margin-bottom: var(--e2); }#nm-evoluto-day-vc .stack{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }#nm-evoluto-day-vc .stack li{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--e3);
+  padding: var(--e3) 0;
+  border-bottom: 1px solid var(--divisoria);
+  font-size: 16px;
+  color: var(--texto-2);
+}#nm-evoluto-day-vc .stack .valor{ color: var(--texto); font-variant-numeric: tabular-nums; white-space: nowrap; }#nm-evoluto-day-vc .stack .total{
+  border-bottom: 0;
+  padding-top: var(--e4);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--texto);
+}#nm-evoluto-day-vc .stack .total .valor{ text-decoration: line-through; opacity: 0.6; }#nm-evoluto-day-vc .oferta-preco{ text-align: center; display: flex; flex-direction: column; gap: var(--e1); }#nm-evoluto-day-vc .oferta-selo{
+  align-self: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #050f08;
+  background: var(--cta);
+  border-radius: 999px;
+  padding: var(--e1) var(--e2);
+  margin-bottom: var(--e2);
+}#nm-evoluto-day-vc .oferta-parcela{ font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1.1; }#nm-evoluto-day-vc .oferta-avista{ font-size: 16px; color: var(--texto-2); }#nm-evoluto-day-vc .oferta-evento{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--e3);
+  border-top: 1px solid var(--divisoria);
+  padding-top: var(--e4);
+}#nm-evoluto-day-vc .oferta-evento-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e2);
+  background: var(--card);
+  border-radius: 16px;
+  padding: var(--e2) var(--e3);
+  flex: 0 1 auto;
+}#nm-evoluto-day-vc .oferta-evento-item img{ flex: none; }#nm-evoluto-day-vc .oferta-evento-item b{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cta);
+  white-space: nowrap;
+}@media (max-width: 768px){#nm-evoluto-day-vc .oferta-evento{ gap: var(--e2); }#nm-evoluto-day-vc .oferta-evento-item{ padding: var(--e2); }}#nm-evoluto-day-vc .garantia{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--e4);
+  align-items: start;
+  background: var(--card);
+  border: 1px solid var(--divisoria);
+  border-radius: 24px;
+  padding: var(--e5);
+  max-width: 900px;
+  margin: 0 auto;
+}@media (max-width: 768px){#nm-evoluto-day-vc .garantia{ grid-template-columns: 1fr; padding: var(--e4); }}#nm-evoluto-day-vc .garantia-selo{
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(168, 240, 90, 0.1);
+  color: var(--cta);
+}#nm-evoluto-day-vc .garantia-selo svg{ width: 32px; height: 32px; }#nm-evoluto-day-vc .garantia-texto{ display: flex; flex-direction: column; gap: var(--e2); }#nm-evoluto-day-vc .garantia-texto h3{ font-size: 32px; }@media (max-width: 768px){#nm-evoluto-day-vc .garantia-texto h3{ font-size: 26px; }}#nm-evoluto-day-vc .garantia-texto p{ color: var(--texto-2); font-size: 16px; }#nm-evoluto-day-vc .garantia-texto a{ color: var(--cta); }#nm-evoluto-day-vc .faq-grid{
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: var(--e6);
+  align-items: start;
+}@media (max-width: 900px){#nm-evoluto-day-vc .faq-grid{ grid-template-columns: 1fr; gap: var(--e4); }}#nm-evoluto-day-vc .faq-intro{ display: flex; flex-direction: column; gap: var(--e2); }#nm-evoluto-day-vc .faq-intro p{ color: var(--texto-2); font-size: 16px; }#nm-evoluto-day-vc .faq-intro a{ color: var(--texto); font-weight: 600; }#nm-evoluto-day-vc .faq-intro a:hover{ color: var(--cta); }#nm-evoluto-day-vc .faq{ display: flex; flex-direction: column; gap: var(--e2); }#nm-evoluto-day-vc .faq-item{
+  border: 1px solid var(--divisoria);
+  border-radius: 16px;
+  background: var(--fundo-2);
+  overflow: hidden;
+}#nm-evoluto-day-vc .faq-pergunta{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--e3);
+  padding: var(--e3) var(--e4);
+  background: none;
+  border: 0;
+  color: var(--texto);
+  font-family: var(--corpo);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}#nm-evoluto-day-vc .faq-pergunta:focus-visible{ outline: 2px solid var(--cta); outline-offset: -2px; border-radius: 16px; }#nm-evoluto-day-vc .faq-icone{ flex: none; width: 20px; height: 20px; color: var(--texto-2); transition: transform 0.2s ease; }#nm-evoluto-day-vc .faq-item.open .faq-icone{ transform: rotate(180deg); }#nm-evoluto-day-vc .faq-resposta{ display: none; padding: 0 var(--e4) var(--e3); color: var(--texto-2); font-size: 16px; max-width: 65ch; }#nm-evoluto-day-vc .faq-item.open .faq-resposta{ display: block; }@media (max-width: 768px){#nm-evoluto-day-vc .faq-pergunta{ padding: var(--e3); }#nm-evoluto-day-vc .faq-resposta{ padding: 0 var(--e3) var(--e3); }}#nm-evoluto-day-vc .fechamento{ max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: var(--e3); align-items: center; }#nm-evoluto-day-vc .fechamento p{ color: var(--texto-2); }#nm-evoluto-day-vc .fechamento .cta{ margin-top: var(--e2); }#nm-evoluto-day-vc .rodape{ border-top: 1px solid var(--divisoria); padding: var(--e5) 0; background: var(--fundo); }#nm-evoluto-day-vc .rodape-inner{ display: flex; flex-wrap: wrap; gap: var(--e3); justify-content: space-between; align-items: center; font-size: 14px; color: var(--texto-2); }#nm-evoluto-day-vc .rodape-logo{ height: 28px; width: auto; }#nm-evoluto-day-vc .rodape a{ color: var(--texto-2); }#nm-evoluto-day-vc .rodape a:hover{ color: var(--cta); }#nm-evoluto-day-vc .reveal{ opacity: 0; transform: translateY(16px); transition: opacity 400ms ease, transform 400ms ease; }#nm-evoluto-day-vc .reveal.in{ opacity: 1; transform: none; }@media (prefers-reduced-motion: reduce){#nm-evoluto-day-vc .reveal{ opacity: 1; transform: none; transition: none; }}
+/* Camada de animacao — nm-evoluto-day-vc e trocado pelo id da pagina na conversao. */
+#nm-evoluto-day-vc .nm-anim-cta{position:relative;overflow:hidden;isolation:isolate}
+#nm-evoluto-day-vc .nm-anim-cta::after{content:'';position:absolute;top:0;bottom:0;left:-45%;width:45%;z-index:1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);animation:nm-evoluto-day-vc-brilho 5s ease-in-out infinite}
+#nm-evoluto-day-vc .nm-anim-cta:hover{transform:translateY(-2px)}
+#nm-evoluto-day-vc .nm-anim-cta{transition:transform .2s ease}
+@keyframes nm-evoluto-day-vc-brilho{0%,55%{transform:translateX(0)}100%{transform:translateX(330%)}}
+@media (prefers-reduced-motion: reduce){
+  #nm-evoluto-day-vc .nm-anim-cta::after{display:none;animation:none}
+  #nm-evoluto-day-vc *{animation:none !important;transition:none !important}
+}
+</style>
+
+<div id="nm-evoluto-day-vc" class="nm-bloco">
+<!-- Google Tag Manager (noscript) -->
+    
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-fundo" aria-hidden="true"></div>
+      <div class="conteudo">
+        <div class="hero-inner">
+          <img class="hero-logo" src="https://ev.nathmonari.com.br/images/logo-evoluto-day.svg" alt="Evoluto Day" width="264" height="48" fetchpriority="high" />
+          <div class="hero-evento">
+            <span class="hero-chip"><img src="https://ev.nathmonari.com.br/images/emoji-calendar.png" alt="" width="16" height="16" /> 15 e 16/08/2026</span>
+            <span class="hero-sep" aria-hidden="true">|</span>
+            <span class="hero-chip"><img src="https://ev.nathmonari.com.br/images/emoji-pin.png" alt="" width="16" height="16" /> Online e Ao Vivo no Zoom</span>
+          </div>
+          <p class="hero-pre">Para a mulher que j&aacute; tentou de tudo pra mudar de vida e continua se sentindo presa no mesmo lugar</p>
+          <h1>Como sair do ciclo de come&ccedil;ar e desistir em um &uacute;nico fim de semana, sem depender de motiva&ccedil;&atilde;o, mesmo que voc&ecirc; j&aacute; tenha tentado de tudo.</h1>
+          <p class="hero-sub">Dois dias de imers&atilde;o ao vivo, um m&eacute;todo de tr&ecirc;s etapas que ajudou 700 mulheres e um plano de 90 dias na sua m&atilde;o at&eacute; domingo &agrave; tarde &eacute; tudo o que voc&ecirc; precisa para iniciar uma vida nova segunda-feira.</p>
+          <div class="hero-cta">
+            <p class="hero-preco">De <s>R$497</s> por <strong>R$47</strong> s&oacute; no primeiro lote</p>
+            <a class="cta nm-anim-cta" href="https://pay.kiwify.com.br/nKlLKgG" data-cta="hero"><span>Quero garantir minha vaga | Lote 1</span></a>
+            <div class="hero-barra" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do Lote 1">
+              <span class="hero-barra-fill"></span>
+            </div>
+            <p class="hero-lote">25% do <strong>LOTE 1</strong> Vendido a R$47</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="marquee" aria-label="M&eacute;todo CRM">
+      <div class="marquee-track">
+        <div class="marquee-grupo"><span>Clareza</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Reprograma&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Manifesta&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg></div>
+        <div class="marquee-grupo"><span>Clareza</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Reprograma&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Manifesta&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg></div>
+        <div class="marquee-grupo"><span>Clareza</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Reprograma&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Manifesta&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg></div>
+        <div class="marquee-grupo"><span>Clareza</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Reprograma&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg><span>Manifesta&ccedil;&atilde;o</span><svg class="marquee-estrela" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.6 6.9h7.2l-5.8 4.3 2.2 7-6.2-4.5-6.2 4.5 2.2-7-5.8-4.3h7.2z"></path></svg></div>
+      </div>
+    </section>
+
+    <!-- ABERTURA -->
+    <section class="secao secao--escura secao--abertura">
+      <div class="conteudo">
+        <div class="abertura-inner">
+          <p>Voc&ecirc; j&aacute; sabe essa sensa&ccedil;&atilde;o.</p>
+          <p>Acorda pensando em tudo que precisa fazer. Se compara com algu&eacute;m que parece ter uma vida melhor no Instagram. Come&ccedil;a a semana com energia total e alguns dias depois, desanda e desiste de tudo que pensou em fazer.</p>
+          <p>E &agrave; noite vem o pensamento que mais d&oacute;i:</p>
+          <p class="abertura-destaque">&ldquo;J&aacute; tentei de tudo, acho que o problema sou eu, &eacute; melhor desistir.&rdquo;</p>
+          <p>Voc&ecirc; entra e sai do mesmo ciclo: come&ccedil;a, procrastina, desiste, se culpa.</p>
+          <p>E o medo n&atilde;o &eacute; sobre os dias ruins, &eacute; imaginar que daqui uns 5 anos voc&ecirc; vai olhar pra tr&aacute;s e estar&aacute; no mesmo lugar.</p>
+          <p>A verdade &eacute; que ningu&eacute;m te ensinou a diferen&ccedil;a entre <strong>saber o que fazer</strong> e <strong>conseguir de fato fazer e manter a const&acirc;ncia</strong>.</p>
+          <p>Eu mesma j&aacute; errei muito, j&aacute; desisti centenas de vezes no meio do caminho e j&aacute; me senti incapaz de mudar a vida que tinha.</p>
+          <p>A diferen&ccedil;a &eacute; que encontrei um caminho para sair do ciclo e hoje ajudo outras mulheres iguais a voc&ecirc; a encontrar o delas.</p>
+          <p class="abertura-fecho">Se voc&ecirc; est&aacute; cansada de viver uma vida que n&atilde;o aguenta mais, ent&atilde;o eu tenho uma &oacute;tima not&iacute;cia: <span class="verde">o Evoluto Day &eacute; para voc&ecirc;.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE &Eacute; + CRONOGRAMA -->
+    <section class="secao secao--branca" id="metodo">
+      <img class="metodo-bg" src="https://ev.nathmonari.com.br/images/logo-bg.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <div class="conteudo">
+        <div class="secao-topo">
+          <h2>O que &eacute; o Evoluto Day</h2>
+          <p>Uma imers&atilde;o constru&iacute;da em cima de um m&eacute;todo de 3 etapas. Em cada etapa voc&ecirc; aplica uma ferramenta pr&aacute;tica, e sai com ela pronta.</p>
+          <img class="crm-triangulo" src="https://ev.nathmonari.com.br/images/triangulo-crm.webp" alt="M&eacute;todo CRM: Clareza, Reprograma&ccedil;&atilde;o e Manifesta&ccedil;&atilde;o" width="2048" height="565" loading="lazy" decoding="async" />
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></div>
+            <p class="card-etapa">Clareza</p>
+            <h4>Diagn&oacute;stico da vida</h4>
+            <p>Voc&ecirc; n&atilde;o muda o que n&atilde;o consegue nomear. Aqui voc&ecirc; faz um raio-x completo da sua vida atual.</p>
+            <ul>
+              <li>Descubra qual &aacute;rea espec&iacute;fica est&aacute; puxando todas as outras pra baixo e pare de tentar consertar tudo ao mesmo tempo sem sair do lugar.</li>
+              <li>Identifique o momento exato em que voc&ecirc; trava, repetidamente, e a cren&ccedil;a por tr&aacute;s disso.</li>
+              <li>Saia sabendo, com clareza, qual &eacute; o seu real ponto de partida, n&atilde;o o que voc&ecirc; acha que &eacute;.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125"></path><path d="M12 5a3 3 0 1 1 5.997.125"></path><path d="M6.003 5.125A3 3 0 0 0 4.5 10.5a3 3 0 0 0 .5 5.5 3 3 0 0 0 5 2.5V5"></path><path d="M17.997 5.125A3 3 0 0 1 19.5 10.5a3 3 0 0 1-.5 5.5 3 3 0 0 1-5 2.5V5"></path></svg></div>
+            <p class="card-etapa">Reprograma&ccedil;&atilde;o</p>
+            <h4>Nova identidade e reprogramando sua cren&ccedil;a</h4>
+            <p>A cren&ccedil;a que te faz voltar pra estaca zero n&atilde;o &eacute; personalidade, &eacute; padr&atilde;o &mdash; e padr&atilde;o se identifica, se rastreia e se desmonta.</p>
+            <ul>
+              <li>Construa a identidade da mulher que voc&ecirc; quer ser daqui a 90 dias, e o que fazer pra sustentar isso nos dias dif&iacute;ceis, n&atilde;o s&oacute; nos dias bons.</li>
+              <li>Identifique a cren&ccedil;a sabotadora espec&iacute;fica que te faz desistir sempre no mesmo ponto &mdash; a raiz real, n&atilde;o a vers&atilde;o gen&eacute;rica &ldquo;eu n&atilde;o tenho disciplina&rdquo;.</li>
+              <li>Aprenda o processo pra rastrear e desativar essa cren&ccedil;a, n&atilde;o s&oacute; &ldquo;ter consci&ecirc;ncia&rdquo; dela.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91 0z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
+            <p class="card-etapa">Manifesta&ccedil;&atilde;o</p>
+            <h4>Plano de 90 dias</h4>
+            <p>Saia com seu pr&oacute;prio plano de a&ccedil;&atilde;o di&aacute;rio, constru&iacute;do por voc&ecirc;, com base em quem voc&ecirc; quer se tornar.</p>
+            <ul>
+              <li>Defina exatamente o que fazer e o que parar de fazer, dia a dia, pelos pr&oacute;ximos 90 dias.</li>
+              <li>Leve pra casa um plano &agrave; prova de desist&ecirc;ncia, pensado pra funcionar mesmo nos dias em que a vontade n&atilde;o aparece.</li>
+              <li>Voc&ecirc; sai do Evoluto Day com um plano pronto pra executar imediatamente.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- CRONOGRAMA -->
+        <div class="cronograma">
+          <div class="cronograma-info">
+            <img class="cronograma-logo" src="https://ev.nathmonari.com.br/images/logo-sup.svg" alt="Evoluto Day" width="250" height="31" loading="lazy" />
+            <h2>Cronograma do evento</h2>
+            <div class="cronograma-evento">
+              <span class="hero-chip"><img src="https://ev.nathmonari.com.br/images/emoji-calendar.png" alt="" width="16" height="16" /> 15 e 16/08/2026</span>
+              <span class="hero-chip"><img src="https://ev.nathmonari.com.br/images/emoji-pin.png" alt="" width="16" height="16" /> Online e Ao Vivo no Zoom</span>
+            </div>
+          </div>
+          <div class="cronograma-dias">
+            <div class="dia">
+              <p class="dia-titulo">15 de agosto</p>
+              <ul class="agenda">
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>09h00</span><span class="item">Abertura &mdash; Dia 1</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>09h05</span><span class="item">Bloco 1</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>12h00</span><span class="item">Intervalo para almo&ccedil;o</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>13h00</span><span class="item">Bloco 2</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>16h00</span><span class="item">Encerramento do dia 1</span></li>
+              </ul>
+            </div>
+            <div class="dia">
+              <p class="dia-titulo">16 de agosto</p>
+              <ul class="agenda">
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>09h00</span><span class="item">Abertura &mdash; Dia 2</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>09h05</span><span class="item">Bloco 3 &mdash; final</span></li>
+                <li><span class="hora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>12h00</span><span class="item">Encerramento do evento</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUEM &Eacute; -->
+    <section class="secao secao--escura-2 secao--paraquem">
+      <div class="conteudo">
+        <div class="secao-topo">
+          <h2>Para quem &eacute; o Evoluto Day</h2>
+        </div>
+        <ul class="para-quem">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que carrega um sonho de vida nova h&aacute; tempo demais e est&aacute; cansada de adiar ele pra &ldquo;quando der&rdquo;.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que j&aacute; chorou de exaust&atilde;o tentando mudar sozinha e ainda assim guarda uma esperan&ccedil;a de que sua hist&oacute;ria pode ser diferente.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que quer a coragem de tomar decis&otilde;es novas, mesmo com medo, mesmo sem garantia nenhuma de que vai dar certo.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que est&aacute; pronta pra se olhar de frente, encarar o que te trava, e sair do outro lado como a mulher que sempre soube que podia ser.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que j&aacute; tentou de tudo e mesmo assim n&atilde;o perdeu a f&eacute; de que existe um caminho, s&oacute; ainda n&atilde;o encontrou.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que sonha em olhar pra sua pr&oacute;pria vida com orgulho, n&atilde;o com aquele n&oacute; no peito de &ldquo;podia ser diferente&rdquo;.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>&Eacute; para voc&ecirc; que n&atilde;o desistiu, s&oacute; est&aacute; esperando o momento certo pra virar a p&aacute;gina.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao secao--escura secao--provas">
+      <div class="conteudo">
+        <div class="secao-topo">
+          <h2>Quem j&aacute; passou pelo processo</h2>
+        </div>
+        <div class="provas-carrossel" data-provas>
+          <div class="provas-setas">
+            <button class="provas-seta provas-seta--prev" type="button" aria-label="Depoimento anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <button class="provas-seta provas-seta--next" type="button" aria-label="Pr&oacute;ximo depoimento">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+          </div>
+          <div class="provas-viewport">
+            <div class="provas-track">
+              <div class="prova"><img src="https://ev.nathmonari.com.br/images/depoimento-julia.webp" alt="Depoimento da aluna J&uacute;lia" width="760" height="1351" loading="lazy" decoding="async" /></div>
+              <div class="prova"><img src="https://ev.nathmonari.com.br/images/depoimento-kelly.webp" alt="Depoimento da aluna Kelly" width="760" height="1351" loading="lazy" decoding="async" /></div>
+              <div class="prova"><img src="https://ev.nathmonari.com.br/images/depoimento-3.webp" alt="Depoimento de aluna" width="760" height="506" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section class="secao secao--escura-2">
+      <div class="conteudo">
+        <div class="bio">
+          <div class="bio-foto">
+            <picture>
+              <source media="(max-width: 900px)" srcset="/images/bio-storys-mobile.webp" width="1080" height="785" />
+              <img src="https://ev.nathmonari.com.br/images/bio-storys.webp" alt="Story do Instagram de Nath Monari" width="837" height="1410" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <div class="bio-texto">
+            <h2>Quem &eacute; a Nath</h2>
+            <p>Eu sei o que &eacute; isso que voc&ecirc; vive hoje. Eu j&aacute; estive no seu lugar, eu vivi isso.</p>
+            <p>Por muito tempo eu me olhava no espelho e n&atilde;o gostava do que via. Como eu me enxergava, como eu comunicava, como eu decidia as coisas, como eu simplesmente n&atilde;o me posicionava em todas as &aacute;reas da vida.</p>
+            <p>Vivia num ciclo repetitivo: come&ccedil;ava com vontade, abandonava no meio, me comparava com todo mundo e sa&iacute;a perdendo. Terminava o dia com aquela sensa&ccedil;&atilde;o de ficar s&oacute; empurrando a vida com a barriga.</p>
+            <p>Tentei um monte de caminhos, at&eacute; eu parar de tentar consertar o que era externo, focar no que era interno e come&ccedil;ar a reconstruir a imagem que eu tinha de mim mesma. Foi a&iacute; que a mudan&ccedil;a se tornou real e sustent&aacute;vel.</p>
+            <p>Hoje sou especialista em Neuroci&ecirc;ncia e Mentalidade, criadora do Reconstrua-se, do Evoluto e agora do Evoluto Day.</p>
+            <div class="bio-numero">
+              <b>700</b><span>alunas j&aacute; passaram por esse mesmo processo comigo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA -->
+    <section class="secao secao--clara" id="oferta">
+      <div class="conteudo">
+        <div class="oferta-box">
+          <h2 class="oferta-titulo">O que voc&ecirc; vai ter de acesso</h2>
+          <ul class="stack">
+            <li><span>Imers&atilde;o completa de 2 dias, ao vivo, sem replay</span><span class="valor">R$297</span></li>
+            <li><span>4 ferramentas do m&eacute;todo CRM aplicadas na pr&aacute;tica</span><span class="valor">R$127</span></li>
+            <li><span>Plano de a&ccedil;&atilde;o pessoal e personalizado para os pr&oacute;ximos 90 dias</span><span class="valor">R$73</span></li>
+            <li class="total"><span>Valor total</span><span class="valor">R$497</span></li>
+          </ul>
+          <div class="oferta-preco">
+            <span class="oferta-selo">Desconto de 90%</span>
+            <!-- TODO: preencher o valor real da parcela (copy veio com "12x de R$ 00,00") -->
+            <p class="oferta-parcela">12x de R$ 00,00</p>
+            <p class="oferta-avista">ou R$ 47,00 &agrave; vista</p>
+          </div>
+          <a class="cta cta--grande nm-anim-cta" href="https://pay.kiwify.com.br/nKlLKgG" data-cta="oferta"><span>Quero garantir minha vaga | Lote 1</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="secao secao--escura-2">
+      <div class="conteudo">
+        <div class="garantia">
+          <div class="garantia-selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+          <div class="garantia-texto">
+            <h3>7 dias de garantia p&oacute;s-evento</h3>
+            <p>Voc&ecirc; tem, no momento da compra, a garantia de 7 dias do consumidor por lei. Mas eu quero te dar uma garantia melhor ainda.</p>
+            <p>Se voc&ecirc; participar do evento e achar que n&atilde;o fez sentido pra voc&ecirc;, ou que o conte&uacute;do n&atilde;o foi bom o bastante para te ajudar nos seus problemas, basta enviar uma mensagem para <a href="mailto:suportenathmonari@gmail.com">suportenathmonari@gmail.com</a> solicitando o reembolso, com seus dados da compra e o motivo da solicita&ccedil;&atilde;o. Voc&ecirc; ser&aacute; reembolsada em at&eacute; 72 horas a partir da data do recebimento do e-mail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="secao secao--escura">
+      <div class="conteudo">
+        <div class="faq-grid">
+          <div class="faq-intro">
+            <h2>Perguntas frequentes</h2>
+            <p>N&atilde;o encontrou sua resposta?<br />Fale com o <a href="mailto:suportenathmonari@gmail.com">nosso suporte</a></p>
+          </div>
+          <div class="faq">
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r0">
+            <span>&ldquo;J&aacute; tentei tanta coisa e nada funcionou, por que seria diferente agora?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r0">Porque dessa vez voc&ecirc; trabalha o padr&atilde;o que te faz desistir, n&atilde;o s&oacute; acumula mais informa&ccedil;&atilde;o. &Eacute; processo, feito em cima da sua vida real &mdash; n&atilde;o &eacute; mais um conte&uacute;do pra esquecer em uma semana.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r1">
+            <span>&ldquo;Isso funciona pra quem j&aacute; fez terapia, curso, mentoria e n&atilde;o resolveu?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r1">Funciona principalmente pra voc&ecirc;. O Evoluto Day n&atilde;o substitui terapia &mdash; ele te d&aacute; clareza e um plano pr&aacute;tico de execu&ccedil;&atilde;o, que &eacute; o que a maioria dos processos que voc&ecirc; j&aacute; fez n&atilde;o te entregou.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r2">
+            <span>&ldquo;E se eu n&atilde;o conseguir aplicar depois do evento?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r2">Voc&ecirc; sai de l&aacute; com um plano constru&iacute;do em cima da sua pr&oacute;pria vida, feito por voc&ecirc;, na hora, comigo do seu lado &mdash; j&aacute; pensado pra encaixar na sua rotina real, n&atilde;o numa rotina ideal que n&atilde;o existe.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r3">
+            <span>&ldquo;O evento vai ser gravado? Posso assistir depois?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r3">N&atilde;o. N&atilde;o tem grava&ccedil;&atilde;o, n&atilde;o tem replay. O Evoluto Day acontece ao vivo, no dia &mdash; a experi&ecirc;ncia &eacute; constru&iacute;da ali, com voc&ecirc; presente. Por isso a vaga &eacute; limitada.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r4">
+            <span>&ldquo;Como vou acessar o evento?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r4">Voc&ecirc; recebe o link de acesso antes do evento. &Eacute; s&oacute; entrar no hor&aacute;rio, ao vivo, comigo, de onde voc&ecirc; estiver.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r5">
+            <span>&ldquo;Preciso saber alguma coisa antes ou j&aacute; posso chegar sem preparo nenhum?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r5">Voc&ecirc; n&atilde;o precisa chegar com nada pronto. S&oacute; precisa chegar disposta a se olhar de frente por um dia inteiro.</div>
+        </div>
+          <div class="faq-item">
+          <button class="faq-pergunta" type="button" aria-expanded="false" aria-controls="faq-r6">
+            <span>&ldquo;Posso participar sozinha ou &eacute; melhor chamar algu&eacute;m?&rdquo;</span><svg class="faq-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-resposta" id="faq-r6">Pode participar sozinha tranquilamente &mdash; a maioria vai. Mas se quiser chamar uma amiga, melhor ainda: o processo rende mais quando tem algu&eacute;m do seu lado depois.</div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section class="secao secao--escura-2">
+      <div class="conteudo">
+        <div class="fechamento">
+          <h2>Voc&ecirc; pode fechar esta p&aacute;gina agora e continuar exatamente como est&aacute;.</h2>
+          <p>Ningu&eacute;m vai te cobrar por isso. Mas se voc&ecirc; est&aacute; lendo at&eacute; aqui, uma parte sua j&aacute; sabe que n&atilde;o quer mais adiar essa conversa consigo mesma.</p>
+          <p>O Evoluto Day &eacute; um plano real pra sair do lugar em que voc&ecirc; est&aacute; agora e criar uma vida nova.</p>
+          <a class="cta cta--grande nm-anim-cta" href="https://pay.kiwify.com.br/nKlLKgG" data-cta="fechamento"><span>Quero garantir minha vaga | Lote 1</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <div class="conteudo rodape-inner">
+        <img class="rodape-logo" src="https://ev.nathmonari.com.br/images/logo-evoluto-day.svg" alt="Evoluto Day" width="154" height="28" />
+        <a href="mailto:suportenathmonari@gmail.com">suportenathmonari@gmail.com</a>
+      </div>
+    </footer>
+</div>
+
+<script>
+(function () {
+  var KIWIFY_PREFIX = ["https://pay.kiwify.com.br"];
+  var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+  function kiwifySck() {
+    var sck = "";
+    var href = window.top.location.href;
+    var url = new URL(href);
+    if (url != null && href.indexOf("?") !== -1) {
+      sck =
+        "&sck=" +
+        url.searchParams.get("utm_source") +
+        "|" +
+        url.searchParams.get("utm_medium") +
+        "|" +
+        url.searchParams.get("utm_campaign") +
+        "|" +
+        url.searchParams.get("utm_term") +
+        "|" +
+        url.searchParams.get("utm_content");
+    }
+    return sck;
+  }
+
+  function applyKiwifyUtms() {
+    var params = new URLSearchParams(window.location.search);
+    if (!params.toString()) return;
+
+    document.querySelectorAll("a").forEach(function (anchor) {
+      for (var i = 0; i < KIWIFY_PREFIX.length; i++) {
+        if (anchor.href.indexOf(KIWIFY_PREFIX[i]) === -1) continue;
+        if (anchor.href.indexOf("?") === -1) {
+          anchor.href += "?" + params.toString() + kiwifySck();
+        } else {
+          anchor.href += "&" + params.toString() + kiwifySck();
+        }
+      }
+    });
+  }
+
+  function applyGreennUtms() {
+    var params = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(function (key) {
+      if (params.has(key)) localStorage.setItem(key, params.get(key));
+    });
+
+    function buildUtmString() {
+      var query = [];
+      UTM_KEYS.forEach(function (key) {
+        var value = localStorage.getItem(key);
+        if (value) query.push(key + "=" + encodeURIComponent(value));
+      });
+      return query.length ? "?" + query.join("&") : "";
+    }
+
+    document.querySelectorAll('a[href*="greenn.co"], a[href*="greenn.club"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var baseUrl = link.getAttribute("href").split("?")[0];
+        window.location.href = baseUrl + buildUtmString();
+      });
+    });
+  }
+
+  applyKiwifyUtms();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyGreennUtms);
+  } else {
+    applyGreennUtms();
+  }
+})();
+
+// Evoluto Day — FAQ e reveal ao rolar
+
+document.querySelectorAll(".faq-pergunta").forEach(function (pergunta) {
+  pergunta.addEventListener("click", function () {
+    var item = this.closest(".faq-item");
+    var aberto = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function (i) {
+      i.classList.remove("open");
+      i.querySelector(".faq-pergunta").setAttribute("aria-expanded", "false");
+    });
+    if (!aberto) {
+      item.classList.add("open");
+      this.setAttribute("aria-expanded", "true");
+    }
+  });
+});
+
+// Carrossel infinito: roda sozinho; pausa só durante interação e retoma depois
+(function () {
+  var root = document.querySelector("[data-provas]");
+  if (!root) return;
+
+  var track = root.querySelector(".provas-track");
+  if (!track) return;
+
+  var originais = Array.prototype.slice.call(track.children);
+  var total = originais.length;
+  if (total < 2) return;
+
+  originais.forEach(function (slide) {
+    var clone = slide.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelectorAll("img").forEach(function (img) {
+      img.loading = "lazy";
+      img.decoding = "async";
+    });
+    track.appendChild(clone);
+  });
+
+  var indice = 0;
+  var pausado = false;
+  var resumeTimer = null;
+  var visivel = true;
+  var INTERVALO_MS = 3200;
+  var RETOMAR_MS = 1800;
+  var reduzMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function largura() {
+    return track.children[0].getBoundingClientRect().width;
+  }
+
+  function irPara(i, animar) {
+    track.style.transition = animar && !reduzMotion ? "" : "none";
+    track.style.transform = "translateX(" + (-i * largura()) + "px)";
+  }
+
+  track.addEventListener("transitionend", function (e) {
+    if (e.target !== track) return;
+    if (indice >= total) {
+      indice -= total;
+      irPara(indice, false);
+      void track.offsetWidth;
+      track.style.transition = "";
+    }
+  });
+
+  function avancar() {
+    indice += 1;
+    irPara(indice, true);
+  }
+
+  function voltar() {
+    if (indice <= 0) {
+      indice = total;
+      irPara(indice, false);
+      void track.offsetWidth;
+      track.style.transition = "";
+    }
+    indice -= 1;
+    irPara(indice, true);
+  }
+
+  function pausarPorInteracao() {
+    pausado = true;
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function () {
+      pausado = false;
+    }, RETOMAR_MS);
+  }
+
+  var btnPrev = root.querySelector(".provas-seta--prev");
+  var btnNext = root.querySelector(".provas-seta--next");
+  if (btnPrev) {
+    btnPrev.addEventListener("click", function () {
+      pausarPorInteracao();
+      voltar();
+    });
+  }
+  if (btnNext) {
+    btnNext.addEventListener("click", function () {
+      pausarPorInteracao();
+      avancar();
+    });
+  }
+
+  ["pointerdown", "touchstart", "wheel"].forEach(function (ev) {
+    root.addEventListener(ev, pausarPorInteracao, { passive: true });
+  });
+
+  if ("IntersectionObserver" in window) {
+    visivel = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visivel = entry.isIntersecting;
+      });
+    }, { threshold: 0.2 });
+    io.observe(root);
+  }
+
+  if (!reduzMotion) {
+    setInterval(function () {
+      if (pausado || document.hidden || !visivel) return;
+      avancar();
+    }, INTERVALO_MS);
+  }
+
+  window.addEventListener("resize", function () {
+    irPara(indice, false);
+  });
+})();
+
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var sel = ".secao-topo, .abertura-inner > *, .card, .cronograma-info, .dia, .para-quem li, .paraquem-card, .saida-lista li, .prova, .bio-foto, .bio-texto, .oferta-box, .garantia, .faq-item, .fechamento > *, .faq-cta";
+  var els = Array.prototype.slice.call(document.querySelectorAll(sel));
+  if (!els.length) return;
+  els.forEach(function (el) { el.classList.add("reveal"); });
+
+  document.querySelectorAll(".grid-3, .provas, .para-quem, .cronograma-dias, .saida-lista").forEach(function (grupo) {
+    Array.prototype.forEach.call(grupo.children, function (filho, i) {
+      filho.style.transitionDelay = Math.min(i * 55, 240) + "ms";
+    });
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+/* Camada de animacao — nm-evoluto-day-vc e trocado pelo id da pagina na conversao. */
+(function () {
+  var NM_ENTRADA = false; // falso quando a propria pagina ja anima a entrada
+  var raiz = document.getElementById('nm-evoluto-day-vc');
+  if (!raiz) return;
+  var parado = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (NM_ENTRADA) {
+    var alvos = raiz.querySelectorAll('.nm-anim-entrada');
+    if (parado || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(alvos, function (el) { el.classList.add('nm-visivel'); });
+    } else {
+      var obs = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('nm-visivel');
+          obs.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      Array.prototype.forEach.call(alvos, function (el, i) {
+        el.style.transitionDelay = (i % 5) * 80 + 'ms';
+        obs.observe(el);
+      });
+    }
+  }
+})();
+</script>

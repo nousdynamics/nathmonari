@@ -13,6 +13,7 @@
     "fix:clone-css": "node scripts/fix-clone-css-paths.mjs"
   },
   "devDependencies": {
+    "playwright": "^1.63.0",
     "wrangler": "^4.0.0"
   }
 }
